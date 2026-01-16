@@ -45,7 +45,7 @@ const Bonuses = ({ title, subtitle, items = defaultBonuses, badge }: BonusesProp
                         <span className="text-xs font-bold tracking-widest uppercase text-white/80">{badge || "GLOBAL"}</span>
                     </div>
                     <h2 className="font-cabinet font-bold text-5xl md:text-8xl leading-none tracking-tighter text-white mb-6 uppercase">
-                        {t('bonuses.title')}
+                        {title || t('bonuses.title')}
                     </h2>
                     <p className="text-gray-400">
                         {subtitle || "Automatize tarefas repetitivas e escale sua criatividade com n8n."}

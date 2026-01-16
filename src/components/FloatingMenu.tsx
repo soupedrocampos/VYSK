@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
     Menu, X, Settings, Image, Sun, Moon,
-    Code2, Plus, Terminal, Zap, Navigation,
-    Layers, Cpu, Globe
+    Plus, Terminal, Zap, Navigation,
+    Cpu, Globe
 } from 'lucide-react';
 
 // Types for our lists
@@ -31,7 +31,7 @@ const FloatingMenu = () => {
 
     const sections = [
         { id: 'hero', label: 'Home' },
-        { id: 'features', label: 'Modules' },
+        { id: 'products', label: 'Modules' },
         { id: 'about', label: 'About' },
         { id: 'content', label: 'Content' },
         { id: 'certificate', label: 'Certificate' },

@@ -59,7 +59,7 @@ const Languages2 = () => {
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
                 {/* The Wheel */}
                 <motion.div
-                    className="relative w-[900px] h-[900px] rounded-full border border-white/5 shadow-[0_0_100px_rgba(147,51,234,0.1)]"
+                    className="relative w-[900px] h-[900px] rounded-full border border-white/5 shadow-[0_0_100px_rgba(147,51,234,0.1)] scale-[0.4] md:scale-100 origin-center transition-transform duration-500"
                     animate={{ rotate: 360 }}
                     transition={{
                         duration: 150, // 2 minutes and 30 seconds

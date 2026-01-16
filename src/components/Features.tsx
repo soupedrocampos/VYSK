@@ -49,7 +49,7 @@ import { useLanguage } from '../context/LanguageContext';
 const Features = ({ cards = defaultCourses }: { cards?: FeatureCard[] }) => {
     const { t } = useLanguage();
     return (
-        <section id="content" className="py-24 bg-human-bg font-sans overflow-hidden">
+        <section id="products" className="py-24 bg-human-bg font-sans overflow-hidden">
             <div className="container mx-auto px-4">
 
                 {/* Header */}

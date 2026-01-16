@@ -3,7 +3,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 const CTA = () => {
     return (
-        <section className="py-24 bg-human-bg font-satoshi border-t border-white/5">
+        <section id="careers" className="py-24 bg-human-bg font-satoshi border-t border-white/5">
             <div className="container mx-auto px-4">
 
                 {/* Badge */}

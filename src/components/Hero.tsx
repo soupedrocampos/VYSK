@@ -2,11 +2,18 @@ import { motion } from 'framer-motion';
 import { ArrowRight, ArrowDown, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
-const Hero = () => {
+interface HeroProps {
+    title?: string;
+    description?: string;
+    cta?: string;
+    badge?: string;
+}
+
+const Hero = ({ title, description, cta, badge }: HeroProps) => {
     const { t } = useLanguage();
 
     return (
-        <section className="relative h-[100dvh] w-full bg-human-bg text-white overflow-hidden selection:bg-human-green/30 selection:text-white font-sans flex items-center">
+        <section id="hero" className="relative h-[100dvh] w-full bg-human-bg text-white overflow-hidden selection:bg-human-green/30 selection:text-white font-sans flex items-center">
             {/* Background Assets */}
             <div className="absolute inset-0 z-0 select-none pointer-events-none w-full h-full">
                 <video
@@ -37,19 +44,23 @@ const Hero = () => {
                             <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 backdrop-blur-md">
                                 <span className="text-xs font-bold tracking-widest uppercase text-white/90">GLOBAL</span>
                                 <span className="w-px h-3 bg-white/20" />
-                                <span className="text-xs font-bold tracking-widest uppercase text-white/90">{t('hero.badge')}</span>
+                                <span className="text-xs font-bold tracking-widest uppercase text-white/90">{badge || t('hero.badge')}</span>
                             </div>
 
-                            <h1 className="font-cabinet font-bold text-7xl md:text-8xl leading-none drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] tracking-tighter text-white whitespace-pre-line mb-6">
-                                {t('hero.title')}
+                            <h1 className="font-cabinet font-bold text-7xl md:text-8xl leading-none drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] tracking-tighter text-white whitespace-pre-line mb-6" dangerouslySetInnerHTML={{ __html: title || t('hero.title') }}>
+
                             </h1>
+
+                            <p className="font-sans text-xl md:text-2xl text-gray-300 mb-8 max-w-lg leading-relaxed font-light tracking-wide">
+                                {description || t('hero.desc')}
+                            </p>
 
                             <div className="flex flex-col sm:flex-row gap-4 pt-4">
                                 <a
-                                    href="#"
-                                    className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-md border border-white/10 text-white rounded-full text-sm font-bold tracking-widest uppercase hover:bg-white/20 transition-all duration-300 shadow-lg shadow-purple-900/20"
+                                    href="#products"
+                                    className="px-8 py-4 bg-white text-black rounded-full font-bold uppercase tracking-widest hover:bg-gray-200 transition-all duration-300 flex items-center justify-center gap-2 group"
                                 >
-                                    <span>{t('hero.cta')}</span>
+                                    <span>{cta || t('hero.cta')}</span>
                                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                 </a>
 

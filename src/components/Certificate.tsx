@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const Certificate = () => {
     return (
-        <section className="py-32 bg-human-bg font-satoshi overflow-hidden flex flex-col items-center justify-center relative">
+        <section id="certificate" className="py-32 bg-human-bg font-satoshi overflow-hidden flex flex-col items-center justify-center relative">
 
             {/* Background Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-human-purple/10 rounded-full blur-[120px] pointer-events-none" />

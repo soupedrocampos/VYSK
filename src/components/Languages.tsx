@@ -31,12 +31,16 @@ const toolData = [
     { id: 'storage', label: 'Storage', icon: <Cloud className="w-8 h-8 text-white" />, clock: 11, angle: 330, color: 'from-cyan-500/20 to-blue-500/20' },
 ];
 
-const Languages = () => {
+interface LanguagesProps {
+    isStatic?: boolean;
+}
+
+const Languages = ({ isStatic }: LanguagesProps) => {
     return (
-        <section className="relative w-full h-[900px] bg-black overflow-hidden flex flex-col items-center justify-center font-satoshi">
+        <section id="content" className="relative w-full h-[900px] bg-black overflow-hidden flex flex-col items-center justify-center font-satoshi">
 
             {/* Center Content */}
-            <div className="relative z-50 text-center flex flex-col items-center max-w-4xl px-4">
+            <div className={`relative z-50 text-center flex flex-col items-center max-w-4xl px-4 ${isStatic ? 'opacity-80' : ''}`}>
                 <p className="text-white font-sans text-xl md:text-2xl font-medium tracking-widest mb-2 text-purple-400">
                     ECOSSISTEMA DIGITAL
                 </p>
@@ -61,7 +65,7 @@ const Languages = () => {
             {/* Floating Tools Container */}
             <div className="absolute inset-0 pointer-events-none">
                 {/* Center Reference Point */}
-                <div className="absolute top-1/2 left-1/2 w-0 h-0">
+                <div className="absolute top-1/2 left-1/2 w-0 h-0 scale-[0.4] md:scale-100 origin-center transition-transform duration-500">
                     {toolData.map((tool, index) => {
                         const radius = 420;
                         const x = radius * Math.sin(tool.angle * (Math.PI / 180));

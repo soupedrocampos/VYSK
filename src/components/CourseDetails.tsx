@@ -2,66 +2,66 @@
 
 const courses = [
     {
-        title: "Criação de Imagem PRO",
-        subtitle: "Domine a criação comercial de imagens",
+        title: "Design Premium",
+        subtitle: "Visual que posiciona sua marca no topo",
         modules: [
-            "15 módulos completos e mais de 100 horas de aula",
-            "Workflows reais utilizados por Pedrovysk",
-            "Aprenda Midjourney, Recraft, Krea, Magnific, Flux",
-            "Construa sua própria biblioteca de prompts e estilos",
-            "Domine iluminação, direção e storytelling",
-            "Pratique com estudos de caso de marcas reais",
-            "Entregue visuais consistentes e de alta qualidade"
+            "Interfaces modernas e minimalistas",
+            "Identidade visual marcante",
+            "Experiência de usuário (UX) fluida",
+            "Animações e interações refinadas",
+            "Adaptado para todos os dispositivos",
+            "Foco em conversão e retenção",
+            "Estética de alto padrão (High-End)"
         ],
         image: "/assets/card-image-creator.png",
         year: "2025",
         status: "Incluso"
     },
     {
-        title: "Criação de Vídeo PRO",
-        subtitle: "Dirija e produza vídeos com IA",
+        title: "Tecnologia de Ponta",
+        subtitle: "Performance e segurança extremas",
         modules: [
-            "10 módulos completos do pré ao pós",
-            "Aprenda Kling, Luma, Sora, Higgsfield, LTX Studio",
-            "Construa storyboards e cenários virtuais",
-            "Domine iluminação, atuação e motion design",
-            "Projetos reais: Volkswagen, BYD, Vogue",
-            "Aulas de VFX, correção de cor e edição",
-            "Inclui workshops, LUTs e prompts"
+            "Desenvolvimento em React / Next.js",
+            "Carregamento instantâneo",
+            "Código limpo e otimizado para SEO",
+            "Integração com APIs modernas",
+            "Infraestrutura escalável",
+            "Segurança anti-ataques",
+            "Painel administrativo intuitivo"
         ],
         image: "/assets/card-video-creator.png",
         year: "2025",
         status: "Incluso"
     },
     {
-        title: "Upscale PRO",
-        subtitle: "Melhore, refine e finalize seus visuais",
+        title: "Inteligência Artificial",
+        subtitle: "Automação que trabalha enquanto você dorme",
         modules: [
-            "Transforme imagens de 1K para 10K+ em 300dpi",
-            "Preserve textura, nitidez e fidelidade",
-            "Corrija artefatos e erros comuns da IA",
-            "Aprenda Supir, Gigapixel, Magnific, Photoshop",
-            "Use o workflow de upscale do Pedrovysk",
-            "Retoque e exporte para impressão ou digital",
-            "Alcance qualidade de produção de agência"
+            "Chatbots de atendimento 24/7",
+            "Agentes de vendas autônomos",
+            "Geração de conteúdo automática",
+            "Análise de dados preditiva",
+            "Integração com OpenAI e n8n",
+            "Redução de custos operacionais",
+            "Personalização em escala"
         ],
-        image: "/assets/card-other.png",
+        image: "/assets/card-gpt-pro.png",
         year: "2025",
         status: "Incluso"
     },
     {
-        title: "Criação de Clones PRO",
-        subtitle: "Crie réplicas humanas e personagens realistas",
+        title: "Estratégia de Vendas",
+        subtitle: "Não é só código, é negócio",
         modules: [
-            "Construa rostos autênticos, avatares e clones",
-            "Aprenda Freepik, Krea, Higgsfield",
-            "Siga o workflow completo de clonagem",
-            "Mantenha consistência de personagem nas cenas",
-            "Crie histórias e identidades de marca",
-            "Adicione movimento, expressão e realismo",
-            "Use o método criativo do Pedrovysk"
+            "Copywriting persuasivo (Vendas)",
+            "Funis de conversão validados",
+            "Otimização para ROI máximo",
+            "Integração com CRM e Gateways",
+            "Rastreamento de leads avançado",
+            "Testes A/B contínuos",
+            "Foco total em resultados financeiros"
         ],
-        image: "/assets/card-gpt-pro.png",
+        image: "/assets/card-other.png",
         year: "2025",
         status: "Incluso"
     }
@@ -69,7 +69,7 @@ const courses = [
 
 const CourseDetails = () => {
     return (
-        <section className="py-24 bg-human-bg font-satoshi">
+        <section id="research" className="py-24 bg-human-bg font-satoshi">
             <div className="container mx-auto px-4 max-w-[85vw] 2xl:max-w-[80vw]">
 
                 <div className="mb-16">
@@ -104,7 +104,7 @@ const CourseDetails = () => {
                                 </ul>
 
                                 <button className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 text-white text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">
-                                    <span>View course details</span>
+                                    <span>Ver detalhes</span>
                                 </button>
                             </div>
 
