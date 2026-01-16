@@ -87,7 +87,7 @@ const n8nFeatures = [
 const FeaturesBento = () => {
     return (
         <section className="py-24 bg-human-bg font-satoshi">
-            <div className="container mx-auto px-4 max-w-[85vw] 2xl:max-w-[80vw]">
+            <div className="container mx-auto px-4 w-full md:max-w-[85vw] 2xl:max-w-[80vw]">
 
                 {/* Header */}
                 <motion.div
