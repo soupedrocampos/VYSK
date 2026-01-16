@@ -46,8 +46,9 @@ const Hero = ({ title, cta, badge }: HeroProps) => {
                                 <span className="w-px h-3 bg-white/20" />
                                 <span className="text-xs font-bold tracking-widest uppercase text-white/90">{badge || t('hero.badge')}</span>
                             </div>
+                            <div className="mb-4" />
 
-                            <h1 className="font-cabinet font-bold text-4xl md:text-8xl leading-none tracking-tighter text-white mb-8">
+                            <h1 className="font-cabinet font-bold text-5xl md:text-8xl leading-none tracking-tighter text-white mb-8">
                                 {title || t('hero.title') ? <span dangerouslySetInnerHTML={{ __html: title || t('hero.title') }} /> : "MASTER THE CREATIVE FUTURE"}
                             </h1>
 
