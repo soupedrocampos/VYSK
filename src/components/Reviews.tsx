@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 
 const Reviews = () => {
@@ -30,13 +29,13 @@ const Reviews = () => {
                             <Star size={16} fill="currentColor" />
                         </div>
                         <p className="text-gray-300 mb-6 leading-relaxed">
-                            "Curso incrível! A didática do Pedrovysk é sensacional. Aprendi a criar clones perfeitos e escalar minha produção de conteúdo em dias."
+                            "A transformação digital da nossa empresa foi completa. O novo site não só é visualmente impactante, mas a estratégia por trás dele dobrou nossa conversão em 30 dias."
                         </p>
                         <div className="flex items-center gap-4">
                             <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center font-bold text-white">R</div>
                             <div>
-                                <p className="text-white font-bold text-sm">Mariana Costa</p>
-                                <p className="text-gray-500 text-xs uppercase">Diretora de Arte</p>
+                                <p className="text-white font-bold text-sm">Ricardo Alves</p>
+                                <p className="text-gray-500 text-xs uppercase">CEO TechFlow</p>
                             </div>
                         </div>
                     </div>
@@ -51,13 +50,13 @@ const Reviews = () => {
                             <Star size={16} fill="currentColor" />
                         </div>
                         <p className="text-white mb-6 leading-relaxed font-medium">
-                            "Nunca vi nada igual no mercado brasileiro. O módulo de N8N mudou o jogo da minha agência. Automatizamos 80% do fluxo."
+                            "Nunca imaginei que automação pudesse economizar tanto tempo. A equipe da Pedrovysk implementou fluxos que reduziram nosso trabalho manual em 80%. Impecável."
                         </p>
                         <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 bg-purple-500/20 rounded-full flex items-center justify-center font-bold text-purple-300">G</div>
+                            <div className="w-10 h-10 bg-purple-500/20 rounded-full flex items-center justify-center font-bold text-purple-300">A</div>
                             <div>
-                                <p className="text-white font-bold text-sm">Gabriel Silva</p>
-                                <p className="text-gray-500 text-xs uppercase">Founder Agency X</p>
+                                <p className="text-white font-bold text-sm">Ana Clara</p>
+                                <p className="text-gray-500 text-xs uppercase">Diretora Operacional</p>
                             </div>
                         </div>
                     </div>
@@ -72,13 +71,13 @@ const Reviews = () => {
                             <Star size={16} fill="currentColor" />
                         </div>
                         <p className="text-gray-300 mb-6 leading-relaxed">
-                            "Valeu cada centavo. O suporte é rápido e a comunidade é muito engajada. Já fechei 3 projetos grandes com o network daqui."
+                            "Excelência e sofisticação definem. O branding e a identidade visual criados elevaram o patamar da nossa marca no mercado de luxo. Recomendo de olhos fechados."
                         </p>
                         <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center font-bold text-white">L</div>
+                            <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center font-bold text-white">M</div>
                             <div>
-                                <p className="text-white font-bold text-sm">Lucas Mendes</p>
-                                <p className="text-gray-500 text-xs uppercase">Motion Designer</p>
+                                <p className="text-white font-bold text-sm">Marcos Vinicius</p>
+                                <p className="text-gray-500 text-xs uppercase">Fundador LuxeGroup</p>
                             </div>
                         </div>
                     </div>

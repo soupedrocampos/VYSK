@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+
 
 // Imports of all sections
 import Hero from '../components/Hero';
