@@ -8,7 +8,7 @@ const n8nFeatures = [
         color: "from-blue-500/20 to-cyan-500/20",
         borderColor: "border-blue-500/30",
         iconColor: "text-blue-400",
-        span: "col-span-2 row-span-1"
+        span: "col-span-1 md:col-span-2 row-span-1"
     },
     {
         title: "WhatsApp API",
@@ -48,7 +48,7 @@ const n8nFeatures = [
         color: "from-indigo-500/20 to-blue-500/20",
         borderColor: "border-indigo-500/30",
         iconColor: "text-indigo-400",
-        span: "col-span-2 row-span-1"
+        span: "col-span-1 md:col-span-2 row-span-1"
     },
     {
         title: "Qualificação de Leads",
@@ -104,7 +104,7 @@ const FeaturesBento = () => {
                 </motion.div>
 
                 {/* Bento Grid */}
-                <div className="grid grid-cols-4 auto-rows-[180px] gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-[180px] gap-4">
                     {n8nFeatures.map((feature, index) => (
                         <motion.div
                             key={index}

@@ -25,7 +25,7 @@ const flags = [
 const Languages2 = () => {
     const { t } = useLanguage();
     return (
-        <section className="relative w-full h-[1100px] bg-black overflow-hidden flex flex-col items-center justify-center font-satoshi perspective-[1000px]">
+        <section className="relative w-full h-[800px] md:h-[1100px] bg-black overflow-hidden flex flex-col items-center justify-center font-satoshi perspective-[1000px]">
 
             {/* Top Gradient Fade */}
             <div className="absolute top-0 left-0 w-full h-[200px] bg-gradient-to-b from-black to-transparent z-[70] pointer-events-none" />
@@ -37,7 +37,7 @@ const Languages2 = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h2 className="text-white font-cabinet font-bold text-6xl md:text-8xl leading-none mb-4 tracking-tighter">
+                    <h2 className="text-white font-cabinet font-bold text-4xl md:text-6xl lg:text-8xl leading-none mb-4 tracking-tighter">
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
                             {t('languages2.title')}
                         </span>
@@ -64,7 +64,7 @@ const Languages2 = () => {
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden z-[60]">
                 {/* The Wheel */}
                 <motion.div
-                    className="relative w-[900px] h-[900px] rounded-full border border-white/5 shadow-[0_0_100px_rgba(147,51,234,0.1)] scale-[0.85] md:scale-90 origin-center transition-transform duration-500"
+                    className="relative w-[900px] h-[900px] rounded-full border border-white/5 shadow-[0_0_100px_rgba(147,51,234,0.1)] scale-[0.35] md:scale-90 origin-center transition-transform duration-500"
                     animate={{ rotate: 360 }}
                     transition={{
                         duration: 130, // 2 minutes and 10 seconds
