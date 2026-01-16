@@ -26,7 +26,7 @@ const Pricing = () => {
                             INVESTIMENTO
                         </h2>
                         <p className="text-xl text-gray-400 max-w-md mx-auto lg:mx-0 leading-relaxed">
-                            Este pacote exclusivo inclui todos os módulos, atualizações e acesso à comunidade global.
+                            Soluções digitais completas para escalar seu negócio. Unimos design, tecnologia e estratégia para criar resultados extraordinários.
                         </p>
                     </div>
 
@@ -43,17 +43,17 @@ const Pricing = () => {
                         <div className="relative z-10">
                             <div className="mb-8">
                                 <Globe className="text-white w-12 h-12 mb-6" strokeWidth={1} />
-                                <h3 className="text-3xl font-bold text-white mb-2">ACESSO GLOBAL</h3>
-                                <h4 className="text-xl font-bold text-white mb-4">OFERTA ESPECIAL</h4>
+                                <h3 className="text-3xl font-bold text-white mb-2">SERVIÇOS EXCLUSIVOS</h3>
+                                <h4 className="text-xl font-bold text-white mb-4">PACOTE COMPLETO</h4>
                                 <p className="text-gray-500 text-xs uppercase tracking-wide">
-                                    Criação de Vídeo + Imagem + Clones IA + Upscale PRO
+                                    Sites + Automação + Design + Inteligência Artificial
                                 </p>
                             </div>
 
                             <div className="mb-10">
-                                <p className="text-gray-500 text-lg mb-1 line-through">De R$ 997</p>
+                                <p className="text-gray-500 text-lg mb-1 line-through">De $ 8.997</p>
                                 <div className="flex items-baseline gap-3">
-                                    <span className="text-6xl font-bold text-white font-cabinet">R$ 497</span>
+                                    <span className="text-6xl font-bold text-white font-cabinet">$ 4.997,00</span>
                                     <span className="text-gray-400 text-sm uppercase tracking-wider">PAGAMENTO ÚNICO</span>
                                 </div>
                             </div>
@@ -65,38 +65,38 @@ const Pricing = () => {
                             <div className="space-y-4">
                                 <div className="flex items-center gap-3">
                                     <Check className="text-white w-5 h-5" />
-                                    <span className="text-gray-300 text-sm">Oferta por tempo limitado</span>
+                                    <span className="text-gray-300 text-sm">Desenvolvimento Web High-End</span>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <Check className="text-white w-5 h-5" />
-                                    <span className="text-gray-300 text-sm">4 módulos completos</span>
+                                    <span className="text-gray-300 text-sm">Automação com N8N e IA</span>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <Check className="text-white w-5 h-5" />
-                                    <span className="text-gray-300 text-sm">Suporte em português</span>
+                                    <span className="text-gray-300 text-sm">Design UI/UX Premium</span>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <Check className="text-white w-5 h-5" />
-                                    <span className="text-gray-300 text-sm">150+ aulas gravadas</span>
+                                    <span className="text-gray-300 text-sm">Consultoria Estratégica</span>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <Check className="text-white w-5 h-5" />
-                                    <span className="text-gray-300 text-sm">Metodologia N8N Exclusiva</span>
+                                    <span className="text-gray-300 text-sm">Otimização de Processos</span>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <Check className="text-white w-5 h-5" />
-                                    <span className="text-gray-300 text-sm">Acesso vitalício</span>
+                                    <span className="text-gray-300 text-sm">Suporte Prioritário</span>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <Check className="text-white w-5 h-5" />
-                                    <span className="text-gray-300 text-sm">Início imediato</span>
+                                    <span className="text-gray-300 text-sm">Entrega em 7 a 15 dias</span>
                                 </div>
                             </div>
                         </div>
                     </motion.div>
                 </div>
             </div>
-        </section>
+        </section >
     );
 };
 
