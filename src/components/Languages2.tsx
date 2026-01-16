@@ -28,7 +28,7 @@ const Languages2 = () => {
         <section className="relative w-full h-[1100px] bg-black overflow-hidden flex flex-col items-center justify-center font-satoshi perspective-[1000px]">
 
             {/* Top Gradient Fade */}
-            <div className="absolute top-0 left-0 w-full h-[200px] bg-gradient-to-b from-black to-transparent z-40 pointer-events-none" />
+            <div className="absolute top-0 left-0 w-full h-[200px] bg-gradient-to-b from-black to-transparent z-[70] pointer-events-none" />
 
             {/* Central Text */}
             <div className="relative z-50 text-center flex flex-col items-center max-w-4xl px-4 pointer-events-none">
@@ -103,7 +103,7 @@ const Languages2 = () => {
             </div>
 
             {/* Bottom Gradient Fade - Stronger & Matching Next Section (#050505) */}
-            <div className="absolute bottom-0 left-0 w-full h-[500px] bg-gradient-to-t from-[#050505] via-[#050505] to-transparent z-40 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-full h-[500px] bg-gradient-to-t from-[#050505] via-[#050505] to-transparent z-[70] pointer-events-none" />
         </section>
     );
 };
