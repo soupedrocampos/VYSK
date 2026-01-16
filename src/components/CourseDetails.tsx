@@ -72,11 +72,11 @@ const CourseDetails = () => {
     return (
         <>
             <section className="py-24 bg-human-bg font-satoshi">
-                <div className="container mx-auto px-4 max-w-[85vw] 2xl:max-w-[80vw]">
+                <div className="container mx-auto px-4 w-full md:max-w-[85vw] 2xl:max-w-[80vw]">
 
                     <div className="mb-16">
                         <h2 className="font-cabinet font-bold text-5xl md:text-7xl lg:text-8xl leading-none tracking-tighter text-white mb-4 uppercase">
-                            O DIFERENCIAL <br /> QUE <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">MUDA O JOGO</span>
+                            DIFERENCIAL <br /> QUE <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">MUDA O JOGO</span>
                         </h2>
                         <div className="w-full h-px bg-white/10 mt-8" />
                     </div>
