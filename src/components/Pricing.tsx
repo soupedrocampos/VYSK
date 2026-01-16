@@ -22,11 +22,11 @@ const Pricing = () => {
 
                     {/* Left Content */}
                     <div className="text-center lg:text-left">
-                        <h2 className="text-6xl md:text-8xl font-bold font-cabinet text-white tracking-tighter mb-8">
-                            INVESTMENT
+                        <h2 className="font-cabinet font-bold text-7xl md:text-8xl leading-none drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] tracking-tighter text-white mb-8">
+                            INVESTIMENTO
                         </h2>
                         <p className="text-xl text-gray-400 max-w-md mx-auto lg:mx-0 leading-relaxed">
-                            This one-time offer includes all 4 courses + updates + global community access.
+                            Este pacote exclusivo inclui todos os módulos, atualizações e acesso à comunidade global.
                         </p>
                     </div>
 
@@ -43,53 +43,53 @@ const Pricing = () => {
                         <div className="relative z-10">
                             <div className="mb-8">
                                 <Globe className="text-white w-12 h-12 mb-6" strokeWidth={1} />
-                                <h3 className="text-3xl font-bold text-white mb-2">GLOBAL PASS</h3>
-                                <h4 className="text-xl font-bold text-white mb-4">BLACK FRIDAY SPECIAL OFFER</h4>
+                                <h3 className="text-3xl font-bold text-white mb-2">ACESSO GLOBAL</h3>
+                                <h4 className="text-xl font-bold text-white mb-4">OFERTA ESPECIAL</h4>
                                 <p className="text-gray-500 text-xs uppercase tracking-wide">
-                                    AI Video Creator Pro + AI Image Creator Pro + AI Clone Creator PRO + AI Upscale PRO
+                                    Criação de Vídeo + Imagem + Clones IA + Upscale PRO
                                 </p>
                             </div>
 
                             <div className="mb-10">
-                                <p className="text-gray-500 text-lg mb-1 line-through">From US$ 997</p>
+                                <p className="text-gray-500 text-lg mb-1 line-through">De R$ 997</p>
                                 <div className="flex items-baseline gap-3">
-                                    <span className="text-6xl font-bold text-white font-cabinet">US$ 468</span>
-                                    <span className="text-gray-400 text-sm uppercase tracking-wider">BLACK FRIDAY OFFER</span>
+                                    <span className="text-6xl font-bold text-white font-cabinet">R$ 497</span>
+                                    <span className="text-gray-400 text-sm uppercase tracking-wider">PAGAMENTO ÚNICO</span>
                                 </div>
                             </div>
 
                             <button className="w-full bg-gradient-to-r from-[#9d8bb1] to-[#715e8b] text-white py-4 rounded-full font-bold text-sm uppercase tracking-widest flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-purple-900/30 mb-10 group-hover:from-[#b3a1c7] group-hover:to-[#836ea1]">
-                                ENROLL NOW <ArrowUpRight size={18} />
+                                GARANTIR ACESSO <ArrowUpRight size={18} />
                             </button>
 
                             <div className="space-y-4">
                                 <div className="flex items-center gap-3">
                                     <Check className="text-white w-5 h-5" />
-                                    <span className="text-gray-300 text-sm">One-time only Black Friday deal</span>
+                                    <span className="text-gray-300 text-sm">Oferta por tempo limitado</span>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <Check className="text-white w-5 h-5" />
-                                    <span className="text-gray-300 text-sm">4 complete courses</span>
+                                    <span className="text-gray-300 text-sm">4 módulos completos</span>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <Check className="text-white w-5 h-5" />
-                                    <span className="text-gray-300 text-sm">9 languages</span>
+                                    <span className="text-gray-300 text-sm">Suporte em português</span>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <Check className="text-white w-5 h-5" />
-                                    <span className="text-gray-300 text-sm">150+ lessons</span>
+                                    <span className="text-gray-300 text-sm">150+ aulas gravadas</span>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <Check className="text-white w-5 h-5" />
-                                    <span className="text-gray-300 text-sm">Human Workflow™ methodology</span>
+                                    <span className="text-gray-300 text-sm">Metodologia N8N Exclusiva</span>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <Check className="text-white w-5 h-5" />
-                                    <span className="text-gray-300 text-sm">$468 total</span>
+                                    <span className="text-gray-300 text-sm">Acesso vitalício</span>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <Check className="text-white w-5 h-5" />
-                                    <span className="text-gray-300 text-sm">Immediate start</span>
+                                    <span className="text-gray-300 text-sm">Início imediato</span>
                                 </div>
                             </div>
                         </div>

@@ -15,7 +15,7 @@ const Certificate = () => {
                     <span className="text-xs font-bold tracking-widest uppercase text-white/80">CERTIFICATE</span>
                 </div>
 
-                <h2 className="text-5xl md:text-7xl font-bold font-cabinet text-white mb-20 tracking-tight">
+                <h2 className="font-cabinet font-bold text-7xl md:text-8xl leading-none drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] tracking-tighter text-white mb-20">
                     OBTAIN YOUR <br />
                     CERTIFICATE
                 </h2>

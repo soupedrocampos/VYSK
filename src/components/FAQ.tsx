@@ -4,24 +4,24 @@ import { Plus, Minus } from 'lucide-react';
 
 const faqs = [
     {
-        question: "Which AI softwares and tools will be covered in the course?",
-        answer: "The Academy Pass gives you access to a complete ecosystem of courses that explore the most powerful AI tools for image, video, text, and sound creation. Each tool is presented in a practical way, showing how to use it creatively and integrate it into your professional workflow."
+        question: "Quais softwares e ferramentas de IA serão abordados?",
+        answer: "O Pacote Global dá acesso a um ecossistema completo de estratégias que exploram as ferramentas de IA mais poderosas para criação de imagem, vídeo, texto e som. Cada ferramenta é apresentada de forma prática, mostrando como usá-la criativamente e integrá-la ao seu fluxo de trabalho profissional."
     },
     {
-        question: "Do I need previous experience in audiovisual production to participate?",
-        answer: "No, the course is designed to take you from beginner to advanced levels. We start with the basics of setting up accounts and navigating the interfaces, progressing to advanced techniques. Whether you are a total beginner or an experienced creator, you will find value."
+        question: "Preciso de experiência anterior em produção audiovisual?",
+        answer: "Não, o conteúdo foi desenhado para te levar do zero ao avançado. Começamos com os fundamentos de configuração de contas e navegação nas interfaces, progredindo para técnicas avançadas. Seja você um iniciante total ou um criador experiente, encontrará valor."
     },
     {
-        question: "Will participants receive a certificate at the end of the course?",
-        answer: "Yes, upon completing the course modules, you will receive a certificate of completion from Human Academy, validating your comprehensive knowledge in AI-driven creative workflows."
+        question: "Receberei um certificado ao final do curso?",
+        answer: "Sim, ao completar os módulos, você receberá um certificado de conclusão, validando seu conhecimento abrangente em fluxos de trabalho criativos impulsionados por IA."
     },
     {
-        question: "How can I apply the techniques learned to my current work?",
-        answer: "The techniques taught are applicable across various creative fields including graphic design, video editing, marketing, content creation, and more. You'll learn workflows that can speed up your production, enhance quality, and open new creative possibilities."
+        question: "Como posso aplicar as técnicas aprendidas no meu trabalho atual?",
+        answer: "As técnicas ensinadas são aplicáveis em vários campos criativos, incluindo design gráfico, edição de vídeo, marketing, criação de conteúdo e mais. Você aprenderá workflows que podem acelerar sua produção, melhorar a qualidade e abrir novas possibilidades criativas."
     },
     {
-        question: "Does the course focus only on creating videos with AI?",
-        answer: "No. While video is a major component (AI Video Creator Pro), the Global Pass also covers Image Generation (Midjourney, etc.), Clone Creation, and Upscaling. It's a holistic approach to AI media production."
+        question: "O curso foca apenas em criar vídeos com IA?",
+        answer: "Não. Embora o vídeo seja um componente importante, o Pacote Global também cobre Geração de Imagem, Criação de Clones e Upscaling. É uma abordagem holística para a produção de mídia com IA."
     }
 ];
 
@@ -34,10 +34,11 @@ const FAQ = () => {
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-6">
                         <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                        <span className="text-xs font-bold tracking-widest uppercase text-white/80">Doubts</span>
+                        <span className="text-xs font-bold tracking-widest uppercase text-white/80">Dúvidas</span>
                     </div>
-                    <h2 className="text-4xl md:text-6xl font-bold font-cabinet mb-4">
-                        COMMON <span className="text-gray-500">QUESTIONS</span>
+                    <h2 className="font-cabinet font-bold text-5xl md:text-8xl leading-none tracking-tighter text-white mb-8">
+                        PERGUNTAS <br />
+                        <span className="text-gray-500">FREQUENTES</span>
                     </h2>
                 </div>
 

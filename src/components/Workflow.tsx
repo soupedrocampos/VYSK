@@ -3,16 +3,16 @@ import { PlayCircle, Zap, Camera, Box, Layers, Split, Clock } from 'lucide-react
 // Removed Monitor from imports to fix lint error
 
 const workflowItems = [
-    { title: "Lightning", icon: <Zap />, color: "from-blue-500/20 to-cyan-500/20", colSpan: "md:col-span-2" },
-    { title: "Multi Scenes", icon: <Layers />, color: "from-red-500/20 to-orange-500/20", colSpan: "md:col-span-1" },
-    { title: "Camera Movements", icon: <Camera />, color: "from-purple-500/20 to-pink-500/20", colSpan: "md:col-span-1" },
-    { title: "Boomtown", icon: <Box />, color: "from-amber-500/20 to-yellow-500/20", colSpan: "md:col-span-1" },
-    { title: "Product Mockup", icon: <Box />, color: "from-yellow-400/20 to-amber-600/20", colSpan: "md:col-span-1" },
-    { title: "Visual Effects", icon: <Zap />, color: "from-cyan-400/20 to-blue-600/20", colSpan: "md:col-span-2" },
-    { title: "Realistic Acting", icon: <PlayCircle />, color: "from-emerald-500/20 to-green-500/20", colSpan: "md:col-span-1" },
-    { title: "3D Animation", icon: <Box />, color: "from-indigo-500/20 to-purple-500/20", colSpan: "md:col-span-1" },
+    { title: "Velocidade", icon: <Zap />, color: "from-blue-500/20 to-cyan-500/20", colSpan: "md:col-span-2" },
+    { title: "Multi Cenas", icon: <Layers />, color: "from-red-500/20 to-orange-500/20", colSpan: "md:col-span-1" },
+    { title: "Movimentos de Câmera", icon: <Camera />, color: "from-purple-500/20 to-pink-500/20", colSpan: "md:col-span-1" },
+    { title: "Impacto Visual", icon: <Box />, color: "from-amber-500/20 to-yellow-500/20", colSpan: "md:col-span-1" },
+    { title: "Mockups de Produto", icon: <Box />, color: "from-yellow-400/20 to-amber-600/20", colSpan: "md:col-span-1" },
+    { title: "Efeitos Visuais", icon: <Zap />, color: "from-cyan-400/20 to-blue-600/20", colSpan: "md:col-span-2" },
+    { title: "Atuação Realista", icon: <PlayCircle />, color: "from-emerald-500/20 to-green-500/20", colSpan: "md:col-span-1" },
+    { title: "Animação 3D", icon: <Box />, color: "from-indigo-500/20 to-purple-500/20", colSpan: "md:col-span-1" },
     { title: "Timelapse", icon: <Clock />, color: "from-sky-500/20 to-blue-500/20", colSpan: "md:col-span-1" },
-    { title: "Split Screen", icon: <Split />, color: "from-fuchsia-500/20 to-pink-500/20", colSpan: "md:col-span-1" },
+    { title: "Tela Dividida", icon: <Split />, color: "from-fuchsia-500/20 to-pink-500/20", colSpan: "md:col-span-1" },
 ];
 
 const Workflow = () => {
@@ -22,8 +22,8 @@ const Workflow = () => {
                 <div className="flex justify-between items-end mb-16 relative z-10">
                     <div>
                         <div className="inline-flex items-center space-x-2 mb-4">
-                            <h2 className="text-4xl md:text-6xl font-bold font-cabinet text-white uppercase tracking-tight">
-                                Workflow N8N <span className="text-sm align-top">®</span>
+                            <h2 className="font-cabinet font-bold text-7xl md:text-8xl leading-none drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] tracking-tighter text-white uppercase mb-6">
+                                Workflow N8N <span className="text-4xl align-top">®</span>
                             </h2>
                         </div>
                     </div>

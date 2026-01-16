@@ -12,14 +12,14 @@ export interface BentoItem {
 
 // Default N8N Items
 export const defaultBonuses: BentoItem[] = [
-    { colSpan: 2, rowSpan: 2, title: "AI Lead Scoring", icon: <Zap className="w-6 h-6 text-yellow-400" />, desc: "Automatically qualify leads using AI analysis before they pass to your sales team." },
-    { colSpan: 1, rowSpan: 1, title: "Social Bot", icon: <Share2 className="w-5 h-5 text-blue-400" /> },
-    { colSpan: 1, rowSpan: 1, title: "CRM Sync", icon: <Database className="w-5 h-5 text-green-400" /> },
-    { colSpan: 1, rowSpan: 1, title: "Auto-Reply", icon: <MessageCircle className="w-5 h-5 text-pink-400" /> },
-    { colSpan: 1, rowSpan: 1, title: "Sentiment Analysis", icon: <BarChart className="w-5 h-5 text-purple-400" /> },
-    { colSpan: 1, rowSpan: 1, title: "Auto Invoicing", icon: <FileText className="w-5 h-5 text-orange-400" /> },
-    { colSpan: 2, rowSpan: 1, title: "Web Scraper", icon: <Globe className="w-5 h-5 text-cyan-400" />, desc: "Extract data from any website to Google Sheets." },
-    { colSpan: 2, rowSpan: 1, title: "Custom Webhooks", icon: <Link className="w-5 h-5 text-red-400" />, desc: "Connect any API to your internal tools instantly." }
+    { colSpan: 2, rowSpan: 2, title: "Qualificação de Leads com IA", icon: <Zap className="w-6 h-6 text-yellow-400" />, desc: "Qualifique leads automaticamente usando inteligência artificial antes de passá-los para sua equipe de vendas." },
+    { colSpan: 1, rowSpan: 1, title: "Bot Social", icon: <Share2 className="w-5 h-5 text-blue-400" /> },
+    { colSpan: 1, rowSpan: 1, title: "Sync CRM", icon: <Database className="w-5 h-5 text-green-400" /> },
+    { colSpan: 1, rowSpan: 1, title: "Auto-Resposta", icon: <MessageCircle className="w-5 h-5 text-pink-400" /> },
+    { colSpan: 1, rowSpan: 1, title: "Análise de Sentimento", icon: <BarChart className="w-5 h-5 text-purple-400" /> },
+    { colSpan: 1, rowSpan: 1, title: "Faturamento Auto", icon: <FileText className="w-5 h-5 text-orange-400" /> },
+    { colSpan: 2, rowSpan: 1, title: "Web Scraper", icon: <Globe className="w-5 h-5 text-cyan-400" />, desc: "Extraia dados de qualquer site diretamente para o Google Sheets." },
+    { colSpan: 2, rowSpan: 1, title: "Webhooks Personalizados", icon: <Link className="w-5 h-5 text-red-400" />, desc: "Conecte qualquer API às suas ferramentas internas instantaneamente." }
 ];
 
 interface BonusesProps {
@@ -29,7 +29,10 @@ interface BonusesProps {
     badge?: string;
 }
 
+import { useLanguage } from '../context/LanguageContext';
+
 const Bonuses = ({ title, subtitle, items = defaultBonuses, badge }: BonusesProps) => {
+    const { t } = useLanguage();
     return (
         <section className="py-24 bg-human-bg font-sans relative">
             <div className="container mx-auto px-4 max-w-6xl">
@@ -41,11 +44,11 @@ const Bonuses = ({ title, subtitle, items = defaultBonuses, badge }: BonusesProp
                         <span className="w-px h-3 bg-white/20" />
                         <span className="text-xs font-bold tracking-widest uppercase text-white/80">{badge || "GLOBAL"}</span>
                     </div>
-                    <h2 className="text-5xl md:text-6xl font-bold font-cabinet text-white mb-4">
-                        {title || "WHAT YOU CAN BUILD"}
+                    <h2 className="font-cabinet font-bold text-5xl md:text-8xl leading-none tracking-tighter text-white mb-6 uppercase">
+                        {t('bonuses.title')}
                     </h2>
                     <p className="text-gray-400">
-                        {subtitle || "Automate boring tasks and scale your creativity with n8n."}
+                        {subtitle || "Automatize tarefas repetitivas e escale sua criatividade com n8n."}
                     </p>
                 </div>
 

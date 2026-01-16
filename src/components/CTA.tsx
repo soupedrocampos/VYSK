@@ -18,10 +18,10 @@ const CTA = () => {
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="text-5xl md:text-8xl font-bold font-cabinet text-white tracking-tighter leading-none"
+                        className="font-cabinet font-bold text-7xl md:text-8xl leading-none drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] tracking-tighter text-white"
                     >
-                        HERE'S WHAT <br />
-                        YOU'LL GET
+                        O QUE <br />
+                        VOCÊ VAI RECEBER
                     </motion.h2>
 
                     <motion.div
@@ -35,7 +35,7 @@ const CTA = () => {
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 bg-gradient-to-r from-[#B3A1C7] to-[#8E7BB0] text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-[0_0_20px_rgba(179,161,199,0.4)] transition-all transform hover:-translate-y-1"
                         >
-                            <span>OBTAIN CREATIVE PACK</span>
+                            <span>OBTENHA O PACOTE CRIATIVO</span>
                             <ArrowUpRight size={20} />
                         </a>
                     </motion.div>

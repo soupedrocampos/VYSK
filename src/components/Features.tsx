@@ -64,7 +64,7 @@ const Features = ({ cards = defaultCourses }: { cards?: FeatureCard[] }) => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-5xl md:text-7xl font-sans text-white leading-[0.9] tracking-tight max-w-4xl whitespace-pre-line"
+                        className="font-cabinet font-light text-4xl md:text-6xl leading-none tracking-tighter text-white max-w-6xl whitespace-pre-line mb-10"
                     >
                         {t('features.title').split(/<\/?b>/).map((part, i) => (
                             <span key={i} className={i % 2 === 1 ? "font-bold" : "font-light"}>

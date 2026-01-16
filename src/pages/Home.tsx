@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import CourseDetails from '../components/CourseDetails';
 import Features from '../components/Features';
 import Languages from '../components/Languages';
+import Languages2 from '../components/Languages2';
 import Workflow from '../components/Workflow';
 import Instructors from '../components/Instructors';
 import Community from '../components/Community';
@@ -28,6 +29,7 @@ const Home = () => {
             <Instructors />
             <Community />
             <Certificate />
+            <Languages2 />
             <Bonuses />
             <Pricing />
             <Reviews />

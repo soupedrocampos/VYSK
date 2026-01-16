@@ -13,7 +13,7 @@ const Footer = () => {
                 </div>
 
                 {/* Middle Section - Links */}
-                <div className="flex flex-col md:flex-row justify-between items-center mb-32 px-4 md:px-12">
+                <div className="flex flex-col md:flex-row justify-between items-center mb-16 px-4 md:px-12">
                     <div className="flex flex-col gap-4 text-center md:text-left mb-8 md:mb-0">
                         <a href="#" className="text-gray-400 hover:text-white transition-colors text-xs uppercase tracking-widest">Privacy Policy</a>
                         <a href="#" className="text-gray-400 hover:text-white transition-colors text-xs uppercase tracking-widest">Contact</a>

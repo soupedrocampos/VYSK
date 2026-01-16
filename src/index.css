@@ -24,6 +24,14 @@
     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
+.h1-display {
+    @apply font-cabinet font-bold text-7xl md:text-9xl leading-none drop-shadow-[0_0_15px_rgba(255, 255, 255, 0.5)] tracking-tighter;
+}
+
+.h2-display {
+    @apply font-cabinet font-bold text-4xl md:text-6xl leading-tight tracking-tight text-white;
+}
+
 /* Fonts */
 @font-face {
     font-family: 'Satoshi';

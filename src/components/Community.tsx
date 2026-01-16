@@ -27,16 +27,16 @@ const Community = () => {
                     <div className="mb-8 md:mb-0">
                         <div className="flex flex-col">
                             <h2 className="text-xl md:text-2xl font-light text-gray-400 mb-2 tracking-widest uppercase">
-                                REALISTIC <br /> CONNECTION
+                                CONEXÃO <br /> REAL
                             </h2>
-                            <h2 className="text-6xl md:text-8xl font-bold font-cabinet text-white tracking-tighter loading-none">
-                                COMMUNITY
+                            <h2 className="font-cabinet font-bold text-7xl md:text-8xl leading-none drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] tracking-tighter text-white">
+                                COMUNIDADE
                             </h2>
                         </div>
                     </div>
 
                     <div className="flex items-center gap-4">
-                        <span className="text-4xl md:text-6xl font-cabinet font-light text-white">AI CREATORS</span>
+                        <span className="text-4xl md:text-6xl font-cabinet font-light text-white">CRIADORES IA</span>
                         <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors cursor-pointer">
                             <ArrowUpRight size={20} />
                         </div>
@@ -50,7 +50,7 @@ const Community = () => {
                     <div className="md:col-span-1 md:row-span-2 relative rounded-3xl overflow-hidden border border-white/5 bg-neutral-900/50 group">
                         <div className="absolute top-6 left-6 z-20">
                             <span className="px-4 py-1.5 rounded-full border border-white/20 bg-black/50 backdrop-blur-md text-xs font-bold text-white uppercase tracking-wider">
-                                EXCLUSIVE
+                                EXCLUSIVO
                             </span>
                         </div>
                         <img
@@ -71,7 +71,7 @@ const Community = () => {
                         </div>
                         <h3 className="text-white font-bold text-xl mb-2">Networking</h3>
                         <p className="text-gray-400 text-sm leading-relaxed">
-                            Connect with hundreds of creatives who are already part of our community.
+                            Conecte-se com centenas de criativos que já fazem parte da nossa comunidade.
                         </p>
                     </motion.div>
 
@@ -83,9 +83,9 @@ const Community = () => {
                         <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-6">
                             <MessageSquare className="text-purple-400 w-8 h-8" />
                         </div>
-                        <h3 className="text-white font-bold text-xl mb-2">Conversations</h3>
+                        <h3 className="text-white font-bold text-xl mb-2">Conversas</h3>
                         <p className="text-gray-400 text-sm leading-relaxed">
-                            Real discussions about tools, creative processes, and trends.
+                            Discussões reais sobre ferramentas, processos criativos e tendências de mercado.
                         </p>
                     </motion.div>
 
@@ -97,9 +97,9 @@ const Community = () => {
                         <div className="w-16 h-16 rounded-full bg-indigo-500/20 flex items-center justify-center mb-6">
                             <Briefcase className="text-indigo-400 w-8 h-8" />
                         </div>
-                        <h3 className="text-white font-bold text-xl mb-2">Jobs</h3>
+                        <h3 className="text-white font-bold text-xl mb-2">Vagas</h3>
                         <p className="text-gray-400 text-sm leading-relaxed">
-                            Exclusive opportunities at companies looking for creatives skilled in AI.
+                            Oportunidades exclusivas em empresas que buscam criativos especializados em IA.
                         </p>
                     </motion.div>
 
@@ -111,9 +111,9 @@ const Community = () => {
                         <div className="w-16 h-16 rounded-full bg-blue-500/20 flex items-center justify-center mb-6">
                             <LifeBuoy className="text-blue-400 w-8 h-8" />
                         </div>
-                        <h3 className="text-white font-bold text-xl mb-2">Support</h3>
+                        <h3 className="text-white font-bold text-xl mb-2">Suporte</h3>
                         <p className="text-gray-400 text-sm leading-relaxed">
-                            Get technical help, share learnings, and receive support from the Human team.
+                            Obtenha ajuda técnica, compartilhe aprendizados e receba suporte da equipe.
                         </p>
                     </motion.div>
 

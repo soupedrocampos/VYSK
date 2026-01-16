@@ -6,21 +6,21 @@ const Hero = () => {
     const { t } = useLanguage();
 
     return (
-        <section className="relative min-h-screen bg-human-bg text-white overflow-hidden selection:bg-human-green/30 selection:text-white font-sans flex items-center">
+        <section className="relative h-[100dvh] w-full bg-human-bg text-white overflow-hidden selection:bg-human-green/30 selection:text-white font-sans flex items-center">
             {/* Background Assets */}
-            <div className="absolute inset-0 z-0">
-                {/* Reduced overlay opacity for vivid video - Removed as requested */}
-                {/* <div className="absolute inset-0 bg-gradient-to-r from-human-bg/80 via-human-bg/60 to-transparent z-10" /> */}
+            <div className="absolute inset-0 z-0 select-none pointer-events-none w-full h-full">
                 <video
                     autoPlay
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-center"
                     poster="/assets/hero-poster.webp"
                 >
                     <source src="/assets/hero-video.mp4" type="video/mp4" />
                 </video>
+                {/* Soft Gradient Overlay - Top and Bottom fade for better text readability and seamless transition */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-human-bg/90 z-10" />
             </div>
 
             <div className="container mx-auto px-4 relative z-20">
@@ -32,7 +32,6 @@ const Hero = () => {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
-                            className="space-y-8"
                         >
                             {/* Badge */}
                             <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 backdrop-blur-md">
@@ -41,12 +40,8 @@ const Hero = () => {
                                 <span className="text-xs font-bold tracking-widest uppercase text-white/90">{t('hero.badge')}</span>
                             </div>
 
-                            <h1 className="text-5xl md:text-7xl lg:text-8xl tracking-tighter leading-[0.9] font-sans whitespace-pre-line">
-                                {t('hero.title').split(/<\/?b>/).map((part, i) => (
-                                    <span key={i} className={i % 2 === 1 ? "font-bold text-white" : "font-light text-white/90"}>
-                                        {part}
-                                    </span>
-                                ))}
+                            <h1 className="font-cabinet font-bold text-7xl md:text-8xl leading-none drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] tracking-tighter text-white whitespace-pre-line mb-6">
+                                {t('hero.title')}
                             </h1>
 
                             <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -76,8 +71,9 @@ const Hero = () => {
                         transition={{ delay: 0.2, duration: 0.8 }}
                         className="relative hidden lg:block h-[800px]"
                     >
-                        <div className="absolute inset-0 bg-gradient-to-t from-human-bg via-transparent to-transparent z-10" />
-                        <div className="absolute inset-0 bg-gradient-to-l from-human-bg via-transparent to-transparent z-10" />
+                        {/* Gradients removed from Image container as well */}
+                        {/* <div className="absolute inset-0 bg-gradient-to-t from-human-bg via-transparent to-transparent z-10" /> */}
+                        {/* <div className="absolute inset-0 bg-gradient-to-l from-human-bg via-transparent to-transparent z-10" /> */}
 
                         {/* Placeholder for "Woman in White Jacket" - Using a verified Unsplash High Fashion image that matches the aesthetic */}
                         <img
@@ -89,9 +85,9 @@ const Hero = () => {
                 </div>
             </div>
 
-            {/* Scroll Indicator */}
-            <div className="absolute bottom-10 left-10 z-20 animate-bounce pointer-events-none hidden md:flex flex-col items-center gap-2">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-white/30 vertical-text" style={{ writingMode: 'vertical-rl' }}>Scroll</span>
+            {/* Scroll Indicator - Adjusted Bottom spacing */}
+            <div className="absolute bottom-16 left-10 z-20 animate-bounce pointer-events-none hidden md:flex flex-col items-center gap-2">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-white/50 vertical-text py-2" style={{ writingMode: 'vertical-rl' }}>Scroll</span>
                 <ArrowDown className="w-4 h-4 text-white/30" />
             </div>
         </section>

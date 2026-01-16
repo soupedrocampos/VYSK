@@ -75,7 +75,7 @@ const FloatingMenu = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsOpen(true)}
-                className="fixed bottom-10 left-10 z-50 w-14 h-14 bg-[#00D60B] rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(0,214,11,0.3)] hover:shadow-[0_0_30px_rgba(0,214,11,0.5)] transition-all duration-300 group"
+                className="fixed bottom-10 right-10 z-50 w-14 h-14 bg-[#00D60B] rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(0,214,11,0.3)] hover:shadow-[0_0_30px_rgba(0,214,11,0.5)] transition-all duration-300 group"
             >
                 <Menu className="text-black w-6 h-6 group-hover:rotate-90 transition-transform duration-300" />
             </motion.button>

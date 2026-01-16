@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, type ReactNode } from 'react';
 
 type Language = 'EN' | 'PT' | 'ES';
 
@@ -28,11 +28,17 @@ const translations: Record<Language, Record<string, string>> = {
         "languages.desc": "Complete optimization including high-authority backlinks, RankMath integration, and advanced keyword strategy for global reach.",
         "languages.enroll": "Enroll Now",
 
-        // Features (Courses)
+        // Features (Services)
         "features.badge": "Global",
         "features.badge_sub": "Courses",
         "features.title": "FOUR COMPLETE\nCOURSES THAT'LL TAKE\nYOU TO THE NEXT LEVEL",
         "features.included": "Included",
+
+        // Languages2 Section
+        "languages2.title": "SEO",
+        "languages2.subtitle": "IN MULTIPLE LANGUAGES",
+        "languages2.description": "Bringing cutting-edge technology and growth hacking strategies to multiple markets. Innovation has no borders.",
+        "languages2.cta": "TALK TO ME",
 
         // Instructors
         "instructors.badge": "GLOBAL",
@@ -97,12 +103,12 @@ const translations: Record<Language, Record<string, string>> = {
 
         // Hero
         "hero.badge": "PEDROVYSK",
-        "hero.title": "ESCALANDO\n<b>NEGÓCIOS</b> COM IA",
-        "hero.description": "Transforme sua operação com soluções de Inteligência Artificial, automação avançada e estratégias de crescimento validadas.",
-        "hero.cta": "Nossas Soluções",
+        "hero.title": "MASTER THE\nCREATIVE FUTURE",
+        "hero.description": "Domine a arte da criação com IA com nosso conjunto completo de ferramentas e cursos.",
+        "hero.cta": "Começar Agora",
 
         // Languages Section
-        "languages.title": "GLOBAL",
+        "languages.title": "SEO",
         "languages.available": "ATUAÇÃO GLOBAL",
         "languages.desc": "Estratégias de posicionamento internacional, SEO técnico e adaptação cultural para expandir sua marca para novos mercados.",
         "languages.enroll": "Expandir Agora",
@@ -110,8 +116,22 @@ const translations: Record<Language, Record<string, string>> = {
         // Features (Services)
         "features.badge": "Pedrovysk",
         "features.badge_sub": "Serviços",
-        "features.title": "SOLUÇÕES ESTRATÉGICAS\nPARA ACELERAR\nO SEU CRESCIMENTO",
+        "features.title": "SERVIÇOS QUE\nVOCÊ PRECISA",
         "features.included": "Disponível",
+
+        // Languages2 Section
+        "languages2.title": "SEO",
+        "languages2.subtitle": "EM MULTI IDIOMAS",
+        "languages2.description": "Levando tecnologia de ponta e estratégias de growth hacking para múltiplos mercados. A inovação não tem fronteiras.",
+        "languages2.cta": "FALE COMIGO",
+        "features.card1.title": "Automação Inteligente",
+        "features.card1.desc": "Sistemas autônomos que trabalham por você 24/7.",
+        "features.card2.title": "Marketing de Performance",
+        "features.card2.desc": "Estratégias baseadas em dados para maximizar ROI.",
+        "features.card3.title": "Consultoria Estratégica",
+        "features.card3.desc": "Análise profunda para desbloquear crescimento.",
+        "features.card4.title": "Produtos Digitais",
+        "features.card4.desc": "Criação e lançamento de infoprodutos de alto valor.",
 
         // Instructors (Profile)
         "instructors.badge": "PEDROVYSK",
@@ -192,6 +212,12 @@ const translations: Record<Language, Record<string, string>> = {
         "features.title": "CUATRO CURSOS\nCOMPLETOS QUE TE LLEVARÁN\nAL SIGUIENTE NIVEL",
         "features.included": "Incluido",
 
+        // Languages2 Section
+        "languages2.title": "SEO",
+        "languages2.subtitle": "EN MÚLTIPLES IDIOMAS",
+        "languages2.description": "Llevando tecnología de punta y estrategias de growth hacking a múltiples mercados. La innovación no tiene fronteras.",
+        "languages2.cta": "HABLA CONMIGO",
+
         // Instructors
         "instructors.badge": "GLOBAL",
         "instructors.badge_sub": "INSTRUCTORES",
@@ -252,7 +278,7 @@ const translations: Record<Language, Record<string, string>> = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-    const [language, setLanguage] = useState<Language>('EN');
+    const [language, setLanguage] = useState<Language>('PT');
 
     const t = (key: string) => {
         return translations[language][key] || key;

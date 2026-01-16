@@ -1,70 +1,69 @@
-import { motion } from 'framer-motion';
-import { CheckCircle2, ArrowRight } from 'lucide-react';
+// Imports removed due to being unused
 
 const courses = [
     {
-        title: "AI Image Creator PRO",
-        subtitle: "Master commercial image creation",
+        title: "Criação de Imagem PRO",
+        subtitle: "Domine a criação comercial de imagens",
         modules: [
-            "15 complete modules and 100+ hours of lessons",
-            "Real workflows used by Pedrovysk",
-            "Learn Midjourney, Recraft, Krea, Magnific, Flux",
-            "Build your own prompt and style library",
-            "Master lighting, direction, and storytelling",
-            "Practice with real brand case studies",
-            "Deliver consistent, top-quality visuals"
+            "15 módulos completos e mais de 100 horas de aula",
+            "Workflows reais utilizados por Pedrovysk",
+            "Aprenda Midjourney, Recraft, Krea, Magnific, Flux",
+            "Construa sua própria biblioteca de prompts e estilos",
+            "Domine iluminação, direção e storytelling",
+            "Pratique com estudos de caso de marcas reais",
+            "Entregue visuais consistentes e de alta qualidade"
         ],
         image: "/assets/card-image-creator.png",
         year: "2025",
-        status: "Included"
+        status: "Incluso"
     },
     {
-        title: "AI Video Creator PRO",
-        subtitle: "Direct and produce videos with AI",
+        title: "Criação de Vídeo PRO",
+        subtitle: "Dirija e produza vídeos com IA",
         modules: [
-            "10 complete modules from pre to post",
-            "Learn Kling, Luma, Sora, Higgsfield, LTX Studio",
-            "Build storyboards, treatments, and virtual sets",
-            "Master lighting, acting, and motion design",
-            "Real projects: Volkswagen, BYD, Vogue, Olympics",
-            "Lessons in VFX, color, and editing",
-            "Includes workshops, LUTs, and prompts"
+            "10 módulos completos do pré ao pós",
+            "Aprenda Kling, Luma, Sora, Higgsfield, LTX Studio",
+            "Construa storyboards e cenários virtuais",
+            "Domine iluminação, atuação e motion design",
+            "Projetos reais: Volkswagen, BYD, Vogue",
+            "Aulas de VFX, correção de cor e edição",
+            "Inclui workshops, LUTs e prompts"
         ],
         image: "/assets/card-video-creator.png",
         year: "2025",
-        status: "Included"
+        status: "Incluso"
     },
     {
-        title: "AI Upscale PRO",
-        subtitle: "Enhance, refine and finalize your visuals",
+        title: "Upscale PRO",
+        subtitle: "Melhore, refine e finalize seus visuais",
         modules: [
-            "Transform 1K images into 10K+ at 300dpi",
-            "Preserve texture, sharpness, and fidelity",
-            "Avoid common AI artifacts and errors",
-            "Learn Supir, Gigapixel, Magnific, Photoshop",
-            "Use Pedrovysk's upscale workflow",
-            "Retouch and export for print or digital",
-            "Achieve agency-level production quality"
+            "Transforme imagens de 1K para 10K+ em 300dpi",
+            "Preserve textura, nitidez e fidelidade",
+            "Corrija artefatos e erros comuns da IA",
+            "Aprenda Supir, Gigapixel, Magnific, Photoshop",
+            "Use o workflow de upscale do Pedrovysk",
+            "Retoque e exporte para impressão ou digital",
+            "Alcance qualidade de produção de agência"
         ],
         image: "/assets/card-other.png",
         year: "2025",
-        status: "Included"
+        status: "Incluso"
     },
     {
-        title: "AI Clone Creator PRO",
-        subtitle: "Build realistic human and character replicas",
+        title: "Criação de Clones PRO",
+        subtitle: "Crie réplicas humanas e personagens realistas",
         modules: [
-            "Build authentic faces, avatars, and clones",
-            "Learn Freepik, Nano-Banana, Krea, Higgsfield",
-            "Follow the full cloning workflow",
-            "Keep character consistency across scenes",
-            "Craft stories and brand identities",
-            "Add motion, expression, and realism",
-            "Use Pedrovysk's creative method"
+            "Construa rostos autênticos, avatares e clones",
+            "Aprenda Freepik, Krea, Higgsfield",
+            "Siga o workflow completo de clonagem",
+            "Mantenha consistência de personagem nas cenas",
+            "Crie histórias e identidades de marca",
+            "Adicione movimento, expressão e realismo",
+            "Use o método criativo do Pedrovysk"
         ],
         image: "/assets/card-gpt-pro.png",
         year: "2025",
-        status: "Included"
+        status: "Incluso"
     }
 ];
 
@@ -74,8 +73,8 @@ const CourseDetails = () => {
             <div className="container mx-auto px-4 max-w-[85vw] 2xl:max-w-[80vw]">
 
                 <div className="mb-16">
-                    <h2 className="text-4xl md:text-6xl font-bold font-cabinet text-white mb-4 uppercase">
-                        Here's What <br /> You'll Get
+                    <h2 className="font-cabinet font-bold text-5xl md:text-7xl lg:text-8xl leading-none drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] tracking-tighter text-white mb-4 uppercase">
+                        O DIFERENCIAL <br /> QUE MUDA O JOGO
                     </h2>
                     <div className="w-full h-px bg-white/10 mt-8" />
                 </div>
@@ -89,7 +88,7 @@ const CourseDetails = () => {
                             {/* Interactive Background Gradient */}
                             <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
                             {/* Left: Content */}
-                            <div className="order-2 md:order-1">
+                            <div className="order-2 md:order-1 relative z-10">
                                 <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">{course.title}</h3>
                                 <p className="text-gray-400 mb-8">{course.subtitle}</p>
 
@@ -129,7 +128,7 @@ const CourseDetails = () => {
                                     </div>
 
                                     {/* Rotated Title Overlay - stylistic touch matching reference */}
-                                    <h4 className="absolute top-8 left-8 text-3xl font-bold text-white/20 origin-top-left rotate-90 translate-x-4 whitespace-nowrap z-20">
+                                    <h4 className="absolute top-8 left-8 text-3xl font-bold text-white/5 origin-top-left rotate-90 translate-x-4 whitespace-nowrap z-0 pointer-events-none select-none">
                                         {course.title.split(' ')[0]} <span className="font-light">{course.title.split(' ').slice(1).join(' ')}</span>
                                     </h4>
                                 </div>
