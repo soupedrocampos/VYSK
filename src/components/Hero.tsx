@@ -47,14 +47,14 @@ const Hero = ({ title, cta, badge }: HeroProps) => {
                                 <span className="text-xs font-bold tracking-widest uppercase text-white/90">{badge || t('hero.badge')}</span>
                             </div>
 
-                            <h1 className="font-cabinet font-bold text-6xl md:text-8xl leading-none tracking-tighter text-white mb-8">
+                            <h1 className="font-cabinet font-bold text-4xl md:text-8xl leading-none tracking-tighter text-white mb-8">
                                 {title || t('hero.title') ? <span dangerouslySetInnerHTML={{ __html: title || t('hero.title') }} /> : "MASTER THE CREATIVE FUTURE"}
                             </h1>
 
-                            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                            <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
                                 <a
                                     href="#products"
-                                    className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-bold uppercase tracking-widest hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)]"
+                                    className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-bold uppercase tracking-widest hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)] w-full sm:w-auto"
                                 >
                                     <span>{cta || t('hero.cta')}</span>
                                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -62,7 +62,7 @@ const Hero = ({ title, cta, badge }: HeroProps) => {
 
                                 <a
                                     href="#about"
-                                    className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/5 backdrop-blur-sm border border-white/10 text-white rounded-full text-sm font-bold tracking-widest uppercase hover:bg-white/10 transition-all duration-300"
+                                    className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/5 backdrop-blur-sm border border-white/10 text-white rounded-full text-sm font-bold tracking-widest uppercase hover:bg-white/10 transition-all duration-300 w-full sm:w-auto"
                                 >
                                     <span>READ MORE</span>
                                     <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

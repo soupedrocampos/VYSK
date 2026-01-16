@@ -78,7 +78,7 @@ const Languages = ({ isStatic }: LanguagesProps) => {
 
             {/* Center Content */}
             <div className={`relative z-50 text-center flex flex-col items-center max-w-4xl px-4 ${isStatic ? 'opacity-80' : ''}`}>
-                <h2 className="font-cabinet font-bold text-7xl md:text-8xl leading-none tracking-tighter text-white mb-6">
+                <h2 className="font-cabinet font-bold text-5xl md:text-8xl leading-none tracking-tighter text-white mb-6">
                     SEO <br />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">DE ELITE</span>
                 </h2>
@@ -99,7 +99,7 @@ const Languages = ({ isStatic }: LanguagesProps) => {
             {/* Floating Tools Container */}
             <div className="absolute inset-0 pointer-events-none">
                 {/* Center Reference Point */}
-                <div className="absolute top-1/2 left-1/2 w-0 h-0 scale-[0.5] md:scale-100 origin-center transition-transform duration-500">
+                <div className="absolute top-1/2 left-1/2 w-0 h-0 scale-[0.65] md:scale-100 origin-center transition-transform duration-500">
                     {toolData.map((tool, index) => {
                         const radius = 420; // Adjusted from 380 to 420 for better proportions
                         const baseX = radius * Math.sin(tool.angle * (Math.PI / 180));
@@ -166,7 +166,7 @@ const Languages = ({ isStatic }: LanguagesProps) => {
                                     }}
                                 >
                                     <motion.div
-                                        className={`relative group w-[65px] h-[65px] md:w-[70px] md:h-[70px] bg-neutral-900 border border-white/10 flex flex-col items-center justify-center rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.6)] cursor-pointer transition-all duration-300 ease-out hover:border-purple-500/50`}
+                                        className={`relative group w-[80px] h-[80px] md:w-[70px] md:h-[70px] bg-neutral-900 border border-white/10 flex flex-col items-center justify-center rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.6)] cursor-pointer transition-all duration-300 ease-out hover:border-purple-500/50`}
                                         style={{
                                             transform: `rotate(${rot}deg)`,
                                         }}
