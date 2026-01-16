@@ -1,0 +1,440 @@
+@import "tailwindcss";
+
+@theme {
+    --font-satoshi: 'Outfit', sans-serif;
+    --font-cabinet: 'Outfit', sans-serif;
+    --font-radio: 'Outfit', sans-serif;
+    --font-dm: 'Outfit', sans-serif;
+    --font-inter: 'Outfit', sans-serif;
+
+    --color-human-bg: #050505;
+    --color-human-card-bg: #ffffff05;
+    --color-human-border: #ffffff1a;
+    --color-human-green: #00ffb2;
+    --color-human-purple: #b3a1c7;
+}
+
+@utility mask-image-radial-center {
+    mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+}
+
+@utility mask-image-gradient-sides {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+@utility glow-white {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+}
+
+.h1-display {
+    @apply font-cabinet font-bold text-7xl md:text-9xl leading-none glow-white tracking-tighter;
+}
+
+.h2-display {
+    @apply font-cabinet font-bold text-4xl md:text-6xl leading-tight tracking-tight text-white;
+}
+
+
+
+:root {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--color-human-bg);
+    color: white;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.animate-marquee {
+    animation: marquee 40s linear infinite;
+}
+
+@keyframes marquee2 {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.animate-marquee2 {
+    animation: marquee2 40s linear infinite;
+}
+
+/* Sales Strategy Component Styles */
+.sales-strategy-section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #050505;
+}
+
+.sales-strategy-container {
+    max-width: 1400px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+@media (max-width: 1024px) {
+    .sales-strategy-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+.sales-strategy-content {
+    color: white;
+}
+
+.strategy-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #ffffff 0%, #b3a1c7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@media (max-width: 768px) {
+    .strategy-title {
+        font-size: 2.5rem;
+    }
+}
+
+.strategy-subtitle {
+    font-size: 1.125rem;
+    color: #999;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+}
+
+.strategy-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.5rem 0;
+}
+
+.strategy-features li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.0625rem;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.strategy-features li::before {
+    content: '●';
+    position: absolute;
+    left: 0;
+    color: #00ffb2;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.strategy-button {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem 2.5rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.strategy-button:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 20px rgba(0, 255, 178, 0.2);
+}
+
+.sales-strategy-image-container {
+    position: relative;
+    overflow: visible;
+}
+
+.image-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    overflow: visible;
+}
+
+.image-card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+    transform: translateY(-4px);
+}
+
+.image-wrapper {
+    position: relative;
+    border-radius: 16px;
+    overflow: visible;
+    cursor: zoom-in;
+    width: 100%;
+}
+
+.image-zoom-container {
+    width: 100%;
+    height: 100%;
+    transform-origin: center center;
+}
+
+.strategy-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+    border-radius: 16px;
+}
+
+.image-wrapper:hover .strategy-image {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.image-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: white;
+    text-transform: uppercase;
+}
+
+.image-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.zoom-button {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.zoom-button:hover:not(:disabled) {
+    background: rgba(0, 255, 178, 0.1);
+    border-color: rgba(0, 255, 178, 0.3);
+    transform: scale(1.05);
+}
+
+.zoom-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.zoom-level {
+    font-size: 0.875rem;
+    color: #999;
+    font-weight: 500;
+    min-width: 50px;
+    text-align: center;
+}
+
+.image-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.image-year {
+    font-size: 0.875rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.image-badge {
+    font-size: 0.75rem;
+    color: #00ffb2;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    background: rgba(0, 255, 178, 0.1);
+    border-radius: 6px;
+    border: 1px solid rgba(0, 255, 178, 0.2);
+}
+
+/* Fullscreen Zoom Modal */
+.zoom-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 2rem;
+}
+
+.close-zoom-button {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    transition: all 0.2s ease;
+    z-index: 10001;
+}
+
+.close-zoom-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.zoom-modal-controls {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 10001;
+}
+
+.zoom-modal-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.zoom-modal-button:hover:not(:disabled) {
+    background: rgba(0, 255, 178, 0.2);
+    border-color: rgba(0, 255, 178, 0.4);
+    transform: scale(1.1);
+}
+
+.zoom-modal-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.zoom-modal-level {
+    font-size: 1rem;
+    color: white;
+    font-weight: 600;
+    min-width: 60px;
+    text-align: center;
+}
+
+.zoom-modal-content {
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.zoom-image-container {
+    transform-origin: center center;
+}
+
+.zoom-modal-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}

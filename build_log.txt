@@ -1,0 +1,8 @@
+
+> site-bom@0.0.0 build
+> tsc -b && vite build
+
+src/components/Navbar.tsx(1,18): error TS6133: 'useScroll' is declared but its value is never read.
+src/components/Navbar.tsx(1,29): error TS6133: 'useMotionValueEvent' is declared but its value is never read.
+src/components/Navbar.tsx(2,1): error TS6192: All imports in import declaration are unused.
+src/pages/Sessions.tsx(1,1): error TS6133: 'motion' is declared but its value is never read.
