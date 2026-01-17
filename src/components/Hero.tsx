@@ -52,6 +52,19 @@ const Hero = ({ title, cta, badge }: HeroProps) => {
                                 {title || t('hero.title') ? <span dangerouslySetInnerHTML={{ __html: title || t('hero.title') }} /> : "MASTER THE CREATIVE FUTURE"}
                             </h1>
 
+                            {/* Price Display with Blur Effect for Mobile */}
+                            <div className="mb-8 md:mb-0">
+                                <div className="price-container md:hidden">
+                                    <span className="text-sm text-gray-400 line-through block mb-2">De $ 8.997</span>
+                                    <div className="price-blur-wrapper">
+                                        <span className="text-6xl font-bold">
+                                            $ 4.997<span className="price-cents">,00</span>
+                                        </span>
+                                    </div>
+                                    <span className="text-xs text-gray-400 block mt-2">PAGAMENTO ÚNICO</span>
+                                </div>
+                            </div>
+
                             <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
                                 <a
                                     href="#products"

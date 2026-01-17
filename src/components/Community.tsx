@@ -7,10 +7,10 @@ const Community = () => {
 
             {/* Floating Background Text */}
             <div className="absolute top-0 left-0 w-full h-[500px] pointer-events-none opacity-10 select-none overflow-hidden flex flex-col items-center justify-center space-y-4">
-                <div className="text-8xl font-thin text-white whitespace-nowrap animate-marquee">
+                <div className="text-8xl font-thin text-white whitespace-nowrap animate-marquee2 md:animate-marquee">
                     SEO  •  GOOGLE ADS  •  FACEBOOK  •  INSTAGRAM  •  TIKTOK  •  COPYWRITING  •  SEO  •  GOOGLE ADS  •  FACEBOOK  •  INSTAGRAM  •  TIKTOK  •  COPYWRITING  •
                 </div>
-                <div className="text-8xl font-thin text-white whitespace-nowrap animate-marquee2">
+                <div className="text-8xl font-thin text-white whitespace-nowrap animate-marquee md:animate-marquee2">
                     INTELIGÊNCIA ARTIFICIAL  •  AUTOMAÇÃO  •  WORDPRESS  •  BLOG  •  ANALYTICS  •  INTELIGÊNCIA ARTIFICIAL  •  AUTOMAÇÃO  •  WORDPRESS  •  BLOG  •  ANALYTICS  •
                 </div>
             </div>
@@ -68,8 +68,8 @@ const Community = () => {
                         whileHover={{ scale: 1.02 }}
                         className="md:col-span-1 bg-white/[0.02] border border-white/5 rounded-3xl p-8 flex flex-col items-center justify-center text-center hover:bg-neutral-800/50 transition-colors group relative overflow-hidden"
                     >
-                        <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-6 px-4">
-                            <Users className="text-purple-400 w-8 h-8" />
+                        <div className="w-20 h-20 md:w-16 md:h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-6 px-4">
+                            <Users className="text-purple-400 w-10 h-10 md:w-8 md:h-8" />
                         </div>
                         <h3 className="text-white font-bold text-xl mb-2">Networking</h3>
                         <p className="text-gray-400 text-sm leading-relaxed">
@@ -82,8 +82,8 @@ const Community = () => {
                         whileHover={{ scale: 1.02 }}
                         className="md:col-span-1 bg-white/[0.02] border border-white/10 rounded-3xl p-8 flex flex-col items-center justify-center text-center hover:bg-neutral-800/50 transition-colors group relative overflow-hidden"
                     >
-                        <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-6">
-                            <MessageSquare className="text-purple-400 w-8 h-8" />
+                        <div className="w-20 h-20 md:w-16 md:h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-6">
+                            <MessageSquare className="text-purple-400 w-10 h-10 md:w-8 md:h-8" />
                         </div>
                         <h3 className="text-white font-bold text-xl mb-2">Conversas</h3>
                         <p className="text-gray-400 text-sm leading-relaxed">
@@ -96,8 +96,8 @@ const Community = () => {
                         whileHover={{ scale: 1.02 }}
                         className="md:col-span-1 bg-white/[0.02] border border-white/5 rounded-3xl p-8 flex flex-col items-center justify-center text-center hover:bg-neutral-800/50 transition-colors group"
                     >
-                        <div className="w-16 h-16 rounded-full bg-indigo-500/20 flex items-center justify-center mb-6">
-                            <Briefcase className="text-indigo-400 w-8 h-8" />
+                        <div className="w-20 h-20 md:w-16 md:h-16 rounded-full bg-indigo-500/20 flex items-center justify-center mb-6">
+                            <Briefcase className="text-indigo-400 w-10 h-10 md:w-8 md:h-8" />
                         </div>
                         <h3 className="text-white font-bold text-xl mb-2">Vagas</h3>
                         <p className="text-gray-400 text-sm leading-relaxed">
@@ -110,8 +110,8 @@ const Community = () => {
                         whileHover={{ scale: 1.02 }}
                         className="md:col-span-1 bg-white/[0.02] border border-white/5 rounded-3xl p-8 flex flex-col items-center justify-center text-center hover:bg-neutral-800/50 transition-colors group"
                     >
-                        <div className="w-16 h-16 rounded-full bg-blue-500/20 flex items-center justify-center mb-6">
-                            <LifeBuoy className="text-blue-400 w-8 h-8" />
+                        <div className="w-20 h-20 md:w-16 md:h-16 rounded-full bg-blue-500/20 flex items-center justify-center mb-6">
+                            <LifeBuoy className="text-blue-400 w-10 h-10 md:w-8 md:h-8" />
                         </div>
                         <h3 className="text-white font-bold text-xl mb-2">Suporte</h3>
                         <p className="text-gray-400 text-sm leading-relaxed">
