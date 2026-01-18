@@ -30,7 +30,7 @@ const SalesStrategyDemo = () => {
                 imageUrl="https://images.unsplash.com/photo-1596704017254-9b121068ec31?w=800&h=1000&fit=crop"
                 imageAlt="AI Upscale Pro"
                 year="2025"
-                badge="Included"
+                badge="Incluso"
             />
 
             {/* Second Example with Different Content */}
@@ -49,7 +49,7 @@ const SalesStrategyDemo = () => {
                 imageUrl="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&h=1000&fit=crop"
                 imageAlt="Premium Design"
                 year="2025"
-                badge="Featured"
+                badge="Destaque"
             />
 
             <Footer />

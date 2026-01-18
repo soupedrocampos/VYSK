@@ -5,6 +5,7 @@ import { HelmetProvider } from 'react-helmet-async';
 
 // Pages
 import Home from './pages/Home';
+import Home2 from './pages/Home2';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import SEOPage from './pages/SEOPage';
@@ -13,30 +14,48 @@ import AutomationPage from './pages/AutomationPage';
 import WorldpackersPage from './pages/WorldpackersPage';
 import SalesStrategyDemo from './pages/SalesStrategyDemo';
 import Diagnostic from './pages/Diagnostic';
+import AdminLogin from './pages/admin/AdminLogin';
+import AdminLayout from './layouts/AdminLayout';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import AdminCRM from './pages/admin/AdminCRM';
+import AdminContent from './pages/admin/AdminContent';
+import { AdminProvider } from './context/AdminContext';
 
 function App() {
   const location = useLocation();
 
   return (
     <HelmetProvider>
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Home />} />
+      <AdminProvider>
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/v2" element={<Home2 />} />
 
-          {/* Blog Routes */}
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
+            {/* Blog Routes */}
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
 
-          {/* Landing Pages */}
-          <Route path="/seo" element={<SEOPage />} />
-          <Route path="/saas" element={<SaaSPage />} />
-          <Route path="/automacao" element={<AutomationPage />} />
-          <Route path="/worldpackers" element={<WorldpackersPage />} />
-          <Route path="/estrategia" element={<SalesStrategyDemo />} />
-          <Route path="/diagnostico" element={<Diagnostic />} />
-        </Routes>
-      </AnimatePresence>
+            {/* Landing Pages */}
+            <Route path="/seo" element={<SEOPage />} />
+            <Route path="/saas" element={<SaaSPage />} />
+            <Route path="/automacao" element={<AutomationPage />} />
+            <Route path="/worldpackers" element={<WorldpackersPage />} />
+            <Route path="/estrategia" element={<SalesStrategyDemo />} />
+            <Route path="/diagnostico" element={<Diagnostic />} />
 
+            {/* Admin Routes */}
+            <Route path="/admin" element={<AdminLogin />} />
+
+            {/* Protected Admin Routes */}
+            <Route element={<AdminLayout />}>
+              <Route path="/admin/dashboard" element={<AdminDashboard />} />
+              <Route path="/admin/crm" element={<AdminCRM />} />
+              <Route path="/admin/content" element={<AdminContent />} />
+            </Route>
+          </Routes>
+        </AnimatePresence>
+      </AdminProvider>
       {/* HTML Element Inspector - Development Tool - REMOVED */}
       {/* <HTMLInspector /> */}
     </HelmetProvider>

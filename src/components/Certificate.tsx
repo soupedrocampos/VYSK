@@ -7,7 +7,7 @@ const Certificate = () => {
             {/* Background Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-human-purple/10 rounded-full blur-[120px] pointer-events-none" />
 
-            <div className="container mx-auto px-4 relative z-10 text-center">
+            <div className="container mx-auto px-4 relative z-10 text-center max-w-6xl">
                 {/* Badge */}
                 <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-12">
                     <span className="text-xs font-bold tracking-widest uppercase text-white/80">GLOBAL</span>

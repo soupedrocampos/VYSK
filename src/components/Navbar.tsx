@@ -77,7 +77,7 @@ export default function Navbar() {
                             }
                         `}
                     >
-                        <span className="relative z-10">Access</span>
+                        <span className="relative z-10">ACESSAR</span>
                         <div className="absolute inset-0 bg-gradient-to-r from-human-green to-emerald-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </a>
                 </div>

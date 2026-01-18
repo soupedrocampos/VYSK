@@ -30,7 +30,7 @@ const Hero = ({ title, cta, badge }: HeroProps) => {
                 <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-human-bg/90 z-10" />
             </div>
 
-            <div className="container mx-auto px-4 relative z-20">
+            <div className="container mx-auto px-4 relative z-20 max-w-6xl">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
 
                     {/* Left Column: Content */}
@@ -52,8 +52,8 @@ const Hero = ({ title, cta, badge }: HeroProps) => {
                                 {title || t('hero.title') ? <span dangerouslySetInnerHTML={{ __html: title || t('hero.title') }} /> : "MASTER THE CREATIVE FUTURE"}
                             </h1>
 
-                            {/* Price Display with Blur Effect for Mobile */}
-                            <div className="mb-8 md:mb-0">
+                            {/* Price Display removed from mobile as requested */}
+                            {/* <div className="mb-8 md:mb-0">
                                 <div className="price-container md:hidden">
                                     <span className="text-sm text-gray-400 line-through block mb-2">De $ 8.997</span>
                                     <div className="price-blur-wrapper">
@@ -63,7 +63,7 @@ const Hero = ({ title, cta, badge }: HeroProps) => {
                                     </div>
                                     <span className="text-xs text-gray-400 block mt-2">PAGAMENTO ÚNICO</span>
                                 </div>
-                            </div>
+                            </div> */}
 
                             <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
                                 <a
@@ -78,7 +78,7 @@ const Hero = ({ title, cta, badge }: HeroProps) => {
                                     href="#about"
                                     className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/5 backdrop-blur-sm border border-white/10 text-white rounded-full text-sm font-bold tracking-widest uppercase hover:bg-white/10 transition-all duration-300 w-full sm:w-auto"
                                 >
-                                    <span>READ MORE</span>
+                                    <span>SAIBA MAIS</span>
                                     <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                 </a>
                             </div>

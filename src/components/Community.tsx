@@ -17,7 +17,7 @@ const Community = () => {
 
             <div className="absolute top-0 left-0 w-full h-[150px] bg-gradient-to-b from-human-bg via-human-bg/80 to-transparent z-20 pointer-events-none" />
 
-            <div className="container mx-auto px-4 relative z-10">
+            <div className="container mx-auto px-4 relative z-10 max-w-6xl">
 
                 {/* Header */}
                 <motion.div

@@ -50,7 +50,7 @@ const Features = ({ cards = defaultCourses }: { cards?: FeatureCard[] }) => {
     const { t } = useLanguage();
     return (
         <section id="products" className="py-24 bg-human-bg font-sans overflow-hidden">
-            <div className="container mx-auto px-4 relative">
+            <div className="container mx-auto px-4 relative max-w-6xl">
                 {/* Top Transition Gradient */}
                 <div className="absolute -top-24 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-human-bg pointer-events-none z-10" />
 

@@ -98,7 +98,7 @@ const AIToolsBento = () => {
 
     return (
         <section className="py-24 bg-human-bg font-satoshi">
-            <div className="container mx-auto px-4 max-w-[85vw] 2xl:max-w-[80vw]">
+            <div className="container mx-auto px-4 max-w-6xl">
 
                 {/* Header */}
                 <motion.div

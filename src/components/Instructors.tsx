@@ -18,7 +18,7 @@ const Instructors = ({ title, badge, badgeSub, bio, image }: InstructorsProps) =
             {/* Background Gradient */}
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-900/10 blur-[120px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/2" />
 
-            <div className="container mx-auto px-4 relative z-10">
+            <div className="container mx-auto px-4 relative z-10 max-w-6xl">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     {/* Left: Image/Visual */}
                     <motion.div

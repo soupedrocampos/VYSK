@@ -18,7 +18,7 @@ const workflowItems = [
 const Workflow = () => {
     return (
         <section className="py-32 bg-human-bg font-satoshi">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto px-4 max-w-6xl">
                 <div className="flex justify-between items-end mb-16 relative z-10">
                     <div>
                         <div className="inline-flex items-center space-x-2 mb-4">

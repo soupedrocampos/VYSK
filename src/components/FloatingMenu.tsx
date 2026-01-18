@@ -30,12 +30,12 @@ const FloatingMenu = () => {
     ]);
 
     const sections = [
-        { id: 'hero', label: 'Home' },
-        { id: 'products', label: 'Modules' },
-        { id: 'about', label: 'About' },
-        { id: 'content', label: 'Content' },
-        { id: 'certificate', label: 'Certificate' },
-        { id: 'reviews', label: 'Reviews' },
+        { id: 'hero', label: 'Início' },
+        { id: 'products', label: 'Módulos' },
+        { id: 'about', label: 'Sobre' },
+        { id: 'content', label: 'Conteúdo' },
+        { id: 'certificate', label: 'Certificado' },
+        { id: 'reviews', label: 'Avaliações' },
         { id: 'faq', label: 'FAQ' },
     ];
 
@@ -134,7 +134,7 @@ const FloatingMenu = () => {
                                 {/* Left Column (Mobile) / Left Side (Desktop): Navigation */}
                                 <div className="md:col-span-8 flex flex-col justify-center">
                                     <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-8 flex items-center gap-2">
-                                        <Navigation className="w-3 h-3" /> Navigation
+                                        <Navigation className="w-3 h-3" /> Navegação
                                     </h3>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         {sections.map((section) => (
@@ -205,11 +205,11 @@ const FloatingMenu = () => {
                                     {/* System Status Mock */}
                                     <div className="mt-8 pt-8 border-t border-white/5">
                                         <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4 flex items-center gap-2">
-                                            <Cpu className="w-3 h-3" /> System
+                                            <Cpu className="w-3 h-3" /> Sistema
                                         </h3>
                                         <div className="grid grid-cols-2 gap-2">
                                             <div className="p-3 rounded-lg bg-black/20 border border-white/5 text-center">
-                                                <span className="block text-[10px] text-gray-500 uppercase">Memory</span>
+                                                <span className="block text-[10px] text-gray-500 uppercase">Memória</span>
                                                 <span className="text-sm font-mono text-[#00D60B]">45%</span>
                                             </div>
                                             <div className="p-3 rounded-lg bg-black/20 border border-white/5 text-center">

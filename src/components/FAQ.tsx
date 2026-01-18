@@ -30,7 +30,7 @@ const FAQ = () => {
 
     return (
         <section id="faq" className="py-24 bg-human-bg font-satoshi relative">
-            <div className="container mx-auto px-4 max-w-4xl relative z-10">
+            <div className="container mx-auto px-4 max-w-6xl relative z-10">
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-6">
                         <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />

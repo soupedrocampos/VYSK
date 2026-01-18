@@ -72,7 +72,7 @@ const CourseDetails = () => {
     return (
         <>
             <section className="py-24 bg-human-bg font-satoshi">
-                <div className="container mx-auto px-4 w-full md:max-w-[85vw] 2xl:max-w-[80vw]">
+                <div className="container mx-auto px-4 w-full max-w-6xl">
 
                     <div className="mb-16">
                         <h2 className="font-cabinet font-bold text-5xl md:text-7xl lg:text-8xl leading-none tracking-tighter text-white mb-4 uppercase">

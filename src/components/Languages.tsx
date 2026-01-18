@@ -77,7 +77,7 @@ const Languages = ({ isStatic }: LanguagesProps) => {
         >
 
             {/* Center Content */}
-            <div className={`relative z-50 text-center flex flex-col items-center max-w-4xl px-4 ${isStatic ? 'opacity-80' : ''}`}>
+            <div className={`relative z-50 text-center flex flex-col items-center max-w-6xl px-4 ${isStatic ? 'opacity-80' : ''}`}>
                 <h2 className="font-cabinet font-bold text-5xl md:text-8xl leading-none tracking-tighter text-white mb-6">
                     SEO <br />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">DE ELITE</span>
