@@ -68,7 +68,7 @@ export default function Navbar() {
                 {/* CTA Button */}
                 <div className={`flex items-center transition-all duration-300 ${isScrolled ? 'ml-2' : ''}`}>
                     <a
-                        href="#"
+                        href="/diagnostico"
                         className={`
                             group relative inline-flex items-center justify-center rounded-full font-bold uppercase tracking-wide transition-all duration-300 overflow-hidden
                             ${isScrolled

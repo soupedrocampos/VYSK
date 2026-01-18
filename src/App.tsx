@@ -1,7 +1,7 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { HelmetProvider } from 'react-helmet-async';
-import HTMLInspector from './components/HTMLInspector';
+// import HTMLInspector from './components/HTMLInspector';
 
 // Pages
 import Home from './pages/Home';
@@ -37,8 +37,8 @@ function App() {
         </Routes>
       </AnimatePresence>
 
-      {/* HTML Element Inspector - Development Tool */}
-      <HTMLInspector />
+      {/* HTML Element Inspector - Development Tool - REMOVED */}
+      {/* <HTMLInspector /> */}
     </HelmetProvider>
   );
 }
