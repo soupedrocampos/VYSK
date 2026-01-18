@@ -25,7 +25,7 @@ const flags = [
 const Languages2 = () => {
     const { t } = useLanguage();
     return (
-        <section className="relative w-full h-[800px] md:h-[1100px] bg-black overflow-hidden flex flex-col items-center justify-center font-satoshi perspective-[1000px]">
+        <section className="relative w-full h-[900px] md:h-[1100px] bg-black overflow-hidden flex flex-col items-center justify-center font-satoshi perspective-[1000px]">
 
             {/* Top Gradient Fade */}
             <div className="absolute top-0 left-0 w-full h-[200px] bg-gradient-to-b from-black to-transparent z-[70] pointer-events-none" />
@@ -64,7 +64,7 @@ const Languages2 = () => {
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden z-[60]">
                 {/* The Wheel */}
                 <motion.div
-                    className="relative w-[900px] h-[900px] rounded-full border border-white/5 shadow-[0_0_100px_rgba(147,51,234,0.1)] scale-[0.35] md:scale-90 origin-center transition-transform duration-500"
+                    className="relative w-[900px] h-[900px] rounded-full border border-white/5 shadow-[0_0_100px_rgba(147,51,234,0.1)] scale-[0.875] md:scale-90 origin-center transition-transform duration-500"
                     animate={{ rotate: 360 }}
                     transition={{
                         duration: 130, // 2 minutes and 10 seconds

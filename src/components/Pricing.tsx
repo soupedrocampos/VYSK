@@ -53,7 +53,7 @@ const Pricing = () => {
                             <div className="mb-10">
                                 <p className="text-gray-500 text-lg mb-1 line-through">De $ 8.997</p>
                                 <div className="flex items-baseline gap-3">
-                                    <span className="text-6xl font-bold text-white font-cabinet">$ 4.997,00</span>
+                                    <span className="text-4xl md:text-6xl font-bold text-white font-cabinet">$ 4.997,00</span>
                                     <span className="text-gray-400 text-sm uppercase tracking-wider">PAGAMENTO ÚNICO</span>
                                 </div>
                             </div>
