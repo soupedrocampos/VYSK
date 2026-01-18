@@ -80,7 +80,7 @@ const aiTools = [
         borderColor: "border-indigo-500/20",
         iconColor: "text-indigo-400",
         iconBg: "bg-indigo-500/20",
-        span: "col-span-2 row-span-1"
+        span: "col-span-1 row-span-1"
     }
 ];
 
