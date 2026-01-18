@@ -12,6 +12,7 @@ import SaaSPage from './pages/SaaSPage';
 import AutomationPage from './pages/AutomationPage';
 import WorldpackersPage from './pages/WorldpackersPage';
 import SalesStrategyDemo from './pages/SalesStrategyDemo';
+import Diagnostic from './pages/Diagnostic';
 
 function App() {
   const location = useLocation();
@@ -32,6 +33,7 @@ function App() {
           <Route path="/automacao" element={<AutomationPage />} />
           <Route path="/worldpackers" element={<WorldpackersPage />} />
           <Route path="/estrategia" element={<SalesStrategyDemo />} />
+          <Route path="/diagnostico" element={<Diagnostic />} />
         </Routes>
       </AnimatePresence>
 
