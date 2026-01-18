@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import { Brain, Share2, Database, MessageSquare, BarChart3, FileText, Globe, Webhook } from 'lucide-react';
 
 const aiTools = [
@@ -85,6 +86,16 @@ const aiTools = [
 ];
 
 const AIToolsBento = () => {
+    // Mobile Carousel State
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveIndex((current) => (current + 1) % aiTools.length);
+        }, 3000); // Rotate every 3 seconds
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <section className="py-24 bg-human-bg font-satoshi">
             <div className="container mx-auto px-4 max-w-[85vw] 2xl:max-w-[80vw]">
@@ -103,8 +114,8 @@ const AIToolsBento = () => {
                     <div className="w-full h-px bg-white/10 mt-8" />
                 </motion.div>
 
-                {/* Bento Grid */}
-                <div className="grid grid-cols-4 auto-rows-[160px] gap-4">
+                {/* Desktop: Bento Grid */}
+                <div className="hidden md:grid grid-cols-4 auto-rows-[160px] gap-4">
                     {aiTools.map((tool, index) => (
                         <motion.div
                             key={index}
@@ -136,8 +147,55 @@ const AIToolsBento = () => {
                         </motion.div>
                     ))}
                 </div>
+
+                {/* Mobile: Animated Carousel */}
+                <div className="md:hidden relative h-[400px]">
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={activeIndex}
+                            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.9, y: -20 }}
+                            transition={{ duration: 0.4 }}
+                            className="absolute inset-0 bg-white/[0.03] backdrop-blur-md border border-white/5 rounded-3xl p-8 flex flex-col justify-between overflow-hidden"
+                        >
+                            {/* Icon */}
+                            <div className={`w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center bg-gradient-to-br ${aiTools[activeIndex].color}`}>
+                                {(() => {
+                                    const Icon = aiTools[activeIndex].icon;
+                                    return <Icon size={32} className="text-white" />;
+                                })()}
+                            </div>
+
+                            {/* Content */}
+                            <div className="relative z-10 mt-8">
+                                <h3 className="text-white font-bold text-3xl mb-4">{aiTools[activeIndex].title}</h3>
+                                <p className="text-gray-400 text-lg leading-relaxed">{aiTools[activeIndex].description}</p>
+                            </div>
+
+                            {/* Background Icon Watermark */}
+                            <div className={`absolute -bottom-8 -right-8 opacity-10 ${aiTools[activeIndex].iconColor}`}>
+                                {(() => {
+                                    const Icon = aiTools[activeIndex].icon;
+                                    return <Icon size={200} />;
+                                })()}
+                            </div>
+
+                            {/* Progress Indicators */}
+                            <div className="absolute top-8 right-8 flex gap-1">
+                                {aiTools.map((_, i) => (
+                                    <div
+                                        key={i}
+                                        className={`h-1 rounded-full transition-all duration-300 ${i === activeIndex ? 'w-6 bg-white' : 'w-2 bg-white/20'}`}
+                                    />
+                                ))}
+                            </div>
+                        </motion.div>
+                    </AnimatePresence>
+                </div>
+
             </div>
-        </section>
+        </section >
     );
 };
 
