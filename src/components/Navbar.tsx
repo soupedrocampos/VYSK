@@ -36,11 +36,13 @@ export default function Navbar() {
             >
                 {/* Logo */}
                 <div className={`flex items-center transition-all duration-300 ${isScrolled ? 'mr-4' : ''}`}>
-                    <img
-                        src="/assets/logo-pedrovysk.png"
-                        alt="Pedrovysk"
-                        className={`object-contain transition-all duration-300 ${isScrolled ? 'h-8' : 'h-12'}`}
-                    />
+                    <a href="/">
+                        <img
+                            src="/assets/logo-pedrovysk.png"
+                            alt="Pedrovysk"
+                            className={`object-contain transition-all duration-300 ${isScrolled ? 'h-8' : 'h-12'}`}
+                        />
+                    </a>
                 </div>
 
                 {/* Desktop Links */}
