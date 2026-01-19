@@ -6,17 +6,14 @@ const STORAGE_KEY = 'vysk_diagnostics_data';
 export const diagnosticService = {
     getAll: (): IDiagnosticData[] => {
         const stored = localStorage.getItem(STORAGE_KEY);
-        const dynamicUsers: IDiagnosticData[] = stored ? JSON.parse(stored) : [];
-        // Merge static users (avoiding duplicates by username)
-        const allUsers = [...dynamicUsers];
+        if (stored) {
+            return JSON.parse(stored);
+        }
 
-        diagnosticUsers.forEach(staticUser => {
-            if (!allUsers.find(u => u.username === staticUser.username)) {
-                allUsers.push(staticUser);
-            }
-        });
-
-        return allUsers;
+        // Initialize with default data if empty
+        const initialData = [...diagnosticUsers];
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(initialData));
+        return initialData;
     },
 
     save: (user: IDiagnosticData) => {

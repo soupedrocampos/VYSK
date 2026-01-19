@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { type IDiagnosticData } from '../data/diagnosticData';
 import { diagnosticService } from '../utils/diagnosticService';
+import { useAdmin } from '../context/AdminContext';
 
 const Diagnostic = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -25,9 +26,22 @@ const Diagnostic = () => {
     // Admin Backdoor
     const secretClickCount = useRef(0);
     const secretClickTimeout = useRef<any>(null);
+    const { login: adminLogin } = useAdmin();
 
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
+
+        // Admin Login Check
+        if (username === 'admin') {
+            if (adminLogin(password)) {
+                window.location.href = '/admin/dashboard';
+                return;
+            } else {
+                setError('Credenciais de administrador inválidas.');
+                return;
+            }
+        }
+
         const users = diagnosticService.getAll();
         const user = users.find(
             (u) => u.username === username && u.password === password
