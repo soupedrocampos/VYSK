@@ -29,7 +29,7 @@ const Home = () => {
             <Languages2 />
             <FeaturesBento />
             <CourseDetails />
-            <AIToolsBento />
+
             <TechStack />
             <Workflow />
             <Instructors image="/assets/pedro-profile-new.png" />
