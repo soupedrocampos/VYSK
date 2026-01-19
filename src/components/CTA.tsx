@@ -17,15 +17,15 @@ const CTA = () => {
                 </div>
 
                 <div className="flex flex-col md:flex-row justify-between items-end gap-12">
-                    <div className="flex flex-col gap-6 w-full md:w-1/2">
+                    <div className="flex flex-col gap-6 w-full md:w-3/4">
                         <motion.h2
                             initial={{ opacity: 0, x: -50 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             className="font-cabinet font-bold text-6xl md:text-8xl leading-none tracking-tighter text-white"
                         >
-                            O QUE <br />
-                            VOCÊ QUER <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">RECEBER?</span>
+                            O QUE VOCÊ QUER <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">RECEBER?</span>
                         </motion.h2>
 
                         <motion.textarea
