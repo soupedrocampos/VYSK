@@ -50,7 +50,7 @@ const CTA = () => {
                             href="https://pay.kiwify.com.br/W711S1B"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)] hover:brightness-110 w-full md:w-auto"
+                            className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-full font-bold text-sm transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)] hover:brightness-110 w-full md:w-auto"
                         >
                             <span className="uppercase text-center">{inputValue.length > 0 ? "SOLUCIONAR MEU PROBLEMA AGORA" : "OBTENHA O PACOTE CRIATIVO"}</span>
                             <ArrowUpRight size={20} />

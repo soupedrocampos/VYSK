@@ -65,7 +65,7 @@ const TechStack = () => {
                         />
                         <button
                             onClick={openModal}
-                            className="w-full inline-flex items-center justify-center gap-3 px-10 py-5 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full text-sm font-bold tracking-widest uppercase transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(147,51,234,0.5)] hover:shadow-[0_0_50px_rgba(147,51,234,0.8)] hover:brightness-110"
+                            className="w-full inline-flex items-center justify-center gap-3 px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full text-sm font-bold tracking-widest uppercase transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(147,51,234,0.5)] hover:shadow-[0_0_50px_rgba(147,51,234,0.8)] hover:brightness-110"
                         >
                             <span>SOLICITAR DIAGNÓSTICO</span>
                             <ArrowUpRight className="w-5 h-5" />
