@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Plus, Trash, Edit, FileText, Globe, Layout } from 'lucide-react';
+import { Search, Plus, Trash, FileText, Globe, Layout } from 'lucide-react';
 import { useAdmin } from '../../context/AdminContext';
 
 const AdminContent = () => {
@@ -55,7 +55,7 @@ const AdminContent = () => {
                             <div className="relative z-10">
                                 <div className="flex justify-between items-start mb-4">
                                     <div className={`p-2 rounded-lg border border-white/10 ${article.type === 'Article' ? 'bg-blue-500/10 text-blue-400' :
-                                            article.type === 'Case Study' ? 'bg-purple-500/10 text-purple-400' : 'bg-green-500/10 text-green-400'
+                                        article.type === 'Case Study' ? 'bg-purple-500/10 text-purple-400' : 'bg-green-500/10 text-green-400'
                                         }`}>
                                         {article.type === 'Article' ? <FileText size={20} /> :
                                             article.type === 'Case Study' ? <Layout size={20} /> : <Globe size={20} />}

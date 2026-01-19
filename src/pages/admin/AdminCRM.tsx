@@ -4,7 +4,7 @@ import { Search, Plus, Trash, Edit, Phone, Calendar } from 'lucide-react';
 import { useAdmin } from '../../context/AdminContext';
 
 const AdminCRM = () => {
-    const { clients, addClient, deleteClient, updateClient } = useAdmin();
+    const { clients, addClient, deleteClient } = useAdmin();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -81,8 +81,8 @@ const AdminCRM = () => {
                                 <div className="flex items-center gap-3 mb-1">
                                     <h3 className="text-lg font-bold text-white">{client.name}</h3>
                                     <span className={`px-2 py-0.5 rounded text-[10px] uppercase font-bold tracking-wide border ${client.status === 'Client' ? 'bg-green-500/10 text-green-400 border-green-500/20' :
-                                            client.status === 'Prospect' ? 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20' :
-                                                'bg-red-500/10 text-red-400 border-red-500/20'
+                                        client.status === 'Prospect' ? 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20' :
+                                            'bg-red-500/10 text-red-400 border-red-500/20'
                                         }`}>
                                         {client.status}
                                     </span>
