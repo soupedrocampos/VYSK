@@ -60,7 +60,7 @@ const TechStack = () => {
 
                 <button
                     onClick={openModal}
-                    className="pointer-events-auto inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 text-white rounded-full text-sm font-bold tracking-widest uppercase transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(147,51,234,0.5)] hover:shadow-[0_0_50px_rgba(147,51,234,0.8)] hover:brightness-110 mb-20"
+                    className="pointer-events-auto inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full text-sm font-bold tracking-widest uppercase transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(147,51,234,0.5)] hover:shadow-[0_0_50px_rgba(147,51,234,0.8)] hover:brightness-110 mb-20"
                 >
                     <span>VER SOLUÇÕES</span>
                     <ArrowUpRight className="w-5 h-5" />
