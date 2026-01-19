@@ -51,7 +51,7 @@ const Certificate = () => {
                     <div className="flex items-center justify-center gap-4 mb-16">
                         <span className="text-2xl font-bold tracking-tighter flex items-center gap-2">
                             {/* GG STUDIO fake logo */}
-                            <span className="bg-black text-white px-2 py-1 text-lg rounded-sm italic">GG</span> STUDIO
+                            <img src="/favicon.png" alt="GG" className="h-8 w-8 rounded-sm object-contain" /> STUDIO
                         </span>
                     </div>
 
