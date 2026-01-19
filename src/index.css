@@ -183,8 +183,8 @@
 /* Sales Strategy Component Styles */
 .sales-strategy-section {
     width: 100%;
-    min-height: 100vh;
-    padding: 2rem 1rem;
+    /* min-height: 100vh; Removed to fix spacing issue */
+    padding: 6rem 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -250,23 +250,23 @@
 .strategy-subtitle {
     font-size: 1.125rem;
     color: #999;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     font-weight: 400;
 }
 
 .strategy-features {
     list-style: none;
     padding: 0;
-    margin: 0 0 2.5rem 0;
+    margin: 0 0 2rem 0;
 }
 
 .strategy-features li {
     position: relative;
     padding-left: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.4rem;
     font-size: 1.0625rem;
     color: #ddd;
-    line-height: 1.6;
+    line-height: 1.35;
 }
 
 .strategy-features li::before {

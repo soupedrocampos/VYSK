@@ -64,16 +64,6 @@ const aiTools = [
         span: "col-span-1 row-span-1"
     },
     {
-        title: "Web Scraper",
-        description: "Extraia dados de qualquer site diretamente para o Google Sheets.",
-        icon: Globe,
-        color: "from-cyan-500/10 to-teal-500/10",
-        borderColor: "border-cyan-500/20",
-        iconColor: "text-cyan-400",
-        iconBg: "bg-cyan-500/20",
-        span: "col-span-2 row-span-1"
-    },
-    {
         title: "Webhooks Personalizados",
         description: "Conecte qualquer API às suas ferramentas internas instantaneamente.",
         icon: Webhook,
@@ -82,6 +72,16 @@ const aiTools = [
         iconColor: "text-indigo-400",
         iconBg: "bg-indigo-500/20",
         span: "col-span-1 row-span-1"
+    },
+    {
+        title: "Web Scraper",
+        description: "Extraia dados de qualquer site.",
+        icon: Globe,
+        color: "from-cyan-500/10 to-teal-500/10",
+        borderColor: "border-cyan-500/20",
+        iconColor: "text-cyan-400",
+        iconBg: "bg-cyan-500/20",
+        span: "col-span-2 row-span-1"
     }
 ];
 

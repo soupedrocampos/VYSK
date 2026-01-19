@@ -25,15 +25,15 @@ const Home = () => {
             <Navbar />
             <Hero />
             <Features />
+            <Languages2 />
             <FeaturesBento />
             <CourseDetails />
             <AIToolsBento />
             <Languages />
             <Workflow />
-            <Instructors />
+            <Instructors image="/assets/pedro-profile-new.png" />
             <Community />
             <Certificate />
-            <Languages2 />
             <Bonuses />
             <Pricing />
             <Reviews />

@@ -42,7 +42,7 @@ export const blogPosts: IBlogPost[] = [
             <h3>3. Technical SEO: A Fundação Invisível</h3>
             <p>Com a Web Core Vitals agora sendo um fator de desempate crítico, seu site precisa voar. Renderização do lado do servidor (SSR), imagens em formatos de próxima geração (AVIF) e carregamento inteligente de scripts não são diferenciais, são pré-requisitos.</p>
         `,
-        coverImage: 'https://images.unsplash.com/photo-1571721795195-a2ca2d3380a3?q=80&w=2070&auto=format&fit=crop', // SEO Image
+        coverImage: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop', // SEO Image
         date: '2026-01-15',
         author: 'Pedro Campos',
         category: 'SEO',

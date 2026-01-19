@@ -81,7 +81,7 @@ const CourseDetails = () => {
                         <div className="w-full h-px bg-white/10 mt-8" />
                     </div>
 
-                    <div className="space-y-24">
+                    <div className="space-y-0">
                         {courses.map((course, index) => (
                             <SalesStrategy
                                 key={index}

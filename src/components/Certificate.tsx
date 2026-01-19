@@ -15,9 +15,9 @@ const Certificate = () => {
                     <span className="text-xs font-bold tracking-widest uppercase text-white/80">CERTIFICATE</span>
                 </div>
 
-                <h2 className="font-cabinet font-bold text-6xl md:text-8xl leading-none tracking-tighter text-white mb-20">
-                    OBTAIN YOUR <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">CERTIFICATE</span>
+                <h2 className="font-cabinet font-bold text-6xl md:text-8xl leading-none tracking-tighter text-white mb-20 uppercase">
+                    OBTENHA <br />
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">CERTIFICAÇÃO</span>
                 </h2>
 
                 {/* Certificate Card */}

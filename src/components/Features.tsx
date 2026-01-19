@@ -69,14 +69,20 @@ const Features = ({ cards = defaultCourses }: { cards?: FeatureCard[] }) => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="font-cabinet font-light text-4xl md:text-6xl leading-none tracking-tighter text-white max-w-6xl whitespace-pre-line mb-10"
+                            className="font-satoshi font-bold text-4xl md:text-6xl leading-none tracking-tighter text-white max-w-6xl whitespace-pre-line mb-4"
                         >
-                            {t('features.title').split(/<\/?b>/).map((part, i) => (
-                                <span key={i} className={i % 2 === 1 ? "font-bold" : "font-light"}>
-                                    {part}
-                                </span>
-                            ))}
+                            {t('features.title')}
                         </motion.h2>
+
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.1 }}
+                            className="text-[#999999] text-lg md:text-xl font-medium tracking-wide max-w-2xl mb-16 font-cabinet"
+                        >
+                            {t('features.subtitle')}
+                        </motion.p>
                     </div>
 
                     {/* Continuous Marquee */}

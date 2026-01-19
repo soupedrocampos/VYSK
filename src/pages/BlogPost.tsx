@@ -84,7 +84,7 @@ const BlogPost = () => {
                     <div
                         className="prose prose-lg prose-invert max-w-none 
                         prose-headings:font-cabinet prose-headings:font-bold prose-h2:text-3xl prose-h2:text-purple-100 prose-h3:text-2xl prose-h3:text-gray-200
-                        prose-p:text-gray-300 prose-p:leading-relaxed
+                        prose-p:text-gray-300 prose-p:leading-relaxed prose-p:mb-12
                         prose-a:text-purple-400 prose-a:no-underline hover:prose-a:text-purple-300
                         prose-strong:text-white
                         prose-ul:text-gray-300 prose-li:marker:text-purple-500"

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, ArrowDown, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { useLeadModal } from '../context/LeadModalContext';
 
 interface HeroProps {
     title?: string;
@@ -11,6 +12,7 @@ interface HeroProps {
 
 const Hero = ({ title, cta, badge }: HeroProps) => {
     const { t } = useLanguage();
+    const { openModal } = useLeadModal();
 
     return (
         <section id="hero" className="relative h-[100dvh] w-full bg-human-bg text-white overflow-hidden selection:bg-human-green/30 selection:text-white font-sans flex items-center">
@@ -53,26 +55,16 @@ const Hero = ({ title, cta, badge }: HeroProps) => {
                             </h1>
 
                             {/* Price Display removed from mobile as requested */}
-                            {/* <div className="mb-8 md:mb-0">
-                                <div className="price-container md:hidden">
-                                    <span className="text-sm text-gray-400 line-through block mb-2">De $ 8.997</span>
-                                    <div className="price-blur-wrapper">
-                                        <span className="text-6xl font-bold">
-                                            $ 4.997<span className="price-cents">,00</span>
-                                        </span>
-                                    </div>
-                                    <span className="text-xs text-gray-400 block mt-2">PAGAMENTO ÚNICO</span>
-                                </div>
-                            </div> */}
+
 
                             <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
-                                <a
-                                    href="#products"
-                                    className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-bold uppercase tracking-widest hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)] w-full sm:w-auto"
+                                <button
+                                    onClick={openModal}
+                                    className="px-10 py-5 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-bold uppercase tracking-widest hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)] w-full sm:w-auto sm:min-w-[300px]"
                                 >
-                                    <span>{cta || t('hero.cta')}</span>
-                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                                </a>
+                                    <span className="text-center">{cta || t('hero.cta')}</span>
+                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform shrink-0" />
+                                </button>
 
                                 <a
                                     href="#about"
