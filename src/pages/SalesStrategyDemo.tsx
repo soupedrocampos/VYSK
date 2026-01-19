@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import SalesStrategy from '../components/SalesStrategy';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import PageSEO from '../components/PageSEO';
 
 const SalesStrategyDemo = () => {
     return (
@@ -11,6 +12,7 @@ const SalesStrategyDemo = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
         >
+            <PageSEO path="/estrategia" />
             <Navbar />
 
             {/* Demo Section */}

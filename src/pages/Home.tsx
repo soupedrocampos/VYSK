@@ -17,11 +17,12 @@ import Footer from '../components/Footer';
 
 import LanguageSelector from '../components/LanguageSelector';
 import FeaturesBento from '../components/FeaturesBento';
-import AIToolsBento from '../components/AIToolsBento';
+import PageSEO from '../components/PageSEO';
 
 const Home = () => {
     return (
         <div className="min-h-screen bg-black text-white selection:bg-purple-500/30">
+            <PageSEO path="/" />
             <Navbar />
             <Hero />
             <Features />

@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import { type IDiagnosticData } from '../data/diagnosticData';
 import { diagnosticService } from '../utils/diagnosticService';
 import { useAdmin } from '../context/AdminContext';
+import PageSEO from '../components/PageSEO';
 
 const Diagnostic = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -76,6 +77,7 @@ const Diagnostic = () => {
 
     return (
         <div className="min-h-screen bg-black text-white selection:bg-purple-500/30 font-satoshi">
+            <PageSEO path="/diagnostico" />
             <Navbar />
 
             <div className="pt-32 pb-20 container mx-auto px-4 min-h-[80vh] flex flex-col items-center justify-center">

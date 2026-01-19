@@ -53,6 +53,13 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         { id: '1', path: '/', name: 'Home', title: 'VYSK | Scale Your Business', description: 'Potencialize seu negócio com IA.', ogImage: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop' },
         { id: '2', path: '/blog', name: 'Blog', title: 'VYSK | Blog', description: 'Artigos e insights sobre tecnologia e crescimento.', ogImage: 'https://images.unsplash.com/photo-1499750310159-5b9887039e5b?q=80&w=2668&auto=format&fit=crop' },
         { id: '3', path: '/services', name: 'Serviços', title: 'VYSK | Nossos Serviços', description: 'Conheça nossas soluções de alta performance.', ogImage: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2670&auto=format&fit=crop' },
+        { id: '4', path: '/diagnostico', name: 'Diagnóstico', title: 'VYSK | Diagnóstico de Performance', description: 'Descubra oportunidades ocultas no seu negócio.', ogImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop' },
+        { id: '5', path: '/privacy', name: 'Privacidade', title: 'VYSK | Política de Privacidade', description: 'Nossos termos e políticas de uso.', ogImage: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?q=80&w=2676&auto=format&fit=crop' },
+        { id: '6', path: '/seo', name: 'Landing SEO', title: 'VYSK | Dominando o Google', description: 'Estratégias avançadas de SEO.', ogImage: 'https://images.unsplash.com/photo-1572021335469-31706a17aaef?q=80&w=2670&auto=format&fit=crop' },
+        { id: '7', path: '/saas', name: 'Landing SaaS', title: 'VYSK | Soluções SaaS', description: 'Software como serviço para escalar.', ogImage: 'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2670&auto=format&fit=crop' },
+        { id: '8', path: '/automacao', name: 'Landing Automação', title: 'VYSK | Automação Inteligente', description: 'Automatize processos e ganhe tempo.', ogImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2670&auto=format&fit=crop' },
+        { id: '9', path: '/worldpackers', name: 'Case Worldpackers', title: 'VYSK | Case Worldpackers', description: 'Como ajudamos a Worldpackers a crescer.', ogImage: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2671&auto=format&fit=crop' },
+        { id: '10', path: '/estrategia', name: 'Estratégia Vendas', title: 'VYSK | Estratégia de Vendas', description: 'Métodos comprovados para vender mais.', ogImage: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2632&auto=format&fit=crop' },
     ]);
 
     // Load initial state

@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BlogCard from '../components/BlogCard';
 import CategoryFilter from '../components/CategoryFilter';
-import SEOHead from '../components/SEOHead';
+import PageSEO from '../components/PageSEO';
 import { blogPosts, allCategories } from '../data/blogData';
 
 const Blog = () => {
@@ -16,12 +16,7 @@ const Blog = () => {
 
     return (
         <div className="bg-black min-h-screen font-satoshi selection:bg-purple-500/30">
-            <SEOHead
-                title="Blog"
-                description="Artigos sobre SEO, Automação, SaaS e Inovação Digital. Insights profundos para escalar seu negócio."
-                keywords={['Blog', 'SEO', 'N8N', 'Automação', 'SaaS', 'Marketing Digital']}
-                url="https://pedrovysk.com/blog"
-            />
+            <PageSEO path="/blog" />
 
             <Navbar />
 

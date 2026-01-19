@@ -1,9 +1,11 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import PageSEO from '../components/PageSEO';
 
 const PrivacyPolicy = () => {
     return (
         <div className="min-h-screen bg-black text-white font-satoshi selection:bg-purple-500/30">
+            <PageSEO path="/privacy" />
             <Navbar />
 
             <main className="pt-32 pb-20 container mx-auto px-4 max-w-4xl">

@@ -1,17 +1,13 @@
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import SEOHead from '../components/SEOHead';
+import PageSEO from '../components/PageSEO';
 import { Bot, Workflow, Cpu, Zap } from 'lucide-react';
 
 const AutomationPage = () => {
     return (
         <div className="bg-black min-h-screen font-satoshi selection:bg-purple-500/30">
-            <SEOHead
-                title="Automação com IA & N8N"
-                description="Automatize seus processos de negócio com N8N e Inteligência Artificial. Reduza custos operacionais e aumente a produtividade da sua agência."
-                keywords={['Automação', 'N8N', 'IA', 'ChatGPT', 'Processos', 'Agência']}
-            />
+            <PageSEO path="/automacao" />
 
             <Navbar />
 

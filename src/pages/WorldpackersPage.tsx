@@ -1,17 +1,13 @@
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import SEOHead from '../components/SEOHead';
+import PageSEO from '../components/PageSEO';
 import { MapPin, Backpack, Heart, Star } from 'lucide-react';
 
 const WorldpackersPage = () => {
     return (
         <div className="bg-black min-h-screen font-satoshi selection:bg-cyan-500/30">
-            <SEOHead
-                title="Worldpackers: Viaje Trocando Habilidades"
-                description="Minha jornada como nômade digital usando a Worldpackers. Troque suas habilidades por hospedagem e viva experiências únicas pelo mundo."
-                keywords={['Worldpackers', 'Viagem', 'Nômade Digital', 'Voluntariado', 'Hospedagem Grátis']}
-            />
+            <PageSEO path="/worldpackers" />
 
             <Navbar />
 

@@ -1,16 +1,12 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import SEOHead from '../components/SEOHead';
+import PageSEO from '../components/PageSEO';
 import { Cloud, Code, Shield, Layers } from 'lucide-react';
 
 const SaaSPage = () => {
     return (
         <div className="bg-black min-h-screen font-satoshi selection:bg-purple-500/30">
-            <SEOHead
-                title="Desenvolvimento de SaaS & Micro-SaaS"
-                description="Transforme sua ideia em um produto digital escalável. Desenvolvimento de SaaS high-end com arquitetura robusta e design premium."
-                keywords={['SaaS', 'Desenvolvimento Web', 'React', 'Micro-SaaS', 'Startup']}
-            />
+            <PageSEO path="/saas" />
 
             <Navbar />
 

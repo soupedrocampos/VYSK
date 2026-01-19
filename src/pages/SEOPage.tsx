@@ -1,17 +1,13 @@
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import SEOHead from '../components/SEOHead';
+import PageSEO from '../components/PageSEO';
 import { Search, BarChart, Zap, Globe } from 'lucide-react';
 
 const SEOPage = () => {
     return (
         <div className="bg-black min-h-screen font-satoshi selection:bg-purple-500/30">
-            <SEOHead
-                title="Consultoria de SEO Avançado"
-                description="Domine o Google com estratégias de SEO focadas em IA, E-E-A-T e Core Web Vitals. Aumente seu tráfego orgânico agora."
-                keywords={['SEO', 'Consultoria SEO', 'Tráfego Orgânico', 'Otimização de Sites']}
-            />
+            <PageSEO path="/seo" />
 
             <Navbar />
 
