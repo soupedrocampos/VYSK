@@ -29,6 +29,19 @@ const Pricing = () => {
                         <p className="text-xl text-gray-400 max-w-md mx-auto lg:mx-0 leading-relaxed">
                             Soluções digitais completas para escalar seu negócio. Unimos design, tecnologia e estratégia para criar resultados extraordinários.
                         </p>
+
+                        <div className="mt-8 relative group/price cursor-pointer w-fit mx-auto lg:mx-0">
+                            <div className="flex items-baseline gap-3 transition-all duration-500 ease-in-out group-hover/price:blur-xl group-hover/price:opacity-0 group-hover/price:translate-y-4">
+                                <span className="text-4xl md:text-5xl font-bold text-white font-cabinet blur-[6px] select-none">R$ 5.000</span>
+                                <span className="text-gray-500 text-sm uppercase tracking-wider blur-[3px]">MENSAL</span>
+                            </div>
+
+                            <div className="absolute inset-0 flex items-center justify-start opacity-0 group-hover/price:opacity-100 transition-all duration-500 ease-in-out translate-y-4 group-hover/price:translate-y-0">
+                                <span className="text-xl md:text-2xl font-bold text-white font-cabinet tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400 whitespace-nowrap">
+                                    CONSULTAR VALOR
+                                </span>
+                            </div>
+                        </div>
                     </div>
 
                     {/* Right Card - Pricing */}
