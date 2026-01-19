@@ -61,9 +61,7 @@ const Pricing = () => {
                                     <span>.</span>
                                     <SlotDigit duration={6} />
                                     <SlotDigit duration={9} />
-                                    <SlotDigit duration={7} />
                                 </div>
-                                <span className="text-gray-500 text-sm uppercase tracking-wider ml-2 blur-[2px]">MENSAL</span>
                             </div>
 
                             <div className="absolute inset-0 flex items-center justify-start opacity-0 group-hover/price:opacity-100 transition-all duration-500 ease-in-out translate-y-4 group-hover/price:translate-y-0">
