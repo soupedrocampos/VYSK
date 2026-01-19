@@ -43,30 +43,14 @@ const Pricing = () => {
 
                         <div className="relative z-10">
                             <div className="mb-8">
-                                <Globe className="text-white w-12 h-12 mb-6" strokeWidth={1} />
-                                <h3 className="text-3xl font-bold text-white mb-2">SERVIÇOS EXCLUSIVOS</h3>
-                                <h4 className="text-xl font-bold text-white mb-4">PACOTE COMPLETO</h4>
-                                <p className="text-gray-500 text-xs uppercase tracking-wide">
+                                <div className="flex items-center gap-4 mb-2">
+                                    <Globe className="text-white w-12 h-12" strokeWidth={1} />
+                                    <h3 className="text-3xl font-bold text-white">SERVIÇOS EXCLUSIVOS</h3>
+                                </div>
+                                <h4 className="text-xl font-bold text-white mb-4 pl-[4rem]">PACOTE COMPLETO</h4>
+                                <p className="text-gray-500 text-xs uppercase tracking-wide pl-[4rem]">
                                     Sites + Automação + Design + Inteligência Artificial
                                 </p>
-                            </div>
-
-                            <div className="mb-10 relative group/price cursor-pointer w-fit">
-                                <p className="text-gray-500 text-lg mb-1 line-through font-mono">U$ 8 997</p>
-                                <div className="relative">
-                                    {/* Blurred Price State */}
-                                    <div className="flex items-baseline gap-3 transition-all duration-500 ease-in-out group-hover/price:blur-xl group-hover/price:opacity-0 group-hover/price:translate-y-4">
-                                        <span className="text-4xl md:text-6xl font-bold text-white font-cabinet blur-[8px] select-none">$ 597</span>
-                                        <span className="text-gray-400 text-sm uppercase tracking-wider blur-[2px]">PAGAMENTO ÚNICO</span>
-                                    </div>
-
-                                    {/* Hover Message State */}
-                                    <div className="absolute inset-0 flex items-center justify-start opacity-0 group-hover/price:opacity-100 transition-all duration-500 ease-in-out translate-y-4 group-hover/price:translate-y-0">
-                                        <span className="text-2xl md:text-3xl font-bold text-white font-cabinet tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
-                                            ENTRE EM CONTATO
-                                        </span>
-                                    </div>
-                                </div>
                             </div>
 
                             <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 rounded-full font-bold text-sm uppercase tracking-widest flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform duration-300 shadow-[0_0_20px_rgba(168,85,247,0.3)] hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] mb-10 hover:brightness-110">
