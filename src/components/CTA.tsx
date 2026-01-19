@@ -27,7 +27,9 @@ const CTA = () => {
                             className="font-cabinet font-bold text-6xl md:text-8xl leading-none tracking-tighter text-white"
                         >
                             {t('cta.title').split('\n')[0]} <br />
-                            {t('cta.title').split('\n')[1]} <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">?</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                                {t('cta.title').split('\n')[1]}?
+                            </span>
                         </motion.h2>
 
                         <motion.textarea

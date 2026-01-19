@@ -31,7 +31,7 @@ const Footer = () => {
                 <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-8">
                     {/* Left - Copyright */}
                     <div className="text-center md:text-left">
-                        <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-1">2026 Pedrovysk</h4>
+                        <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-1">2018-2026 PEDROVYSK</h4>
                         <p className="text-gray-600 text-[10px]">{t('footer.rights')}</p>
                     </div>
 

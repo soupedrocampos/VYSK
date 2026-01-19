@@ -251,7 +251,7 @@ export const translations: Record<Language, Record<string, string>> = {
         // CTA
         "cta.badge": "VAMOS COMEÇAR?",
         "cta.badge_sub": "ORÇAMENTO",
-        "cta.title": "TIRE SUA IDEIA\nDO PAPEL HOJE",
+        "cta.title": "O QUE VOCÊ\nQUER HOJE",
         "cta.button": "OBTENHA ORÇAMENTO",
 
         // FAQs
@@ -303,9 +303,9 @@ export const translations: Record<Language, Record<string, string>> = {
         // Footer
         "footer.contact": "Contato",
         "footer.blog": "Blog",
-        "footer.slogan_line1": "O FUTURO",
-        "footer.slogan_line2": "ESPERA",
-        "footer.slogan_line3": "AGORA",
+        "footer.slogan_line1": "THE FUTURE",
+        "footer.slogan_line2": "AWAITS",
+        "footer.slogan_line3": "NOW",
         "footer.rights": "Todos os direitos reservados.",
         "footer.privacy": "Política de Privacidade",
         "footer.terms": "Termos de Serviço"
