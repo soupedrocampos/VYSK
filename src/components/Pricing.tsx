@@ -1,6 +1,26 @@
 import { motion } from 'framer-motion';
 import { Check, ArrowUpRight, Globe } from 'lucide-react';
 
+const SlotDigit = ({ value, delay }: { value: number; delay: number }) => {
+    return (
+        <div className="relative h-[1.1em] w-[0.6em] overflow-hidden inline-block align-bottom">
+            <motion.div
+                initial={{ y: "0%" }}
+                whileInView={{ y: `-${value * 100}%` }}
+                viewport={{ once: true }}
+                transition={{ duration: 2, delay, ease: [0.23, 1, 0.32, 1] }}
+                className="absolute left-0 top-0 flex flex-col items-center w-full leading-none"
+            >
+                {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
+                    <span key={num} className="h-[1.1em] flex items-center justify-center">
+                        {num}
+                    </span>
+                ))}
+            </motion.div>
+        </div>
+    );
+};
+
 const Pricing = () => {
     return (
         <section id="pricing" className="py-24 bg-human-bg font-satoshi relative overflow-hidden">
@@ -31,9 +51,16 @@ const Pricing = () => {
                         </p>
 
                         <div className="mt-8 relative group/price cursor-pointer w-fit mx-auto lg:mx-0">
-                            <div className="flex items-baseline gap-3 transition-all duration-500 ease-in-out group-hover/price:blur-xl group-hover/price:opacity-0 group-hover/price:translate-y-4">
-                                <span className="text-4xl md:text-6xl font-bold text-white font-cabinet blur-[6px] select-none">R$ 4.997</span>
-                                <span className="text-gray-500 text-sm uppercase tracking-wider blur-[3px]">MENSAL</span>
+                            <div className="flex items-baseline gap-1 transition-all duration-500 ease-in-out group-hover/price:opacity-0 group-hover/price:translate-y-4">
+                                <span className="text-4xl md:text-6xl font-bold text-white font-cabinet select-none">R$</span>
+                                <div className="text-4xl md:text-6xl font-bold text-white font-cabinet select-none flex items-baseline">
+                                    <SlotDigit value={4} delay={0} />
+                                    <span>.</span>
+                                    <SlotDigit value={9} delay={0.1} />
+                                    <SlotDigit value={9} delay={0.2} />
+                                    <SlotDigit value={7} delay={0.3} />
+                                </div>
+                                <span className="text-gray-500 text-sm uppercase tracking-wider ml-2">MENSAL</span>
                             </div>
 
                             <div className="absolute inset-0 flex items-center justify-start opacity-0 group-hover/price:opacity-100 transition-all duration-500 ease-in-out translate-y-4 group-hover/price:translate-y-0">
