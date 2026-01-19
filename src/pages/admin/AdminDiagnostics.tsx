@@ -26,13 +26,13 @@ const AdminDiagnostics = () => {
 
     const [newSection, setNewSection] = useState({ title: '', content: '' });
 
-    useEffect(() => {
-        loadUsers();
-    }, []);
-
     const loadUsers = () => {
         setUsers(diagnosticService.getAll());
     };
+
+    useEffect(() => {
+        loadUsers();
+    }, []);
 
     const handleOpenModal = (user?: IDiagnosticData) => {
         setPreviewUrl(null); // Clear preview
