@@ -71,13 +71,12 @@ const Hero = ({ title, cta, badge }: HeroProps) => {
                                             animate={{ y: 0, opacity: 1 }}
                                             exit={{ y: -50, opacity: 0 }}
                                             transition={{ duration: 0.5, ease: "circOut" }}
-                                            className="absolute left-0 text-white block"
+                                            className="absolute left-0 block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400"
                                         >
                                             {words[wordIndex]}
                                         </motion.span>
                                     </AnimatePresence>
                                 </div>
-                                <span className='block mt-2'>COMEÇA AGORA</span>
                             </h1>
 
 
