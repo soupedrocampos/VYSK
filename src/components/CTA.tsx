@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const CTA = () => {
+    const { t } = useLanguage();
     const [inputValue, setInputValue] = useState('');
 
     return (
@@ -13,7 +15,7 @@ const CTA = () => {
                 <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-12">
                     <span className="text-xs font-bold tracking-widest uppercase text-white/80">GLOBAL</span>
                     <span className="w-px h-3 bg-white/20" />
-                    <span className="text-xs font-bold tracking-widest uppercase text-white/80">PACKAGE</span>
+                    <span className="text-xs font-bold tracking-widest uppercase text-white/80">{t('cta.badge_sub')}</span>
                 </div>
 
                 <div className="flex flex-col md:flex-row justify-between items-end gap-12">
@@ -24,8 +26,8 @@ const CTA = () => {
                             viewport={{ once: true }}
                             className="font-cabinet font-bold text-6xl md:text-8xl leading-none tracking-tighter text-white"
                         >
-                            O QUE VOCÊ <br />
-                            QUER <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">RECEBER?</span>
+                            {t('cta.title').split('\n')[0]} <br />
+                            {t('cta.title').split('\n')[1]} <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">?</span>
                         </motion.h2>
 
                         <motion.textarea
@@ -52,7 +54,7 @@ const CTA = () => {
                             rel="noopener noreferrer"
                             className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-full font-bold text-sm transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)] hover:brightness-110 w-full md:w-auto"
                         >
-                            <span className="uppercase text-center">{inputValue.length > 0 ? "SOLUCIONAR MEU PROBLEMA AGORA" : "OBTENHA O PACOTE CRIATIVO"}</span>
+                            <span className="uppercase text-center">{inputValue.length > 0 ? "SOLUCIONAR MEU PROBLEMA AGORA" : t('cta.button')}</span>
                             <ArrowUpRight size={20} />
                         </a>
                     </motion.div>

@@ -13,8 +13,8 @@ export const translations: Record<Language, Record<string, string>> = {
         "hero.line1": "THE FUTURE OF",
         "hero.line2": "YOUR",
         "hero.description": "Master the art of AI creation with our comprehensive suite of tools and courses.",
-        "hero.cta": "START NOW",
-        "hero.secondary_cta": "LEARN MORE",
+        "cta.title": "HERE'S WHAT\nYOU'LL GET",
+        "cta.button": "GET A QUOTE",
         "hero.rotating_words": "BUSINESS,BRAND,STORE",
 
         // Languages Section
@@ -93,7 +93,7 @@ export const translations: Record<Language, Record<string, string>> = {
         "cta.badge": "GLOBAL",
         "cta.badge_sub": "PACKAGE",
         "cta.title": "HERE'S WHAT\nYOU'LL GET",
-        "cta.button": "OBTAIN CREATIVE PACK",
+        "cta.button": "GET A QUOTE",
 
         // Footer
         "footer.rights": "All rights reserved.",
@@ -201,7 +201,7 @@ export const translations: Record<Language, Record<string, string>> = {
         "cta.badge": "VAMOS COMEÇAR?",
         "cta.badge_sub": "ORÇAMENTO",
         "cta.title": "TIRE SUA IDEIA\nDO PAPEL HOJE",
-        "cta.button": "SOLICITAR PROPOSTA AGORA",
+        "cta.button": "OBTENHA ORÇAMENTO",
 
         // Footer
         "footer.rights": "Todos os direitos reservados.",
@@ -299,7 +299,7 @@ export const translations: Record<Language, Record<string, string>> = {
         "cta.badge": "GLOBAL",
         "cta.badge_sub": "PAQUETE",
         "cta.title": "AQUÍ ESTÁ LO QUE\nOBTENDRÁS",
-        "cta.button": "OBTENER PAQUETE CREATIVO",
+        "cta.button": "OBTENER PRESUPUESTO",
 
         // Footer
         "footer.rights": "Todos los derechos reservados.",
