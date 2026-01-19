@@ -4,6 +4,7 @@ import CourseDetails from '../components/CourseDetails';
 import Features from '../components/Features';
 import Languages from '../components/Languages';
 import Languages2 from '../components/Languages2';
+import TechStack from '../components/TechStack';
 import Workflow from '../components/Workflow';
 import Instructors from '../components/Instructors';
 import Community from '../components/Community';
@@ -26,6 +27,7 @@ const Home = () => {
             <Hero />
             <Features />
             <Languages2 />
+            <TechStack />
             <FeaturesBento />
             <CourseDetails />
             <AIToolsBento />
