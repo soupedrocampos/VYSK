@@ -105,7 +105,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
         // Hero
         "hero.badge": "PEDROVYSK DIGITAL",
-        "hero.title": "SEU NEGÓCIO, POTENCIALIZADO <span class='text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400'>PELA IA</span>",
+        "hero.title": "O FUTURO DA SUA EMPRESA <span class='text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400'>COMEÇA AGORA</span>",
         "hero.description": "Não entregamos apenas sites. Construímos ecossistemas digitais, lojas virtuais e agentes de IA que vendem por você. 8 anos de expertise em Marketing unindo Tecnologia e Design de Elite.",
         "hero.cta": "Quero Escalar Meu Negócio",
 
