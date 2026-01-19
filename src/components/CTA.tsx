@@ -24,8 +24,8 @@ const CTA = () => {
                             viewport={{ once: true }}
                             className="font-cabinet font-bold text-6xl md:text-8xl leading-none tracking-tighter text-white"
                         >
-                            O QUE VOCÊ QUER <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">RECEBER?</span>
+                            O QUE VOCÊ <br />
+                            QUER <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">RECEBER?</span>
                         </motion.h2>
 
                         <motion.textarea
