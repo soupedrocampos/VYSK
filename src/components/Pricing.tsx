@@ -2,10 +2,11 @@ import { motion } from 'framer-motion';
 import { Check, ArrowUpRight, Globe } from 'lucide-react';
 
 const SlotDigit = ({ duration = 1 }: { duration?: number }) => {
+    const strip = [7, 2, 9, 0, 5, 1, 8, 3, 6, 4];
     return (
         <div className="relative h-[1.1em] w-[0.6em] overflow-hidden inline-block align-bottom">
             <motion.div
-                animate={{ y: ["0%", "-900%"] }}
+                animate={{ y: ["0%", "-50%"] }}
                 transition={{
                     duration: duration,
                     repeat: Infinity,
@@ -13,9 +14,8 @@ const SlotDigit = ({ duration = 1 }: { duration?: number }) => {
                 }}
                 className="absolute left-0 top-0 flex flex-col items-center w-full leading-none"
             >
-                {/* 0-9 repeated for loop */}
-                {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
-                    <span key={num} className="h-[1.1em] flex items-center justify-center">
+                {[...strip, ...strip].map((num, i) => (
+                    <span key={i} className="h-[1.1em] flex items-center justify-center">
                         {num}
                     </span>
                 ))}
