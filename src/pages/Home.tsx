@@ -14,7 +14,7 @@ import Reviews from '../components/Reviews';
 import FAQ from '../components/FAQ';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
-import FloatingMenu from '../components/FloatingMenu';
+
 import LanguageSelector from '../components/LanguageSelector';
 import FeaturesBento from '../components/FeaturesBento';
 import AIToolsBento from '../components/AIToolsBento';
@@ -40,7 +40,7 @@ const Home = () => {
             <FAQ />
             <CTA />
             <Footer />
-            <FloatingMenu />
+
             <LanguageSelector />
         </div>
     );
