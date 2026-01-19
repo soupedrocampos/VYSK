@@ -15,14 +15,15 @@ const Hero = ({ badge }: HeroProps) => {
     const { t } = useLanguage();
     const { openModal } = useLeadModal();
     const [wordIndex, setWordIndex] = useState(0);
-    const words = ["EMPRESA", "MARCA", "LOJA"];
+    const words = t('hero.rotating_words').split(',');
+    const longestWord = words.reduce((a, b) => a.length > b.length ? a : b, "");
 
     useEffect(() => {
         const interval = setInterval(() => {
             setWordIndex((prev) => (prev + 1) % words.length);
         }, 2000);
         return () => clearInterval(interval);
-    }, []);
+    }, [words.length]);
 
     return (
         <section id="hero" className="relative h-[100dvh] w-full bg-human-bg text-white overflow-hidden selection:bg-human-green/30 selection:text-white font-sans flex items-center">
@@ -61,9 +62,9 @@ const Hero = ({ badge }: HeroProps) => {
                             <div className="mb-8" />
 
                             <h1 className="font-cabinet font-bold text-5xl md:text-8xl leading-none tracking-tighter text-white mb-8">
-                                O FUTURO DA <br />
-                                SUA <div className="h-[1em] relative overflow-hidden inline-block align-top">
-                                    <span className="invisible">EMPRESA</span>
+                                {t('hero.line1')} <br />
+                                {t('hero.line2')} <div className="h-[1em] relative overflow-hidden inline-block align-top">
+                                    <span className="invisible">{longestWord}</span>
                                     <AnimatePresence mode="wait">
                                         <motion.span
                                             key={words[wordIndex]}
@@ -85,7 +86,7 @@ const Hero = ({ badge }: HeroProps) => {
                                     onClick={openModal}
                                     className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-bold uppercase tracking-widest hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)] w-full sm:w-auto text-sm"
                                 >
-                                    <span>COMEÇA AGORA</span>
+                                    <span>{t('hero.cta')}</span>
                                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform shrink-0" />
                                 </button>
 
@@ -93,7 +94,7 @@ const Hero = ({ badge }: HeroProps) => {
                                     href="#about"
                                     className="group inline-flex items-center justify-center gap-2 px-8 py-3 bg-white/5 backdrop-blur-sm border border-white/10 text-white rounded-full text-sm font-bold tracking-widest uppercase hover:bg-white/10 transition-all duration-300 w-full sm:w-auto"
                                 >
-                                    <span>SAIBA MAIS</span>
+                                    <span>{t('hero.secondary_cta')}</span>
                                     <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                 </a>
                             </div>

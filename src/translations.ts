@@ -10,9 +10,12 @@ export const translations: Record<Language, Record<string, string>> = {
 
         // Hero
         "hero.badge": "PEDROVYSK",
-        "hero.title": "MASTER THE\nCREATIVE FUTURE",
+        "hero.line1": "THE FUTURE OF",
+        "hero.line2": "YOUR",
         "hero.description": "Master the art of AI creation with our comprehensive suite of tools and courses.",
-        "hero.cta": "Start Learning",
+        "hero.cta": "START NOW",
+        "hero.secondary_cta": "LEARN MORE",
+        "hero.rotating_words": "BUSINESS,BRAND,STORE",
 
         // Languages Section
         "languages.title": "SEO",
@@ -105,9 +108,12 @@ export const translations: Record<Language, Record<string, string>> = {
 
         // Hero
         "hero.badge": "PEDROVYSK DIGITAL",
-        "hero.title": "O FUTURO DA SUA EMPRESA <br /> <span class='text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400'>COMEÇA AGORA</span>",
+        "hero.line1": "O FUTURO DA",
+        "hero.line2": "SUA",
         "hero.description": "Não entregamos apenas sites. Construímos ecossistemas digitais, lojas virtuais e agentes de IA que vendem por você. 8 anos de expertise em Marketing unindo Tecnologia e Design de Elite.",
-        "hero.cta": "Quero Escalar Meu Negócio",
+        "hero.cta": "COMEÇA AGORA",
+        "hero.secondary_cta": "SAIBA MAIS",
+        "hero.rotating_words": "EMPRESA,MARCA,LOJA",
 
         // Languages Section -> Agora: "Serviços de Desenvolvimento"
         "languages.title": "WEB",
@@ -210,9 +216,12 @@ export const translations: Record<Language, Record<string, string>> = {
 
         // Hero
         "hero.badge": "PEDROVYSK",
-        "hero.title": "DOMINA EL\nFUTURO CREATIVO",
+        "hero.line1": "EL FUTURO DE",
+        "hero.line2": "TU",
         "hero.description": "Domina el arte de la creación con IA con nuestro conjunto completo de herramientas y cursos.",
-        "hero.cta": "Empieza a Aprender",
+        "hero.cta": "EMPIEZA AHORA",
+        "hero.secondary_cta": "SABER MÁS",
+        "hero.rotating_words": "EMPRESA,MARCA,TIENDA",
 
         // Languages Section
         "languages.title": "SEO",
