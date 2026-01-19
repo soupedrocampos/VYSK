@@ -71,10 +71,10 @@ const Certificate = () => {
                     {/* Floating Tags */}
                     <div className="absolute top-1/2 -right-12 md:-right-24 transform -translate-y-1/2 flex flex-col gap-4">
                         <div className="bg-black/80 backdrop-blur-md text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest shadow-xl">
-                            100+ HOURS
+                            MENTORIA
                         </div>
                         <div className="bg-white text-black px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest shadow-xl">
-                            BE HUMAN
+                            PERSONALIZADA
                         </div>
                     </div>
                 </motion.div>
