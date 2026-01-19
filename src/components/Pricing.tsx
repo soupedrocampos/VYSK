@@ -57,11 +57,11 @@ const Pricing = () => {
                             <div className="flex items-baseline gap-1 transition-all duration-500 ease-in-out group-hover/price:opacity-0 group-hover/price:translate-y-4">
                                 <span className="text-4xl md:text-6xl font-bold text-white font-cabinet select-none blur-[4px]">R$</span>
                                 <div className="text-4xl md:text-6xl font-bold text-white font-cabinet select-none flex items-baseline blur-[4px]">
-                                    <SlotDigit duration={0.8} />
+                                    <SlotDigit duration={8} />
                                     <span>.</span>
-                                    <SlotDigit duration={1.2} />
-                                    <SlotDigit duration={0.6} />
-                                    <SlotDigit duration={1.0} />
+                                    <SlotDigit duration={6} />
+                                    <SlotDigit duration={9} />
+                                    <SlotDigit duration={7} />
                                 </div>
                                 <span className="text-gray-500 text-sm uppercase tracking-wider ml-2 blur-[2px]">MENSAL</span>
                             </div>
