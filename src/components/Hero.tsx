@@ -61,9 +61,8 @@ const Hero = ({ badge }: HeroProps) => {
                             <div className="mb-8" />
 
                             <h1 className="font-cabinet font-bold text-5xl md:text-8xl leading-none tracking-tighter text-white mb-8">
-                                O FUTURO <br />
-                                DA SUA <br />
-                                <div className="h-[1em] relative overflow-hidden inline-block align-top w-full">
+                                O FUTURO DA <br />
+                                SUA <div className="h-[1em] relative overflow-hidden inline-block align-top min-w-[20px]">
                                     <AnimatePresence mode="wait">
                                         <motion.span
                                             key={words[wordIndex]}
@@ -71,7 +70,7 @@ const Hero = ({ badge }: HeroProps) => {
                                             animate={{ y: 0, opacity: 1 }}
                                             exit={{ y: -50, opacity: 0 }}
                                             transition={{ duration: 0.5, ease: "circOut" }}
-                                            className="absolute left-0 block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400"
+                                            className="absolute left-0 block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 whitespace-nowrap"
                                         >
                                             {words[wordIndex]}
                                         </motion.span>
