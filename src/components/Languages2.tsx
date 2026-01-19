@@ -135,7 +135,7 @@ const Languages2 = () => {
                     {flags.map((flag, index) => {
                         const total = flags.length;
                         const angle = (index * (360 / total));
-                        const radius = isMobile ? 300 : 550; // Responsive radius logic
+                        const radius = isMobile ? 360 : 550; // Responsive radius logic
 
                         return (
                             <div

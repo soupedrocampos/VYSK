@@ -84,7 +84,7 @@ const Languages = ({ isStatic }: LanguagesProps) => {
                 </h2>
 
                 <p className="text-[#a0a0a0] text-lg md:text-[18px] max-w-2xl mx-auto mb-10 leading-relaxed border-t border-white/10 pt-6 mt-6">
-                    Especialista em N8N, SEO e SaaS. Do aquecimento de chips a automações complexas, construo a infraestrutura invisível que escala seu negócio.
+                    Domine a Nova Era do SEO e AEO. Estratégias avançadas de Search Engine & Answer Engine Optimization para posicionar sua marca onde a IA e os clientes realmente estão.
                 </p>
 
                 <a

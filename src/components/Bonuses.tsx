@@ -120,7 +120,7 @@ const Bonuses = ({ title, subtitle, badge }: BonusesProps) => {
                 </div>
 
                 {/* Bento Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[180px]">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[180px]">
                     {items.map((item, i) => (
                         <BentoCard
                             key={i}
@@ -148,8 +148,8 @@ const BentoCard = ({ colSpan, rowSpan, title, icon, children }: { colSpan: numbe
     <motion.div
         whileHover="hover"
         initial="initial"
-        className={`md:col-span-${colSpan} md:row-span-${rowSpan} bg-white/[0.02] backdrop-blur-md border border-white/10 rounded-3xl p-6 relative overflow-hidden group transition-all duration-300 cursor-default hover:border-white/20 hover:bg-white/[0.05]`}
-        style={{ gridColumn: `span ${colSpan} / span ${colSpan}`, gridRow: `span ${rowSpan} / span ${rowSpan}` }}
+        className={`col-span-1 row-span-1 md:col-span-${colSpan} md:row-span-${rowSpan} bg-white/[0.02] backdrop-blur-md border border-white/10 rounded-3xl p-6 relative overflow-hidden group transition-all duration-300 cursor-default hover:border-white/20 hover:bg-white/[0.05]`}
+        style={{ gridColumn: undefined, gridRow: undefined }}
     >
         {/* Background Image - n8n flow */}
         <img

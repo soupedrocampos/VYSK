@@ -44,7 +44,7 @@ const Workflow = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-human-bg via-transparent to-human-bg" />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 h-[800px] md:h-auto">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 h-auto">
                     {workflowItems.map((item, index) => (
                         <motion.div
                             key={index}

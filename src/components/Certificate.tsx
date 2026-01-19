@@ -71,7 +71,7 @@ const Certificate = () => {
                     </div>
 
                     {/* Floating Tags */}
-                    <div className="absolute top-1/2 -right-12 md:-right-24 transform -translate-y-1/2 flex flex-col gap-4">
+                    <div className="absolute top-[95%] left-1/2 -translate-x-1/2 md:top-1/2 md:-right-24 md:transform md:-translate-y-1/2 flex flex-col gap-4">
                         <div className="bg-black/80 backdrop-blur-md text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest shadow-xl">
                             {t('certificate.tag1')}
                         </div>
