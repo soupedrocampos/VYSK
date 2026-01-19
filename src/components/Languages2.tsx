@@ -42,6 +42,14 @@ const Languages2 = () => {
     const { t } = useLanguage();
     const { openModal } = useLeadModal();
     const [currentKeyword, setCurrentKeyword] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -73,7 +81,7 @@ const Languages2 = () => {
                                 animate={{ y: 0, opacity: 1 }}
                                 exit={{ y: -50, opacity: 0 }}
                                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                                className="block text-white font-cabinet font-bold text-5xl md:text-7xl lg:text-8xl leading-none tracking-tighter"
+                                className="block text-white font-cabinet font-bold text-5xl md:text-7xl lg:text-8xl leading-none tracking-tighter uppercase"
                             >
                                 {keywords[currentKeyword].label}
                             </motion.span>
@@ -127,7 +135,7 @@ const Languages2 = () => {
                     {flags.map((flag, index) => {
                         const total = flags.length;
                         const angle = (index * (360 / total));
-                        const radius = 550; // Increased radius for better spacing
+                        const radius = isMobile ? 300 : 550; // Responsive radius logic
 
                         return (
                             <div
@@ -136,6 +144,7 @@ const Languages2 = () => {
                                 style={{
                                     transform: `rotate(${angle}deg) translate(${radius}px) rotate(90deg)`
                                 }}
+
                             >
                                 {/* Main Flag - Clean, no overlays, no trails */}
                                 <div

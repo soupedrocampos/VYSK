@@ -219,10 +219,11 @@
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .sales-strategy-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
     }
 }
 

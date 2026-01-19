@@ -1,8 +1,17 @@
 
-> site-bom@0.0.0 build
+> site-bom@1.1.3 build
 > tsc -b && vite build
 
-src/components/Navbar.tsx(1,18): error TS6133: 'useScroll' is declared but its value is never read.
-src/components/Navbar.tsx(1,29): error TS6133: 'useMotionValueEvent' is declared but its value is never read.
-src/components/Navbar.tsx(2,1): error TS6192: All imports in import declaration are unused.
-src/pages/Sessions.tsx(1,1): error TS6133: 'motion' is declared but its value is never read.
+src/components/SalesStrategy.tsx(34,22): error TS6133: 'setIsZoomed' is declared but its value is never read.
+src/components/SalesStrategy.tsx(35,23): error TS6133: 'setZoomLevel' is declared but its value is never read.
+src/components/SalesStrategy.tsx(84,69): error TS2304: Cannot find name 'toggleFullscreen'.
+src/components/SalesStrategy.tsx(108,41): error TS2304: Cannot find name 'handleZoomOut'.
+src/components/SalesStrategy.tsx(120,41): error TS2304: Cannot find name 'handleZoomIn'.
+src/components/SalesStrategy.tsx(146,34): error TS2304: Cannot find name 'toggleFullscreen'.
+src/components/SalesStrategy.tsx(150,38): error TS2304: Cannot find name 'toggleFullscreen'.
+src/components/SalesStrategy.tsx(162,37): error TS2304: Cannot find name 'handleZoomOut'.
+src/components/SalesStrategy.tsx(173,37): error TS2304: Cannot find name 'handleZoomIn'.
+src/pages/admin/AdminContent.tsx(3,31): error TS6133: 'Edit' is declared but its value is never read.
+src/pages/admin/AdminCRM.tsx(7,47): error TS6133: 'updateClient' is declared but its value is never read.
+src/pages/Diagnostic.tsx(158,41): error TS2322: Type '{ url: string; width: string; height: string; controls: true; playing: false; }' is not assignable to type 'IntrinsicAttributes & Omit<ReactPlayerProps, "ref"> & RefAttributes<HTMLVideoElement>'.
+  Property 'url' does not exist on type 'IntrinsicAttributes & Omit<ReactPlayerProps, "ref"> & RefAttributes<HTMLVideoElement>'.

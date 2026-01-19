@@ -1,9 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, Users, FileText, LogOut, ShieldCheck, Menu, X } from 'lucide-react';
+import { LayoutDashboard, Users, FileText, LogOut, ShieldCheck, Menu, X, ClipboardList } from 'lucide-react';
 import { useAdmin } from '../context/AdminContext';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const AdminLayout = () => {
     const { isAuthenticated, logout } = useAdmin();
@@ -12,7 +10,7 @@ const AdminLayout = () => {
 
     // Redirect if not authenticated
     // In a real app, this should be a ProtectedRoute wrapper, but strict check here works for MVP
-    React.useEffect(() => {
+    useEffect(() => {
         if (!isAuthenticated) {
             navigate('/admin');
         }
@@ -29,6 +27,7 @@ const AdminLayout = () => {
         { path: '/admin/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
         { path: '/admin/crm', icon: Users, label: 'CRM / Clientes' },
         { path: '/admin/content', icon: FileText, label: 'Conteúdo' },
+        { path: '/admin/diagnostics', icon: ClipboardList, label: 'Diagnósticos' },
     ];
 
     return (

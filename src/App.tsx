@@ -5,6 +5,7 @@ import { HelmetProvider } from 'react-helmet-async';
 
 // Pages
 import Home from './pages/Home';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import Home2 from './pages/Home2';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
@@ -19,6 +20,7 @@ import AdminLayout from './layouts/AdminLayout';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminCRM from './pages/admin/AdminCRM';
 import AdminContent from './pages/admin/AdminContent';
+import AdminDiagnostics from './pages/admin/AdminDiagnostics';
 import { AdminProvider } from './context/AdminContext';
 import { LeadModalProvider } from './context/LeadModalContext';
 import LeadModal from './components/LeadModal';
@@ -46,6 +48,7 @@ function App() {
               <Route path="/worldpackers" element={<WorldpackersPage />} />
               <Route path="/estrategia" element={<SalesStrategyDemo />} />
               <Route path="/diagnostico" element={<Diagnostic />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
 
               {/* Admin Routes */}
               <Route path="/admin" element={<AdminLogin />} />
@@ -55,6 +58,7 @@ function App() {
                 <Route path="/admin/dashboard" element={<AdminDashboard />} />
                 <Route path="/admin/crm" element={<AdminCRM />} />
                 <Route path="/admin/content" element={<AdminContent />} />
+                <Route path="/admin/diagnostics" element={<AdminDiagnostics />} />
               </Route>
             </Routes>
           </AnimatePresence>

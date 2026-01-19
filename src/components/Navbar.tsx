@@ -2,9 +2,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { useLeadModal } from '../context/LeadModalContext';
 
 export default function Navbar() {
     const { t } = useLanguage();
+    const { openModal } = useLeadModal();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -55,6 +57,12 @@ export default function Navbar() {
                         <a
                             key={item.name}
                             href={item.href}
+                            onClick={(e) => {
+                                if (item.href === '#careers') {
+                                    e.preventDefault();
+                                    openModal();
+                                }
+                            }}
                             className={`
                                 relative px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300
                                 ${isScrolled ? 'text-white/80 hover:text-white hover:bg-white/10' : 'text-white/80 hover:text-white'}
@@ -110,7 +118,13 @@ export default function Navbar() {
                             <a
                                 key={item.name}
                                 href={item.href}
-                                onClick={() => setIsMobileMenuOpen(false)}
+                                onClick={(e) => {
+                                    if (item.href === '#careers') {
+                                        e.preventDefault();
+                                        openModal();
+                                    }
+                                    setIsMobileMenuOpen(false);
+                                }}
                                 className="text-white/80 hover:text-white font-bold uppercase tracking-wider text-lg py-2 border-b border-white/5 last:border-0"
                             >
                                 {item.name}

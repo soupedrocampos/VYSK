@@ -33,27 +33,10 @@ const SalesStrategy = ({
 }: SalesStrategyProps) => {
     const [isZoomed, setIsZoomed] = useState(false);
     const [zoomLevel, setZoomLevel] = useState(1);
-    const [isFlipped, setIsFlipped] = useState(false);
 
-    const handleZoomIn = () => {
-        setZoomLevel(prev => Math.min(prev + 0.25, 3));
-    };
-
-    const handleZoomOut = () => {
-        setZoomLevel(prev => Math.max(prev - 0.25, 1));
-    };
-
-    const toggleFullscreen = () => {
-        setIsZoomed(!isZoomed);
-        if (!isZoomed) {
-            setZoomLevel(1);
-        }
-    };
-
-    const toggleFlip = () => {
-        setIsFlipped(!isFlipped);
-    };
-
+    const toggleFullscreen = () => setIsZoomed(!isZoomed);
+    const handleZoomIn = () => setZoomLevel(prev => Math.min(prev + 0.5, 3));
+    const handleZoomOut = () => setZoomLevel(prev => Math.max(prev - 0.5, 1));
     return (
         <>
             <section className="sales-strategy-section">
@@ -98,8 +81,8 @@ const SalesStrategy = ({
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        {/* Desktop View - Original Card */}
-                        <div className="image-card hidden md:block">
+                        {/* Universal Card - Visible on all devices */}
+                        <div className="image-card">
                             <div className="image-wrapper" onClick={toggleFullscreen}>
                                 <div
                                     className="image-zoom-container"
@@ -148,53 +131,6 @@ const SalesStrategy = ({
                             <div className="image-footer">
                                 <span className="image-year">{year}</span>
                                 <span className="image-badge">{badge}</span>
-                            </div>
-                        </div>
-
-                        {/* Mobile View - Flip Card */}
-                        <div
-                            className={`flip-card md:hidden ${isFlipped ? 'flipped' : ''}`}
-                            onClick={toggleFlip}
-                        >
-                            <div className="flip-card-inner">
-                                {/* Front - Image */}
-                                <div className="flip-card-front">
-                                    <div className="image-card">
-                                        <div className="image-wrapper-mobile">
-                                            <img
-                                                src={imageUrl}
-                                                alt={imageAlt}
-                                                className="strategy-image"
-                                            />
-                                            <div className="flip-hint">
-                                                <span className="text-xs">Toque para ver detalhes</span>
-                                            </div>
-                                        </div>
-                                        <div className="image-footer">
-                                            <span className="image-year">{year}</span>
-                                            <span className="image-badge">{badge}</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Back - Features */}
-                                <div className="flip-card-back">
-                                    <div className="flip-card-content">
-                                        <h3 className="text-xl font-bold mb-3 text-white">{title}</h3>
-                                        <p className="text-sm text-gray-400 mb-4">{subtitle}</p>
-                                        <ul className="space-y-2">
-                                            {features.map((feature, index) => (
-                                                <li key={index} className="text-sm text-gray-300 flex items-start">
-                                                    <span className="text-human-green mr-2">●</span>
-                                                    <span>{feature}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                        <div className="mt-4 text-xs text-gray-500">
-                                            Toque novamente para voltar
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </motion.div>

@@ -1,20 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Lock, User, LogIn, LogOut, CheckCircle, AlertTriangle, XCircle, BarChart } from 'lucide-react';
+import ReactPlayer from 'react-player';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { diagnosticUsers, type IDiagnosticData } from '../data/diagnosticData';
+import { type IDiagnosticData } from '../data/diagnosticData';
+import { diagnosticService } from '../utils/diagnosticService';
 
 const Diagnostic = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [currentUser, setCurrentUser] = useState<IDiagnosticData | null>(null);
-    const [username, setUsername] = useState('');
+    // Initialize username from URL parameter 'u' if present
+    const [username, setUsername] = useState(() => {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('u') || '';
+    });
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
+    // Price Reveal State
+    const [isPriceRevealed, setIsPriceRevealed] = useState(false);
+    const [showPriceConfirm, setShowPriceConfirm] = useState(false);
+
+    // Admin Backdoor
+    const secretClickCount = useRef(0);
+    const secretClickTimeout = useRef<any>(null);
+
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
-        const user = diagnosticUsers.find(
+        const users = diagnosticService.getAll();
+        const user = users.find(
             (u) => u.username === username && u.password === password
         );
 
@@ -32,6 +47,8 @@ const Diagnostic = () => {
         setCurrentUser(null);
         setUsername('');
         setPassword('');
+        setIsPriceRevealed(false);
+        setShowPriceConfirm(false);
     };
 
     const getStatusColor = (status: 'good' | 'warning' | 'critical') => {
@@ -102,7 +119,23 @@ const Diagnostic = () => {
 
                                 <button
                                     type="submit"
-                                    className="w-full bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200 transition-colors flex items-center justify-center gap-2"
+                                    onClick={(e) => {
+                                        // Backdoor: 10 consecutive clicks to go to admin
+                                        if (secretClickTimeout.current) clearTimeout(secretClickTimeout.current);
+
+                                        secretClickCount.current += 1;
+
+                                        if (secretClickCount.current >= 10) {
+                                            e.preventDefault();
+                                            window.location.href = '/admin';
+                                            secretClickCount.current = 0;
+                                        } else {
+                                            secretClickTimeout.current = setTimeout(() => {
+                                                secretClickCount.current = 0;
+                                            }, 1000);
+                                        }
+                                    }}
+                                    className="w-full bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 select-none active:scale-95 duration-200"
                                 >
                                     <LogIn size={18} />
                                     ACESSAR DIAGNÓSTICO
@@ -115,10 +148,10 @@ const Diagnostic = () => {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.95 }}
-                            className="w-full max-w-5xl"
+                            className="w-full max-w-5xl space-y-8"
                         >
                             {/* Header */}
-                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
+                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                                 <div>
                                     <h1 className="text-3xl md:text-5xl font-bold font-cabinet mb-2">
                                         Olá, <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">{currentUser?.name}</span>
@@ -133,6 +166,27 @@ const Diagnostic = () => {
                                 </button>
                             </div>
 
+                            {/* Video Section */}
+                            {currentUser?.videoUrl && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className="w-full aspect-video rounded-3xl overflow-hidden border border-white/10 bg-black shadow-2xl relative"
+                                >
+                                    {/* @ts-ignore */}
+                                    <ReactPlayer
+                                        {...({
+                                            url: currentUser.videoUrl,
+                                            width: "100%",
+                                            height: "100%",
+                                            controls: true,
+                                            playing: false
+                                        } as any)}
+                                    />
+                                </motion.div>
+                            )}
+
+                            {/* Main Grid */}
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                                 {/* Score Card */}
                                 <div className="bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-3xl p-8 flex flex-col items-center justify-center text-center">
@@ -141,7 +195,7 @@ const Diagnostic = () => {
                                         <div className="absolute inset-0 border-4 border-t-purple-500 rounded-full rotate-45" />
                                     </div>
                                     <h3 className="text-xl font-bold mb-2">Pontuação Geral</h3>
-                                    <p className="text-gray-400 text-sm">Baseado em nossos 4 pilares de análise</p>
+                                    <p className="text-gray-400 text-sm">Baseado em 4 pilares</p>
                                 </div>
 
                                 {/* Summary */}
@@ -176,6 +230,24 @@ const Diagnostic = () => {
                                     ))}
                                 </div>
 
+                                {/* Analysis Sections (Persuasive Content) */}
+                                {currentUser?.analysisSections?.map((section, idx) => (
+                                    <motion.div
+                                        key={idx}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        className="md:col-span-3 bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/10 rounded-3xl p-8 md:p-12 relative overflow-hidden"
+                                    >
+                                        <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 blur-[100px] rounded-full pointer-events-none" />
+                                        <h3 className="text-2xl md:text-3xl font-cabinet font-bold mb-6 text-white">{section.title}</h3>
+                                        <div
+                                            className="text-gray-300 text-lg leading-relaxed whitespace-pre-wrap [&>img]:rounded-xl [&>img]:w-full [&>img]:my-4"
+                                            dangerouslySetInnerHTML={{ __html: section.content }}
+                                        />
+                                    </motion.div>
+                                ))}
+
                                 {/* Recommendations */}
                                 <div className="md:col-span-3 bg-gradient-to-br from-purple-900/20 to-blue-900/20 border border-white/10 rounded-3xl p-8">
                                     <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
@@ -193,7 +265,110 @@ const Diagnostic = () => {
                                         ))}
                                     </div>
                                 </div>
+
+                                {/* Price Reveal Section */}
+                                {currentUser?.price && (
+                                    <div className="md:col-span-3 mt-8 mb-20">
+                                        {!isPriceRevealed ? (
+                                            <motion.div
+                                                className="w-full bg-white/5 border border-white/10 rounded-3xl p-12 text-center cursor-pointer hover:bg-white/10 transition-colors group relative overflow-hidden"
+                                                onClick={() => setShowPriceConfirm(true)}
+                                                whileHover={{ scale: 1.01 }}
+                                            >
+                                                <div className="relative z-10 flex flex-col items-center gap-4">
+                                                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                                        <Lock className="text-white w-8 h-8" />
+                                                    </div>
+                                                    <h3 className="text-2xl font-bold text-white">VISUALIZAR INVESTIMENTO</h3>
+                                                    <p className="text-gray-400 max-w-md mx-auto">
+                                                        O plano de ação desenvolvido é exclusivo e de alto impacto. Clique para confirmar que você entende o valor da proposta.
+                                                    </p>
+                                                </div>
+                                            </motion.div>
+                                        ) : (
+                                            <motion.div
+                                                initial={{ opacity: 0, scale: 0.9 }}
+                                                animate={{ opacity: 1, scale: 1 }}
+                                                className="w-full bg-gradient-to-br from-purple-900/40 to-black border border-purple-500/30 rounded-3xl p-12 text-center relative overflow-hidden"
+                                            >
+                                                <div className="absolute inset-0 bg-[url('/assets/grid.svg')] opacity-10" />
+                                                <div className="relative z-10">
+                                                    <p className="text-purple-300 font-bold tracking-widest uppercase mb-4 text-sm">
+                                                        {currentUser.price.label}
+                                                    </p>
+                                                    <div className="flex flex-col items-center justify-center gap-2">
+                                                        {currentUser.price.originalValue && (
+                                                            <span className="text-gray-500 line-through text-2xl font-cabinet">
+                                                                {currentUser.price.originalValue}
+                                                            </span>
+                                                        )}
+                                                        <h2 className="text-6xl md:text-8xl font-cabinet font-bold text-white mb-2 tracking-tighter">
+                                                            {currentUser.price.value}
+                                                        </h2>
+                                                        <span className="px-4 py-2 bg-purple-500/20 text-purple-300 rounded-full text-xs font-bold uppercase border border-purple-500/20">
+                                                            Oferta Especial
+                                                        </span>
+                                                        <button
+                                                            className="mt-8 bg-white text-black px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform shadow-[0_0_30px_rgba(255,255,255,0.3)]"
+                                                            onClick={() => window.location.href = "https://wa.me/55999999999"} // Example WhatsApp link
+                                                        >
+                                                            GARANTIR MINHA VAGA
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        )}
+                                    </div>
+                                )}
                             </div>
+
+                            {/* Popup Confirmation */}
+                            <AnimatePresence>
+                                {showPriceConfirm && (
+                                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm">
+                                        <motion.div
+                                            initial={{ opacity: 0, scale: 0.9 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            exit={{ opacity: 0, scale: 0.9 }}
+                                            className="bg-[#111] border border-white/20 rounded-3xl p-8 max-w-md w-full relative"
+                                        >
+                                            <button
+                                                onClick={() => setShowPriceConfirm(false)}
+                                                className="absolute top-4 right-4 text-gray-500 hover:text-white"
+                                            >
+                                                <XCircle size={24} />
+                                            </button>
+
+                                            <div className="flex flex-col items-center text-center">
+                                                <div className="w-16 h-16 rounded-full bg-yellow-500/20 text-yellow-500 flex items-center justify-center mb-6">
+                                                    <AlertTriangle size={32} />
+                                                </div>
+                                                <h3 className="text-2xl font-bold font-cabinet text-white mb-4">Atenção: Alto Valor</h3>
+                                                <p className="text-gray-400 mb-8 leading-relaxed">
+                                                    Esta oferta inclui acompanhamento exclusivo e garantia de resultado. O investimento reflete a qualidade e o retorno esperado. Você está pronto para escalar seu negócio?
+                                                </p>
+                                                <div className="grid grid-cols-2 gap-4 w-full">
+                                                    <button
+                                                        onClick={() => setShowPriceConfirm(false)}
+                                                        className="px-6 py-3 rounded-xl border border-white/10 hover:bg-white/5 text-gray-400 font-bold text-sm"
+                                                    >
+                                                        VOLTAR
+                                                    </button>
+                                                    <button
+                                                        onClick={() => {
+                                                            setShowPriceConfirm(false);
+                                                            setIsPriceRevealed(true);
+                                                        }}
+                                                        className="px-6 py-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-sm shadow-lg shadow-purple-900/20"
+                                                    >
+                                                        SIM, ESTOU PRONTO
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </motion.div>
+                                    </div>
+                                )}
+                            </AnimatePresence>
                         </motion.div>
                     )}
                 </AnimatePresence>

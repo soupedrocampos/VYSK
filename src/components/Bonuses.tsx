@@ -62,11 +62,11 @@ const Bonuses = ({ title, subtitle, badge }: BonusesProps) => {
         },
         // Row 3 (Wide)
         {
-            colSpan: 2,
+            colSpan: 1,
             rowSpan: 1,
-            title: t('bonuses.card6.title'),
-            desc: t('bonuses.card6.desc'),
-            icon: <Globe className="w-5 h-5 text-cyan-400" />
+            title: t('bonuses.card8.title'),
+            desc: t('bonuses.card8.desc'),
+            icon: <ShoppingBag className="w-5 h-5 text-red-400" />
         },
         {
             colSpan: 2,
@@ -75,14 +75,14 @@ const Bonuses = ({ title, subtitle, badge }: BonusesProps) => {
             desc: t('bonuses.card7.desc'),
             icon: <BarChart className="w-5 h-5 text-yellow-400" />
         },
-        // Row 4 (Mixed)
         {
             colSpan: 1,
             rowSpan: 1,
-            title: t('bonuses.card8.title'),
-            desc: t('bonuses.card8.desc'),
-            icon: <ShoppingBag className="w-5 h-5 text-red-400" />
+            title: t('bonuses.card6.title'),
+            desc: t('bonuses.card6.desc'),
+            icon: <Globe className="w-5 h-5 text-cyan-400" />
         },
+        // Row 4 (Mixed)
         {
             colSpan: 1,
             rowSpan: 1,
@@ -91,7 +91,7 @@ const Bonuses = ({ title, subtitle, badge }: BonusesProps) => {
             icon: <Terminal className="w-5 h-5 text-gray-400" />
         },
         {
-            colSpan: 2,
+            colSpan: 3,
             rowSpan: 1,
             title: t('bonuses.card10.title'),
             desc: t('bonuses.card10.desc'),
