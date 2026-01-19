@@ -32,7 +32,7 @@ const Pricing = () => {
 
                         <div className="mt-8 relative group/price cursor-pointer w-fit mx-auto lg:mx-0">
                             <div className="flex items-baseline gap-3 transition-all duration-500 ease-in-out group-hover/price:blur-xl group-hover/price:opacity-0 group-hover/price:translate-y-4">
-                                <span className="text-4xl md:text-5xl font-bold text-white font-cabinet blur-[6px] select-none">R$ 5.000</span>
+                                <span className="text-5xl md:text-7xl font-bold text-white font-cabinet blur-[6px] select-none">R$ 997</span>
                                 <span className="text-gray-500 text-sm uppercase tracking-wider blur-[3px]">MENSAL</span>
                             </div>
 
