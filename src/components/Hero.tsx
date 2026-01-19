@@ -43,10 +43,10 @@ const Hero = ({ title, cta, badge }: HeroProps) => {
             </div>
 
             <div className="container mx-auto px-4 relative z-20 max-w-6xl">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="grid lg:grid-cols-[1.3fr_0.7fr] gap-16 items-center">
 
                     {/* Left Column: Content */}
-                    <div className="text-left max-w-2xl">
+                    <div className="text-left">
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -77,7 +77,7 @@ const Hero = ({ title, cta, badge }: HeroProps) => {
                                         </motion.span>
                                     </AnimatePresence>
                                 </div>
-                                <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 block mt-2'>COMEÇA AGORA</span>
+                                <span className='block mt-2'>COMEÇA AGORA</span>
                             </h1>
 
 
