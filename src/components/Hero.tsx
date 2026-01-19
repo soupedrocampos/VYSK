@@ -11,7 +11,7 @@ interface HeroProps {
     badge?: string;
 }
 
-const Hero = ({ title, cta, badge }: HeroProps) => {
+const Hero = ({ badge }: HeroProps) => {
     const { t } = useLanguage();
     const { openModal } = useLeadModal();
     const [wordIndex, setWordIndex] = useState(0);
