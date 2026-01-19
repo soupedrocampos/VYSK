@@ -2,7 +2,6 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import CourseDetails from '../components/CourseDetails';
 import Features from '../components/Features';
-import Languages from '../components/Languages';
 import Languages2 from '../components/Languages2';
 import TechStack from '../components/TechStack';
 import Workflow from '../components/Workflow';
@@ -31,7 +30,6 @@ const Home = () => {
             <CourseDetails />
             <AIToolsBento />
             <TechStack />
-            <Languages />
             <Workflow />
             <Instructors image="/assets/pedro-profile-new.png" />
             <Community />
