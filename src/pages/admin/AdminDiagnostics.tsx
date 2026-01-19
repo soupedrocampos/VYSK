@@ -182,7 +182,7 @@ const AdminDiagnostics = () => {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.95 }}
-                            className="bg-[#111] border border-white/10 rounded-3xl p-8 w-full max-w-2xl relative my-10"
+                            className="bg-[#111] border border-white/10 rounded-none md:rounded-3xl p-6 md:p-10 w-full h-full md:h-[95vh] relative flex flex-col"
                         >
                             <button
                                 onClick={() => setIsModalOpen(false)}
@@ -191,11 +191,11 @@ const AdminDiagnostics = () => {
                                 <X size={24} />
                             </button>
 
-                            <h3 className="font-cabinet font-bold text-2xl text-white mb-6">
+                            <h3 className="font-cabinet font-bold text-2xl text-white mb-6 shrink-0">
                                 {editingUser ? 'Editar Diagnóstico' : 'Novo Diagnóstico'}
                             </h3>
 
-                            <form onSubmit={handleSave} className="space-y-6">
+                            <form onSubmit={handleSave} className="space-y-6 overflow-y-auto flex-1 custom-scrollbar">
                                 {/* Basic Info */}
                                 <div className="grid grid-cols-2 gap-4">
                                     <div>
