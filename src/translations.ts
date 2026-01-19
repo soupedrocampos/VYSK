@@ -109,7 +109,44 @@ export const translations: Record<Language, Record<string, string>> = {
         "faq.q5": "How long does a project take?",
         "faq.a5": "Timelines vary by complexity. A landing page might take 1 week, while a full AI ecosystem could take 4-6 weeks.",
 
+        // Navbar Extra
+        "nav.access": "ACCESS",
+
+        // Pricing
+        "pricing.badge": "PRICING",
+        "pricing.offer_line1": "SPECIAL",
+        "pricing.offer_line2": "OFFER",
+        "pricing.desc": "Complete digital solutions to scale your business. We combine design, technology, and strategy to create extraordinary results.",
+        "pricing.consult": "GET QUOTE",
+        "pricing.card.title": "EXCLUSIVE SERVICES",
+        "pricing.card.subtitle": "FULL PACKAGE",
+        "pricing.card.desc": "Websites + Automation + Design + AI",
+        "pricing.card.button": "GET ACCESS",
+        "pricing.feat1": "High-End Web Development",
+        "pricing.feat2": "N8N Automation & AI",
+        "pricing.feat3": "Premium UI/UX Design",
+        "pricing.feat4": "Strategic Consulting",
+        "pricing.feat5": "Process Optimization",
+        "pricing.feat6": "Priority Support",
+        "pricing.feat7": "Delivery in 7-15 days",
+
+        // Certificate
+        "certificate.badge": "CERTIFICATE",
+        "certificate.title_line1": "OBTAIN",
+        "certificate.title_line2": "CERTIFICATION",
+        "certificate.card_title": "CERTIFICATE",
+        "certificate.awarded_to": "This certificate is awarded by Pedrovysk to",
+        "certificate.student": "STUDENT",
+        "certificate.tag1": "MENTORSHIP",
+        "certificate.tag2": "PERSONALIZED",
+        "certificate.recognized": "Recognized By",
+
         // Footer
+        "footer.contact": "Contact",
+        "footer.blog": "Blog",
+        "footer.slogan_line1": "THE FUTURE",
+        "footer.slogan_line2": "AWAITS",
+        "footer.slogan_line3": "NOW",
         "footer.rights": "All rights reserved.",
         "footer.privacy": "Privacy Policy",
         "footer.terms": "Terms of Service"
@@ -231,7 +268,44 @@ export const translations: Record<Language, Record<string, string>> = {
         "faq.q5": "Quanto tempo leva um projeto?",
         "faq.a5": "Os prazos variam conforme a complexidade. Uma Landing Page pode levar 1 semana, enquanto um ecossistema completo de IA pode levar de 4 a 6 semanas.",
 
+        // Navbar Extra
+        "nav.access": "ACESSAR",
+
+        // Pricing
+        "pricing.badge": "PREÇOS",
+        "pricing.offer_line1": "OFERTA",
+        "pricing.offer_line2": "ESPECIAL",
+        "pricing.desc": "Soluções digitais completas para escalar seu negócio. Unimos design, tecnologia e estratégia para criar resultados extraordinários.",
+        "pricing.consult": "CONSULTAR VALOR",
+        "pricing.card.title": "SERVIÇOS EXCLUSIVOS",
+        "pricing.card.subtitle": "PACOTE COMPLETO",
+        "pricing.card.desc": "Sites + Automação + Design + I.A.",
+        "pricing.card.button": "GARANTIR ACESSO",
+        "pricing.feat1": "Desenvolvimento Web High-End",
+        "pricing.feat2": "Automação com N8N e IA",
+        "pricing.feat3": "Design UI/UX Premium",
+        "pricing.feat4": "Consultoria Estratégica",
+        "pricing.feat5": "Otimização de Processos",
+        "pricing.feat6": "Suporte Prioritário",
+        "pricing.feat7": "Entrega em 7 a 15 dias",
+
+        // Certificate
+        "certificate.badge": "CERTIFICADO",
+        "certificate.title_line1": "OBTENHA",
+        "certificate.title_line2": "CERTIFICAÇÃO",
+        "certificate.card_title": "CERTIFICADO",
+        "certificate.awarded_to": "Este certificado é concedido por Pedrovysk a",
+        "certificate.student": "ALUNO",
+        "certificate.tag1": "MENTORIA",
+        "certificate.tag2": "PERSONALIZADA",
+        "certificate.recognized": "Reconhecido Por",
+
         // Footer
+        "footer.contact": "Contato",
+        "footer.blog": "Blog",
+        "footer.slogan_line1": "O FUTURO",
+        "footer.slogan_line2": "ESPERA",
+        "footer.slogan_line3": "AGORA",
         "footer.rights": "Todos os direitos reservados.",
         "footer.privacy": "Política de Privacidade",
         "footer.terms": "Termos de Serviço"
@@ -343,7 +417,44 @@ export const translations: Record<Language, Record<string, string>> = {
         "faq.q5": "¿Cuánto tiempo toma un proyecto?",
         "faq.a5": "Los plazos varían según la complejidad. Una Landing Page puede tomar 1 semana, mientras que un ecosistema completo de IA puede tomar de 4 a 6 semanas.",
 
+        // Navbar Extra
+        "nav.access": "ACCEDER",
+
+        // Pricing
+        "pricing.badge": "PRECIOS",
+        "pricing.offer_line1": "OFERTA",
+        "pricing.offer_line2": "ESPECIAL",
+        "pricing.desc": "Soluciones digitales completas para escalar su negocio. Unimos diseño, tecnología y estrategia para crear resultados extraordinarios.",
+        "pricing.consult": "CONSULTAR PRECIO",
+        "pricing.card.title": "SERVICIOS EXCLUSIVOS",
+        "pricing.card.subtitle": "PAQUETE COMPLETO",
+        "pricing.card.desc": "Sitios + Automatización + Diseño + IA",
+        "pricing.card.button": "OBTENER ACCESO",
+        "pricing.feat1": "Desarrollo Web High-End",
+        "pricing.feat2": "Automatización con N8N e IA",
+        "pricing.feat3": "Diseño UI/UX Premium",
+        "pricing.feat4": "Consultoría Estratégica",
+        "pricing.feat5": "Optimización de Procesos",
+        "pricing.feat6": "Soporte Prioritario",
+        "pricing.feat7": "Entrega en 7 a 15 días",
+
+        // Certificate
+        "certificate.badge": "CERTIFICADO",
+        "certificate.title_line1": "OBTENER",
+        "certificate.title_line2": "CERTIFICACIÓN",
+        "certificate.card_title": "CERTIFICADO",
+        "certificate.awarded_to": "Este certificado es otorgado por Pedrovysk a",
+        "certificate.student": "ESTUDIANTE",
+        "certificate.tag1": "MENTORÍA",
+        "certificate.tag2": "PERSONALIZADA",
+        "certificate.recognized": "Reconocido Por",
+
         // Footer
+        "footer.contact": "Contacto",
+        "footer.blog": "Blog",
+        "footer.slogan_line1": "EL FUTURO",
+        "footer.slogan_line2": "ESPERA",
+        "footer.slogan_line3": "AHORA",
         "footer.rights": "Todos los derechos reservados.",
         "footer.privacy": "Política de Privacidad",
         "footer.terms": "Términos de Servicio"

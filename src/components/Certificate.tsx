@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 
 const Certificate = () => {
+    const { t } = useLanguage();
     return (
         <section id="certificate" className="py-32 bg-human-bg font-satoshi overflow-hidden flex flex-col items-center justify-center relative">
 
@@ -12,12 +14,12 @@ const Certificate = () => {
                 <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-12">
                     <span className="text-xs font-bold tracking-widest uppercase text-white/80">GLOBAL</span>
                     <span className="w-px h-3 bg-white/20" />
-                    <span className="text-xs font-bold tracking-widest uppercase text-white/80">CERTIFICATE</span>
+                    <span className="text-xs font-bold tracking-widest uppercase text-white/80">{t('certificate.badge')}</span>
                 </div>
 
                 <h2 className="font-cabinet font-bold text-6xl md:text-8xl leading-none tracking-tighter text-white mb-20 uppercase">
-                    OBTENHA <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">CERTIFICAÇÃO</span>
+                    {t('certificate.title_line1')} <br />
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">{t('certificate.title_line2')}</span>
                 </h2>
 
                 {/* Certificate Card */}
@@ -41,11 +43,11 @@ const Certificate = () => {
                     </div>
 
                     <h3 className="text-5xl md:text-8xl font-bold font-cabinet tracking-tight mb-4 text-neutral-800">
-                        CERTIFICATE
+                        {t('certificate.card_title')}
                     </h3>
 
                     <p className="text-neutral-500 text-sm md:text-base uppercase tracking-widest mb-12">
-                        This certificate is awarded by Pedrovysk to
+                        {t('certificate.awarded_to')}
                     </p>
 
                     <div className="flex items-center justify-center gap-4 mb-16">
@@ -62,8 +64,8 @@ const Certificate = () => {
                                 M
                             </div>
                             <div>
-                                <p className="font-bold text-sm">MENTORIA</p>
-                                <p className="text-[10px] text-neutral-500 uppercase">STUDENT</p>
+                                <p className="font-bold text-sm">{t('certificate.tag1')}</p>
+                                <p className="text-[10px] text-neutral-500 uppercase">{t('certificate.student')}</p>
                             </div>
                         </div>
                     </div>
@@ -71,17 +73,17 @@ const Certificate = () => {
                     {/* Floating Tags */}
                     <div className="absolute top-1/2 -right-12 md:-right-24 transform -translate-y-1/2 flex flex-col gap-4">
                         <div className="bg-black/80 backdrop-blur-md text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest shadow-xl">
-                            MENTORIA
+                            {t('certificate.tag1')}
                         </div>
                         <div className="bg-white text-black px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest shadow-xl">
-                            PERSONALIZADA
+                            {t('certificate.tag2')}
                         </div>
                     </div>
                 </motion.div>
 
                 {/* Recognized By Marquee */}
                 <div className="mt-24 w-full overflow-hidden mask-image-gradient-sides opacity-60">
-                    <p className="text-sm font-bold tracking-widest uppercase text-white/40 mb-8">Recognized By</p>
+                    <p className="text-sm font-bold tracking-widest uppercase text-white/40 mb-8">{t('certificate.recognized')}</p>
                     <motion.div
                         className="flex gap-16 w-max items-center"
                         animate={{ x: ["0%", "-50%"] }}

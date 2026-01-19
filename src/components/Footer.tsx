@@ -1,6 +1,8 @@
 import { Instagram, Youtube, Phone, MessageCircle } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Footer = () => {
+    const { t } = useLanguage();
     return (
         <footer className="bg-human-bg pt-20 pb-12 px-4 overflow-hidden font-satoshi relative border-t border-white/5">
             <div className="container mx-auto">
@@ -15,13 +17,13 @@ const Footer = () => {
                 {/* Middle Section - Links */}
                 <div className="flex flex-col md:flex-row justify-between items-center mb-16 px-4 md:px-12">
                     <div className="flex flex-col gap-4 text-center md:text-left mb-8 md:mb-0">
-                        <a href="/privacy" className="text-gray-400 hover:text-white transition-colors text-xs uppercase tracking-widest">Privacy Policy</a>
-                        <a href="#" className="text-gray-400 hover:text-white transition-colors text-xs uppercase tracking-widest">Contact</a>
-                        <a href="/blog" className="text-gray-400 hover:text-white transition-colors text-xs uppercase tracking-widest">Blog</a>
+                        <a href="/privacy" className="text-gray-400 hover:text-white transition-colors text-xs uppercase tracking-widest">{t('footer.privacy')}</a>
+                        <a href="#" className="text-gray-400 hover:text-white transition-colors text-xs uppercase tracking-widest">{t('footer.contact')}</a>
+                        <a href="/blog" className="text-gray-400 hover:text-white transition-colors text-xs uppercase tracking-widest">{t('footer.blog')}</a>
                     </div>
 
                     <div className="text-center md:text-right">
-                        <h3 className="text-xl md:text-3xl font-light text-white uppercase tracking-widest">THE FUTURE <br /> AWAITS <br /> <span className="font-bold">NOW</span></h3>
+                        <h3 className="text-xl md:text-3xl font-light text-white uppercase tracking-widest">{t('footer.slogan_line1')} <br /> {t('footer.slogan_line2')} <br /> <span className="font-bold">{t('footer.slogan_line3')}</span></h3>
                     </div>
                 </div>
 
@@ -30,7 +32,7 @@ const Footer = () => {
                     {/* Left - Copyright */}
                     <div className="text-center md:text-left">
                         <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-1">2026 Pedrovysk</h4>
-                        <p className="text-gray-600 text-[10px]">All Rights Reserved.</p>
+                        <p className="text-gray-600 text-[10px]">{t('footer.rights')}</p>
                     </div>
 
                     {/* Center - Spinner */}
