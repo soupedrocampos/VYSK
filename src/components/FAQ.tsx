@@ -1,32 +1,19 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
-
-const faqs = [
-    {
-        question: "Quais softwares e ferramentas de IA serão abordados?",
-        answer: "O Pacote Global dá acesso a um ecossistema completo de estratégias que exploram as ferramentas de IA mais poderosas para criação de imagem, vídeo, texto e som. Cada ferramenta é apresentada de forma prática, mostrando como usá-la criativamente e integrá-la ao seu fluxo de trabalho profissional."
-    },
-    {
-        question: "Preciso de experiência anterior em produção audiovisual?",
-        answer: "Não, o conteúdo foi desenhado para te levar do zero ao avançado. Começamos com os fundamentos de configuração de contas e navegação nas interfaces, progredindo para técnicas avançadas. Seja você um iniciante total ou um criador experiente, encontrará valor."
-    },
-    {
-        question: "Receberei um certificado ao final do curso?",
-        answer: "Sim, ao completar os módulos, você receberá um certificado de conclusão, validando seu conhecimento abrangente em fluxos de trabalho criativos impulsionados por IA."
-    },
-    {
-        question: "Como posso aplicar as técnicas aprendidas no meu trabalho atual?",
-        answer: "As técnicas ensinadas são aplicáveis em vários campos criativos, incluindo design gráfico, edição de vídeo, marketing, criação de conteúdo e mais. Você aprenderá workflows que podem acelerar sua produção, melhorar a qualidade e abrir novas possibilidades criativas."
-    },
-    {
-        question: "O curso foca apenas em criar vídeos com IA?",
-        answer: "Não. Embora o vídeo seja um componente importante, o Pacote Global também cobre Geração de Imagem, Criação de Clones e Upscaling. É uma abordagem holística para a produção de mídia com IA."
-    }
-];
+import { useLanguage } from '../context/LanguageContext';
 
 const FAQ = () => {
+    const { t } = useLanguage();
     const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+    const faqs = [
+        { question: t('faq.q1'), answer: t('faq.a1') },
+        { question: t('faq.q2'), answer: t('faq.a2') },
+        { question: t('faq.q3'), answer: t('faq.a3') },
+        { question: t('faq.q4'), answer: t('faq.a4') },
+        { question: t('faq.q5'), answer: t('faq.a5') }
+    ];
 
     return (
         <section id="faq" className="py-24 bg-human-bg font-satoshi relative">
@@ -34,11 +21,11 @@ const FAQ = () => {
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-6">
                         <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                        <span className="text-xs font-bold tracking-widest uppercase text-white/80">Dúvidas</span>
+                        <span className="text-xs font-bold tracking-widest uppercase text-white/80">{t('faq.badge')}</span>
                     </div>
                     <h2 className="font-cabinet font-bold text-6xl md:text-8xl leading-none tracking-tighter text-white mb-8">
-                        PERGUNTAS <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">FREQUENTES</span>
+                        {t('faq.title').split('\n')[0]} <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">{t('faq.title').split('\n')[1]}</span>
                     </h2>
                 </div>
 

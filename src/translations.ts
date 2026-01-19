@@ -13,8 +13,8 @@ export const translations: Record<Language, Record<string, string>> = {
         "hero.line1": "THE FUTURE OF",
         "hero.line2": "YOUR",
         "hero.description": "Master the art of AI creation with our comprehensive suite of tools and courses.",
-        "cta.title": "HERE'S WHAT\nYOU'LL GET",
-        "cta.button": "GET A QUOTE",
+        "hero.cta": "START NOW",
+        "hero.secondary_cta": "LEARN MORE",
         "hero.rotating_words": "BUSINESS,BRAND,STORE",
 
         // Languages Section
@@ -94,6 +94,20 @@ export const translations: Record<Language, Record<string, string>> = {
         "cta.badge_sub": "PACKAGE",
         "cta.title": "HERE'S WHAT\nYOU'LL GET",
         "cta.button": "GET A QUOTE",
+
+        // FAQs
+        "faq.badge": "DOUBTS",
+        "faq.title": "FREQUENTLY ASKED\nQUESTIONS",
+        "faq.q1": "What services do you provide?",
+        "faq.a1": "We offer a complete ecosystem: High-end Web Development, AI Automation Agents, and Growth Marketing strategies.",
+        "faq.q2": "How does the pricing work?",
+        "faq.a2": "All our projects are custom-tailored. We analyze your specific needs to provide a personalized quote that fits your goals.",
+        "faq.q3": "Do you provide support after launch?",
+        "faq.a3": "Yes! We offer ongoing support and maintenance packages to ensure your digital tools remain efficient and up-to-date.",
+        "faq.q4": "What technologies do you use?",
+        "faq.a4": "We work with the latest tech stack including React, Tailwind, Supabase, and advanced AI models like GPT-4 and Claude for automations.",
+        "faq.q5": "How long does a project take?",
+        "faq.a5": "Timelines vary by complexity. A landing page might take 1 week, while a full AI ecosystem could take 4-6 weeks.",
 
         // Footer
         "footer.rights": "All rights reserved.",
@@ -203,6 +217,20 @@ export const translations: Record<Language, Record<string, string>> = {
         "cta.title": "TIRE SUA IDEIA\nDO PAPEL HOJE",
         "cta.button": "OBTENHA ORÇAMENTO",
 
+        // FAQs
+        "faq.badge": "DÚVIDAS",
+        "faq.title": "PERGUNTAS\nFREQUENTES",
+        "faq.q1": "Quais serviços vocês oferecem?",
+        "faq.a1": "Oferecemos um ecossistema completo: Desenvolvimento Web High-End, Agentes de Automação com IA e Estratégias de Marketing de Growth.",
+        "faq.q2": "Como funciona o orçamento?",
+        "faq.a2": "Todos os nossos projetos são personalizados. Analisamos suas necessidades específicas para fornecer um orçamento sob medida para seus objetivos.",
+        "faq.q3": "Vocês dão suporte após a entrega?",
+        "faq.a3": "Sim! Oferecemos pacotes contínuos de suporte e manutenção para garantir que suas ferramentas digitais permaneçam eficientes e atualizadas.",
+        "faq.q4": "Quais tecnologias vocês usam?",
+        "faq.a4": "Trabalhamos com o stack mais moderno, incluindo React, Tailwind, Supabase e modelos avançados de IA como GPT-4 e Claude.",
+        "faq.q5": "Quanto tempo leva um projeto?",
+        "faq.a5": "Os prazos variam conforme a complexidade. Uma Landing Page pode levar 1 semana, enquanto um ecossistema completo de IA pode levar de 4 a 6 semanas.",
+
         // Footer
         "footer.rights": "Todos os direitos reservados.",
         "footer.privacy": "Política de Privacidade",
@@ -300,6 +328,20 @@ export const translations: Record<Language, Record<string, string>> = {
         "cta.badge_sub": "PAQUETE",
         "cta.title": "AQUÍ ESTÁ LO QUE\nOBTENDRÁS",
         "cta.button": "OBTENER PRESUPUESTO",
+
+        // FAQs
+        "faq.badge": "DUDAS",
+        "faq.title": "PREGUNTAS\nFRECUENTES",
+        "faq.q1": "¿Qué servicios ofrecen?",
+        "faq.a1": "Ofrecemos un ecosistema completo: Desarrollo Web de Alta Gama, Agentes de Automatización con IA y Estrategias de Growth Marketing.",
+        "faq.q2": "¿Cómo funciona el presupuesto?",
+        "faq.a2": "Todos nuestros proyectos son personalizados. Analizamos sus necesidades específicas para proporcionar un presupuesto a medida para sus objetivos.",
+        "faq.q3": "¿Ofrecen soporte después de la entrega?",
+        "faq.a3": "¡Sí! Ofrecemos paquetes continuos de soporte y mantenimiento para asegurar que sus herramientas digitales permanezcan eficientes y actualizadas.",
+        "faq.q4": "¿Qué tecnologías utilizan?",
+        "faq.a4": "Trabajamos con el stack más moderno, incluyendo React, Tailwind, Supabase y modelos avanzados de IA como GPT-4 y Claude.",
+        "faq.q5": "¿Cuánto tiempo toma un proyecto?",
+        "faq.a5": "Los plazos varían según la complejidad. Una Landing Page puede tomar 1 semana, mientras que un ecosistema completo de IA puede tomar de 4 a 6 semanas.",
 
         // Footer
         "footer.rights": "Todos los derechos reservados.",
