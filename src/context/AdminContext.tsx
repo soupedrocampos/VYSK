@@ -18,6 +18,15 @@ interface Article {
     content?: string; // HTML or Markdown content
 }
 
+export interface PageMetadata {
+    id: string;
+    path: string;
+    name: string;
+    title: string;
+    description: string;
+    ogImage: string;
+}
+
 interface AdminContextType {
     isAuthenticated: boolean;
     login: (password: string) => boolean;
@@ -30,6 +39,8 @@ interface AdminContextType {
     addArticle: (article: Omit<Article, 'id'>) => void;
     updateArticle: (id: string, article: Partial<Article>) => void;
     deleteArticle: (id: string) => void;
+    pages: PageMetadata[];
+    updatePageMetadata: (id: string, metadata: Partial<PageMetadata>) => void;
 }
 
 const AdminContext = createContext<AdminContextType | undefined>(undefined);
@@ -38,6 +49,11 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
     const [clients, setClients] = useState<Client[]>([]);
     const [articles, setArticles] = useState<Article[]>([]);
+    const [pages, setPages] = useState<PageMetadata[]>([
+        { id: '1', path: '/', name: 'Home', title: 'VYSK | Scale Your Business', description: 'Potencialize seu negócio com IA.', ogImage: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop' },
+        { id: '2', path: '/blog', name: 'Blog', title: 'VYSK | Blog', description: 'Artigos e insights sobre tecnologia e crescimento.', ogImage: 'https://images.unsplash.com/photo-1499750310159-5b9887039e5b?q=80&w=2668&auto=format&fit=crop' },
+        { id: '3', path: '/services', name: 'Serviços', title: 'VYSK | Nossos Serviços', description: 'Conheça nossas soluções de alta performance.', ogImage: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2670&auto=format&fit=crop' },
+    ]);
 
     // Load initial state
     useEffect(() => {
@@ -49,6 +65,9 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
         const storedArticles = localStorage.getItem('admin_articles');
         if (storedArticles) setArticles(JSON.parse(storedArticles));
+
+        const storedPages = localStorage.getItem('admin_pages_metadata');
+        if (storedPages) setPages(JSON.parse(storedPages));
     }, []);
 
     // Save state changes
@@ -64,6 +83,10 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     useEffect(() => {
         localStorage.setItem('admin_articles', JSON.stringify(articles));
     }, [articles]);
+
+    useEffect(() => {
+        localStorage.setItem('admin_pages_metadata', JSON.stringify(pages));
+    }, [pages]);
 
     const login = (password: string) => {
         if (password === 'Senha@2020') {
@@ -105,6 +128,11 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         setArticles(prev => prev.filter(a => a.id !== id));
     };
 
+    // Page Metadata CRUD
+    const updatePageMetadata = (id: string, updates: Partial<PageMetadata>) => {
+        setPages(prev => prev.map(p => p.id === id ? { ...p, ...updates } : p));
+    };
+
     return (
         <AdminContext.Provider value={{
             isAuthenticated,
@@ -117,7 +145,9 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
             articles,
             addArticle,
             updateArticle,
-            deleteArticle
+            deleteArticle,
+            pages,
+            updatePageMetadata
         }}>
             {children}
         </AdminContext.Provider>

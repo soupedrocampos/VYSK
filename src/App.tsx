@@ -21,6 +21,7 @@ import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminCRM from './pages/admin/AdminCRM';
 import AdminContent from './pages/admin/AdminContent';
 import AdminDiagnostics from './pages/admin/AdminDiagnostics';
+import AdminPages from './pages/admin/AdminPages';
 import { AdminProvider } from './context/AdminContext';
 import { LeadModalProvider } from './context/LeadModalContext';
 import LeadModal from './components/LeadModal';
@@ -58,6 +59,7 @@ function App() {
                 <Route path="/admin/dashboard" element={<AdminDashboard />} />
                 <Route path="/admin/crm" element={<AdminCRM />} />
                 <Route path="/admin/content" element={<AdminContent />} />
+                <Route path="/admin/pages" element={<AdminPages />} />
                 <Route path="/admin/diagnostics" element={<AdminDiagnostics />} />
               </Route>
             </Routes>

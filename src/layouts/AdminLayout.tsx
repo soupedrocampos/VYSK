@@ -1,5 +1,5 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, Users, FileText, LogOut, ShieldCheck, Menu, X, ClipboardList } from 'lucide-react';
+import { LayoutDashboard, Users, FileText, LogOut, ShieldCheck, Menu, X, ClipboardList, Globe } from 'lucide-react';
 import { useAdmin } from '../context/AdminContext';
 import { useState, useEffect } from 'react';
 
@@ -27,6 +27,7 @@ const AdminLayout = () => {
         { path: '/admin/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
         { path: '/admin/crm', icon: Users, label: 'CRM / Clientes' },
         { path: '/admin/content', icon: FileText, label: 'Conteúdo' },
+        { path: '/admin/pages', icon: Globe, label: 'Páginas' },
         { path: '/admin/diagnostics', icon: ClipboardList, label: 'Diagnósticos' },
     ];
 

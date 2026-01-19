@@ -1,73 +1,86 @@
-# React + TypeScript + Vite
+# Pedrovysk Digital | Soluções Digitais & IA 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bem-vindo ao repositório oficial do projeto **Pedrovysk**. Este é um site High-End focado em oferecer soluções digitais premium, incluindo desenvolvimento web, inteligência artificial e estratégias de marketing.
 
-Currently, two official plugins are available:
+## 🛠 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O projeto foi construído utilizando as tecnologias mais modernas do mercado para garantir performance extrema e uma experiência visual impactante.
 
-## React Compiler
+- **Frontend Framework:** [React 19](https://react.dev/)
+- **Linguagem:** [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool:** [Vite](https://vitejs.dev/)
+- **Estilização:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animações:** [Framer Motion](https://www.framer.com/motion/)
+- **Ícones:** [Lucide React](https://lucide.dev/)
+- **Roteamento:** [React Router DOM](https://reactrouter.com/)
+- **SEO:** [React Helmet Async](https://github.com/staylor/react-helmet-async)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Funcionalidades Principais
 
-## Expanding the ESLint configuration
+- **Hero Section Imersiva:** Vídeo de fundo com tipografia grande e moderna ("High-End"), com efeitos de texto rotativo.
+- **Design Responsivo Premium:** Layouts adaptáveis (Mobile/Desktop) com foco em UX/UI.
+- **Bento Grid:** Apresentação de features e serviços em formato de grid moderno.
+- **Internacionalização (i18n):** Suporte para múltiplos idiomas (simulado/preparado via Context API).
+- **Blog Integrado:** Sistema de blog com renderização de posts dinâmicos.
+- **Efeitos Visuais:** Scroll animations, glassmorphism e gradientes vibrantes.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Como Executar
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Siga os passos abaixo para rodar o projeto localmente.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Pré-requisitos
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js (v18+ recomendado)
+- npm ou yarn
+
+### Instalação
+
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/VYSK.git
+
+# Entre na pasta do projeto
+cd VYSK
+
+# Instale as dependências
+npm install
+# ou
+yarn
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Rodando o Servidor de Desenvolvimento
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+O projeto estará rodando em: `http://localhost:3000` (ou porta disponível).
+
+### Build para Produção
+
+```bash
+npm run build
+```
+
+## 📂 Estrutura do Projeto
+
+```
+src/
+├── components/      # Componentes reutilizáveis (Hero, Footer, Navbar, etc.)
+├── context/         # React Contexts (ex: LanguageContext)
+├── data/            # Dados estáticos (Blog posts, configurações)
+├── pages/           # Páginas da aplicação (Home, Blog, SEOPage, etc.)
+├── translations.ts  # Arquivo de traduções (PT/EN/ES)
+├── main.tsx         # Ponto de entrada
+├── index.css        # Estilos globais e configuração Tailwind
+└── App.tsx          # Componente Raiz e Rotas
+```
+
+## 🎨 Design System
+
+- **Fontes:** Cabinet Grotesk (Títulos), Satoshi (Corpo), Outfit (Geral).
+- **Cores:** Paleta escura (bg-human-bg) com acentos em Roxo/Rosa (Gradients).
+
+## 📄 Licença
+
+Este projeto é proprietário e desenvolvido por **Pedrovysk Digital**. Todos os direitos reservados.

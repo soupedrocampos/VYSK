@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Plus, Trash, FileText, Globe, Layout } from 'lucide-react';
+import { Plus, Trash, FileText, Globe, Layout, X } from 'lucide-react';
 import { useAdmin } from '../../context/AdminContext';
+import SEOAnalyzer from '../../components/admin/SEOAnalyzer';
 
 const AdminContent = () => {
     const { articles, addArticle, deleteArticle } = useAdmin();
@@ -9,17 +10,34 @@ const AdminContent = () => {
 
     const [formData, setFormData] = useState({
         title: '',
+        slug: '',
         type: 'Article' as 'Article' | 'Case Study' | 'SaaS',
         status: 'Draft' as 'Draft' | 'Published',
         date: new Date().toISOString().split('T')[0],
-        content: ''
+        content: '',
+        focusKeyword: ''
     });
+
+    // Auto-generate slug from title
+    const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const title = e.target.value;
+        const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+        setFormData(prev => ({ ...prev, title, slug }));
+    };
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         addArticle(formData);
         setIsModalOpen(false);
-        setFormData({ title: '', type: 'Article', status: 'Draft', date: new Date().toISOString().split('T')[0], content: '' });
+        setFormData({
+            title: '',
+            slug: '',
+            type: 'Article',
+            status: 'Draft',
+            date: new Date().toISOString().split('T')[0],
+            content: '',
+            focusKeyword: ''
+        });
     };
 
     return (
@@ -93,60 +111,120 @@ const AdminContent = () => {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.95 }}
-                            className="bg-[#111] border border-white/10 rounded-3xl p-8 w-full max-w-lg relative"
+                            className="bg-[#111] border border-white/10 rounded-3xl w-[95vw] h-[90vh] relative flex overflow-hidden"
                         >
+                            {/* Close Button */}
                             <button
                                 onClick={() => setIsModalOpen(false)}
-                                className="absolute top-4 right-4 text-gray-500 hover:text-white"
+                                className="absolute top-6 right-6 text-gray-500 hover:text-white z-50 p-2 hover:bg-white/10 rounded-full transition-colors"
                             >
-                                <Search className="rotate-45" size={24} />
+                                <X size={24} />
                             </button>
 
-                            <h3 className="font-cabinet font-bold text-2xl text-white mb-6">Novo Conteúdo</h3>
+                            <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
 
-                            <form onSubmit={handleSubmit} className="space-y-4">
-                                <div>
-                                    <label className="text-xs text-gray-500 uppercase font-bold ml-1">Título</label>
-                                    <input
-                                        required
-                                        className="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-blue-500"
-                                        value={formData.title}
-                                        onChange={e => setFormData({ ...formData, title: e.target.value })}
-                                    />
+                                {/* LEFT COLUMN - EDITOR */}
+                                <div className="flex-1 p-8 overflow-y-auto border-r border-white/5 custom-scrollbar">
+                                    <h3 className="font-cabinet font-bold text-3xl text-white mb-8">Novo Conteúdo</h3>
+
+                                    <form onSubmit={handleSubmit} className="space-y-6">
+                                        <div className="space-y-4">
+                                            <div>
+                                                <label className="text-xs text-gray-500 uppercase font-bold ml-1 mb-1 block">Título do Artigo</label>
+                                                <input
+                                                    required
+                                                    className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-white text-lg focus:outline-none focus:border-blue-500 transition-colors placeholder:text-gray-600"
+                                                    placeholder="Digite um título atrativo..."
+                                                    value={formData.title}
+                                                    onChange={handleTitleChange}
+                                                />
+                                            </div>
+
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                <div>
+                                                    <label className="text-xs text-gray-500 uppercase font-bold ml-1 mb-1 block">Slug (URL)</label>
+                                                    <input
+                                                        className="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-gray-300 font-mono text-sm focus:outline-none focus:border-blue-500"
+                                                        value={formData.slug}
+                                                        onChange={e => setFormData({ ...formData, slug: e.target.value })}
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <label className="text-xs text-gray-500 uppercase font-bold ml-1 mb-1 block">Palavra-chave Foco</label>
+                                                    <input
+                                                        className="w-full bg-blue-500/10 border border-blue-500/20 rounded-xl p-3 text-blue-400 font-bold focus:outline-none focus:border-blue-500 placeholder:text-blue-500/30"
+                                                        placeholder="Ex: marketing digital"
+                                                        value={formData.focusKeyword}
+                                                        onChange={e => setFormData({ ...formData, focusKeyword: e.target.value })}
+                                                    />
+                                                </div>
+                                            </div>
+
+                                            <div className="grid grid-cols-2 gap-4">
+                                                <div>
+                                                    <label className="text-xs text-gray-500 uppercase font-bold ml-1 mb-1 block">Tipo</label>
+                                                    <select
+                                                        className="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-blue-500 cursor-pointer [&>option]:bg-[#222]"
+                                                        value={formData.type}
+                                                        onChange={e => setFormData({ ...formData, type: e.target.value as any })}
+                                                    >
+                                                        <option value="Article">Artigo</option>
+                                                        <option value="Case Study">Case Study</option>
+                                                        <option value="SaaS">SaaS</option>
+                                                    </select>
+                                                </div>
+                                                <div>
+                                                    <label className="text-xs text-gray-500 uppercase font-bold ml-1 mb-1 block">Status</label>
+                                                    <select
+                                                        className="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-blue-500 cursor-pointer [&>option]:bg-[#222]"
+                                                        value={formData.status}
+                                                        onChange={e => setFormData({ ...formData, status: e.target.value as any })}
+                                                    >
+                                                        <option value="Draft">Rascunho</option>
+                                                        <option value="Published">Publicado</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <label className="text-xs text-gray-500 uppercase font-bold ml-1 mb-1 block">Conteúdo</label>
+                                                <textarea
+                                                    className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-blue-500 min-h-[400px] font-mono text-sm leading-relaxed resize-y placeholder:text-gray-700"
+                                                    placeholder="Escreva seu conteúdo incrível aqui (suporta HTML básico)..."
+                                                    value={formData.content}
+                                                    onChange={e => setFormData({ ...formData, content: e.target.value })}
+                                                />
+                                                <p className="text-right text-xs text-gray-500 mt-2">
+                                                    {formData.content.split(/\s+/).filter(w => w.length > 0).length} palavras
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div className="pt-4 border-t border-white/10">
+                                            <button
+                                                type="submit"
+                                                className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl shadow-[0_0_30px_rgba(37,99,235,0.2)] hover:shadow-[0_0_50px_rgba(37,99,235,0.4)] transition-all transform hover:-translate-y-1"
+                                            >
+                                                Salvar Conteúdo
+                                            </button>
+                                        </div>
+                                    </form>
                                 </div>
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div>
-                                        <label className="text-xs text-gray-500 uppercase font-bold ml-1">Tipo</label>
-                                        <select
-                                            className="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-blue-500"
-                                            value={formData.type}
-                                            onChange={e => setFormData({ ...formData, type: e.target.value as any })}
-                                        >
-                                            <option value="Article">Artigo</option>
-                                            <option value="Case Study">Case Study</option>
-                                            <option value="SaaS">SaaS</option>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <label className="text-xs text-gray-500 uppercase font-bold ml-1">Status</label>
-                                        <select
-                                            className="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-blue-500"
-                                            value={formData.status}
-                                            onChange={e => setFormData({ ...formData, status: e.target.value as any })}
-                                        >
-                                            <option value="Draft">Rascunho</option>
-                                            <option value="Published">Publicado</option>
-                                        </select>
+
+                                {/* RIGHT COLUMN - SEO ANALYZER */}
+                                <div className="w-full md:w-[400px] lg:w-[450px] bg-[#0a0a0a] border-l border-white/5 overflow-y-auto custom-scrollbar p-6">
+                                    <div className="sticky top-0">
+                                        <h4 className="font-bold text-gray-400 text-xs uppercase tracking-widest mb-4">Ferramentas de Otimização</h4>
+                                        <SEOAnalyzer
+                                            title={formData.title}
+                                            slug={formData.slug}
+                                            content={formData.content}
+                                            focusKeyword={formData.focusKeyword}
+                                        />
                                     </div>
                                 </div>
 
-                                <button
-                                    type="submit"
-                                    className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl mt-4"
-                                >
-                                    Criar
-                                </button>
-                            </form>
+                            </div>
                         </motion.div>
                     </div>
                 )}

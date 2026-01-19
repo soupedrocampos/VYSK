@@ -21,7 +21,7 @@ const Hero = ({ badge }: HeroProps) => {
     useEffect(() => {
         const interval = setInterval(() => {
             setWordIndex((prev) => (prev + 1) % words.length);
-        }, 2000);
+        }, 1500);
         return () => clearInterval(interval);
     }, [words.length]);
 
