@@ -62,7 +62,7 @@ const Certificate = () => {
                                 M
                             </div>
                             <div>
-                                <p className="font-bold text-sm">Marioo</p>
+                                <p className="font-bold text-sm">MENTORIA</p>
                                 <p className="text-[10px] text-neutral-500 uppercase">STUDENT</p>
                             </div>
                         </div>
