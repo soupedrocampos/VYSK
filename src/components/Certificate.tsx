@@ -55,7 +55,7 @@ const Certificate = () => {
                         </span>
                     </div>
 
-                    <div className="flex flex-col md:flex-row items-center justify-between border-t border-neutral-200 pt-8 mt-12 gap-8 text-left">
+                    <div className="flex flex-col md:flex-row items-center justify-center border-t border-neutral-200 pt-8 mt-12 gap-8 text-left">
 
                         <div className="flex items-center gap-4">
                             <div className="w-12 h-12 border border-neutral-300 rounded-lg flex items-center justify-center text-4xl font-handwriting">
@@ -65,16 +65,6 @@ const Certificate = () => {
                                 <p className="font-bold text-sm">Marioo</p>
                                 <p className="text-[10px] text-neutral-500 uppercase">STUDENT</p>
                             </div>
-                        </div>
-
-                        <div className="text-center md:text-left border-l border-r border-neutral-200 px-12 py-2">
-                            <p className="text-xs text-neutral-500 uppercase tracking-wider mb-1">Date of Issue: 03/11/2025</p>
-                        </div>
-
-                        <div className="text-right">
-                            <p className="text-[10px] text-neutral-500 uppercase leading-tight">
-                                12 hours workload <br /> divided across 2 days
-                            </p>
                         </div>
                     </div>
 
