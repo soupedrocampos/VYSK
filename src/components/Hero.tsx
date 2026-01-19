@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ArrowDown, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { useLeadModal } from '../context/LeadModalContext';
@@ -13,6 +14,15 @@ interface HeroProps {
 const Hero = ({ title, cta, badge }: HeroProps) => {
     const { t } = useLanguage();
     const { openModal } = useLeadModal();
+    const [wordIndex, setWordIndex] = useState(0);
+    const words = ["EMPRESA", "MARCA", "LOJA"];
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setWordIndex((prev) => (prev + 1) % words.length);
+        }, 2000);
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <section id="hero" className="relative h-[100dvh] w-full bg-human-bg text-white overflow-hidden selection:bg-human-green/30 selection:text-white font-sans flex items-center">
@@ -28,7 +38,7 @@ const Hero = ({ title, cta, badge }: HeroProps) => {
                 >
                     <source src="/assets/hero-video.mp4" type="video/mp4" />
                 </video>
-                {/* Soft Gradient Overlay - Top and Bottom fade for better text readability and seamless transition */}
+                {/* Soft Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-human-bg/90 z-10" />
             </div>
 
@@ -48,27 +58,41 @@ const Hero = ({ title, cta, badge }: HeroProps) => {
                                 <span className="w-px h-3 bg-white/20" />
                                 <span className="text-xs font-bold tracking-widest uppercase text-white/90">{badge || t('hero.badge')}</span>
                             </div>
-                            <div className="mb-12" />
+                            <div className="mb-8" />
 
                             <h1 className="font-cabinet font-bold text-5xl md:text-8xl leading-none tracking-tighter text-white mb-8">
-                                {title || t('hero.title') ? <span dangerouslySetInnerHTML={{ __html: title || t('hero.title') }} /> : "MASTER THE CREATIVE FUTURE"}
+                                O FUTURO <br />
+                                DA SUA <br />
+                                <div className="h-[1em] relative overflow-hidden inline-block align-top w-full">
+                                    <AnimatePresence mode="wait">
+                                        <motion.span
+                                            key={words[wordIndex]}
+                                            initial={{ y: 50, opacity: 0 }}
+                                            animate={{ y: 0, opacity: 1 }}
+                                            exit={{ y: -50, opacity: 0 }}
+                                            transition={{ duration: 0.5, ease: "circOut" }}
+                                            className="absolute left-0 text-white block"
+                                        >
+                                            {words[wordIndex]}
+                                        </motion.span>
+                                    </AnimatePresence>
+                                </div>
+                                <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 block mt-2'>COMEÇA AGORA</span>
                             </h1>
-
-                            {/* Price Display removed from mobile as requested */}
 
 
                             <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
                                 <button
                                     onClick={openModal}
-                                    className="px-10 py-5 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-bold uppercase tracking-widest hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)] w-full sm:w-auto sm:min-w-[300px]"
+                                    className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-bold uppercase tracking-widest hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)] w-full sm:w-auto text-sm"
                                 >
-                                    <span className="text-center">{cta || t('hero.cta')}</span>
+                                    <span>COMEÇA AGORA</span>
                                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform shrink-0" />
                                 </button>
 
                                 <a
                                     href="#about"
-                                    className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/5 backdrop-blur-sm border border-white/10 text-white rounded-full text-sm font-bold tracking-widest uppercase hover:bg-white/10 transition-all duration-300 w-full sm:w-auto"
+                                    className="group inline-flex items-center justify-center gap-2 px-8 py-3 bg-white/5 backdrop-blur-sm border border-white/10 text-white rounded-full text-sm font-bold tracking-widest uppercase hover:bg-white/10 transition-all duration-300 w-full sm:w-auto"
                                 >
                                     <span>SAIBA MAIS</span>
                                     <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -84,10 +108,6 @@ const Hero = ({ title, cta, badge }: HeroProps) => {
                         transition={{ delay: 0.2, duration: 0.8 }}
                         className="relative hidden lg:block h-[800px]"
                     >
-                        {/* Gradients removed from Image container as well */}
-                        {/* <div className="absolute inset-0 bg-gradient-to-t from-human-bg via-transparent to-transparent z-10" /> */}
-                        {/* <div className="absolute inset-0 bg-gradient-to-l from-human-bg via-transparent to-transparent z-10" /> */}
-
                         {/* Placeholder for "Woman in White Jacket" - Using a verified Unsplash High Fashion image that matches the aesthetic */}
                         <img
                             src="https://images.unsplash.com/photo-1548142340-9a997d983949?q=80&w=1287&auto=format&fit=crop"
