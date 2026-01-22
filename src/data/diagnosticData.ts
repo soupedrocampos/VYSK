@@ -11,8 +11,11 @@ export interface IDiagnosticData {
     }[];
     summary: string;
     recommendations: string[];
-    // New fields
     videoUrl?: string;
+    mockups?: {
+        title: string;
+        image: string;
+    }[];
     price?: {
         value: string; // e.g. "R$ 5.000,00"
         label: string; // e.g. "INVESTIMENTO"
@@ -66,6 +69,10 @@ export const diagnosticUsers: IDiagnosticData[] = [
             'Criar upsell pós-compra'
         ],
         videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', // Placeholder
+        mockups: [
+            { title: 'Opção 1', image: '/assets/caio-option-1.png' },
+            { title: 'Opção 2', image: '/assets/caio-option-2.jpg' }
+        ],
         price: {
             value: 'R$ 8.000,00',
             label: 'INVESTIMENTO',

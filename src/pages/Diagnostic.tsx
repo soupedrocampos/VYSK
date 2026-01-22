@@ -11,6 +11,38 @@ import { diagnosticService } from '../utils/diagnosticService';
 import { useAdmin } from '../context/AdminContext';
 import PageSEO from '../components/PageSEO';
 
+const MockupCard = ({ mockup }: { mockup: { title: string; image: string } }) => {
+    const [isRevealed, setIsRevealed] = useState(false);
+
+    return (
+        <div className="space-y-4">
+            <h4 className="text-xl font-bold font-cabinet text-purple-300 text-center">{mockup.title}</h4>
+            <div
+                className="relative rounded-2xl overflow-hidden cursor-pointer group border border-white/10"
+                onClick={() => setIsRevealed(true)}
+            >
+                {/* Image */}
+                <img
+                    src={mockup.image}
+                    alt={mockup.title}
+                    className={`w-full transition-all duration-700 ${isRevealed ? 'scale-100 blur-0' : 'scale-105 blur-md'}`}
+                />
+
+                {/* Glass Camouflage Overlay */}
+                {!isRevealed && (
+                    <div className="absolute inset-0 bg-white/5 backdrop-blur-xl flex flex-col items-center justify-center transition-opacity duration-500 hover:bg-white/10">
+                        <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center backdrop-blur-md border border-purple-500/30 mb-4 group-hover:scale-110 transition-transform">
+                            <Lock className="text-purple-300" size={24} />
+                        </div>
+                        <p className="font-cabinet font-bold text-white text-lg">CLIQUE PARA VISUALIZAR</p>
+                        <p className="text-sm text-gray-400">Design Exclusivo</p>
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+};
+
 const Diagnostic = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [currentUser, setCurrentUser] = useState<IDiagnosticData | null>(null);
@@ -283,6 +315,20 @@ const Diagnostic = () => {
                                         ))}
                                     </div>
                                 </div>
+
+                                {/* Mockups Section */}
+                                {currentUser?.mockups && (
+                                    <div className="md:col-span-3">
+                                        <h3 className="text-2xl font-bold font-cabinet mb-6 text-white text-center">
+                                            Modelos de Site - Escolha o seu
+                                        </h3>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                            {currentUser.mockups.map((mockup, idx) => (
+                                                <MockupCard key={idx} mockup={mockup} />
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
 
                                 {/* Price Reveal Section */}
                                 {currentUser?.price && (
