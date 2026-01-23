@@ -220,18 +220,7 @@ const Diagnostic = () => {
                                     </div>
                                 )}
 
-                                {/* CTA Button Below Video */}
-                                <div className="relative z-10 container mx-auto px-4 text-center mb-12">
-                                    <button
-                                        onClick={() => {
-                                            const element = document.getElementById('price-section');
-                                            element?.scrollIntoView({ behavior: 'smooth' });
-                                        }}
-                                        className="bg-green-500 hover:bg-green-400 text-black font-bold px-8 py-4 rounded-full text-lg transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(34,197,94,0.4)]"
-                                    >
-                                        {currentUser?.hero?.cta || 'Ver Meu Plano'}
-                                    </button>
-                                </div>
+
                             </div>
 
                             <div className="container mx-auto px-4 mt-12 relative z-20 pb-20 space-y-8">
