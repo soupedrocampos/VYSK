@@ -83,6 +83,8 @@ const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({ url }) => {
         return `${mm}:${ss}`;
     };
 
+    const ReactPlayerAny = ReactPlayer as any;
+
     return (
         <div
             ref={containerRef}
@@ -92,7 +94,7 @@ const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({ url }) => {
         >
             {/* The Player - Pointer events none to block YouTube interactions */}
             <div className="absolute inset-0 pointer-events-none">
-                <ReactPlayer
+                <ReactPlayerAny
                     ref={playerRef}
                     url={url}
                     width="100%"
