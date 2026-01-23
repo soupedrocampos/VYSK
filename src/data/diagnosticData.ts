@@ -68,7 +68,7 @@ export const diagnosticUsers: IDiagnosticData[] = [
             'Otimizar velocidade de carregamento',
             'Criar upsell pós-compra'
         ],
-        videoUrl: 'https://youtu.be/p4crBruXTas',
+        videoUrl: 'https://youtu.be/Q0jredtJEdg',
         mockups: [
             { title: 'Opção 1', image: '/assets/caio-option-1.png' },
             { title: 'Opção 2', image: '/assets/caio-option-2.jpg' }
