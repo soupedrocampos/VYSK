@@ -190,29 +190,19 @@ const Diagnostic = () => {
                                     <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80" />
                                 </div>
 
-                                <div className="relative z-10 container mx-auto px-4 text-center max-w-4xl pt-20">
+                                <div className="relative z-10 container mx-auto px-4 text-center pt-20">
                                     <p className="text-green-400 font-bold tracking-widest uppercase mb-4 text-sm md:text-base">
                                         {currentUser?.hero?.subtitle || 'Especialista em Performance'}
                                     </p>
-                                    <h1 className="text-4xl md:text-6xl font-cabinet font-bold leading-tight mb-8 text-green-500 drop-shadow-2xl">
+                                    <h1 className="text-4xl md:text-6xl font-cabinet font-bold leading-tight mb-12 text-green-500 drop-shadow-2xl">
                                         {currentUser?.hero?.title || 'Diagnóstico de Performance'}
                                     </h1>
-
-                                    <button
-                                        onClick={() => {
-                                            const element = document.getElementById('price-section');
-                                            element?.scrollIntoView({ behavior: 'smooth' });
-                                        }}
-                                        className="bg-green-500 hover:bg-green-400 text-black font-bold px-8 py-4 rounded-full text-lg transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(34,197,94,0.4)]"
-                                    >
-                                        {currentUser?.hero?.cta || 'Ver Meu Plano'}
-                                    </button>
                                 </div>
 
                                 {/* Video Section - Full Width */}
                                 {currentUser?.videoUrl && (
                                     <div
-                                        className={`w-full mx-auto mt-12 mb-12 rounded-2xl overflow-hidden shadow-2xl border border-white/20 transition-all duration-700 ease-in-out cursor-pointer group relative z-20 ${isVideoExpanded ? 'max-w-[95vw] scale-105' : 'max-w-[90%] md:max-w-7xl hover:scale-[1.01]'}`}
+                                        className={`w-full mx-auto mt-0 mb-8 rounded-2xl overflow-hidden shadow-2xl border border-white/20 transition-all duration-700 ease-in-out cursor-pointer group relative z-20 ${isVideoExpanded ? 'max-w-[95vw] scale-105' : 'max-w-[90%] md:max-w-7xl hover:scale-[1.01]'}`}
                                         onClick={() => setIsVideoExpanded(true)}
                                     >
                                         <div className="relative aspect-video">
@@ -229,6 +219,19 @@ const Diagnostic = () => {
                                         </div>
                                     </div>
                                 )}
+
+                                {/* CTA Button Below Video */}
+                                <div className="relative z-10 container mx-auto px-4 text-center mb-12">
+                                    <button
+                                        onClick={() => {
+                                            const element = document.getElementById('price-section');
+                                            element?.scrollIntoView({ behavior: 'smooth' });
+                                        }}
+                                        className="bg-green-500 hover:bg-green-400 text-black font-bold px-8 py-4 rounded-full text-lg transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(34,197,94,0.4)]"
+                                    >
+                                        {currentUser?.hero?.cta || 'Ver Meu Plano'}
+                                    </button>
+                                </div>
                             </div>
 
                             <div className="container mx-auto px-4 mt-12 relative z-20 pb-20 space-y-8">
