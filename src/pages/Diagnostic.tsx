@@ -478,8 +478,8 @@ const Diagnostic = () => {
                                         </AnimatePresence>
 
                                         <div className={`bg-gradient-to-b from-[#111] to-black border border-white/10 rounded-3xl p-12 text-center relative transition-all duration-700 ${!isPriceRevealed ? 'filter blur-sm select-none' : ''}`}>
-                                            <div className="relative z-10 max-w-3xl mx-auto">
-                                                <h2 className="text-3xl md:text-5xl font-cabinet font-bold text-white mb-8">
+                                            <div className="relative z-10 max-w-4xl mx-auto">
+                                                <h2 className="text-3xl md:text-5xl font-cabinet font-bold text-white mb-12">
                                                     Plano de Ação Recomendado
                                                 </h2>
 
