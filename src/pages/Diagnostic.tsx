@@ -3,7 +3,7 @@
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Lock, User, LogIn, LogOut, CheckCircle, AlertTriangle, XCircle, BarChart } from 'lucide-react';
-import ReactPlayer from 'react-player';
+import CustomVideoPlayer from '../components/CustomVideoPlayer';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { type IDiagnosticData } from '../data/diagnosticData';
@@ -221,18 +221,8 @@ const Diagnostic = () => {
                                 <motion.div
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    className="w-full aspect-video rounded-3xl overflow-hidden border border-white/10 bg-black shadow-2xl relative"
                                 >
-                                    {/* @ts-ignore */}
-                                    <ReactPlayer
-                                        {...({
-                                            url: currentUser.videoUrl,
-                                            width: "100%",
-                                            height: "100%",
-                                            controls: true,
-                                            playing: false
-                                        } as any)}
-                                    />
+                                    <CustomVideoPlayer url={currentUser.videoUrl} />
                                 </motion.div>
                             )}
 
