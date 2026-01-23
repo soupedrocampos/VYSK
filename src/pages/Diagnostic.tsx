@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Lock, User, LogIn, CheckCircle, AlertTriangle, BarChart, Activity, Zap, Video } from 'lucide-react';
+import { Lock, User, LogIn, CheckCircle, AlertTriangle, BarChart, Activity, Zap, Video, Clock } from 'lucide-react';
 import CustomVideoPlayer from '../components/CustomVideoPlayer';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -10,6 +10,32 @@ import { type IDiagnosticData } from '../data/diagnosticData';
 import { diagnosticService } from '../utils/diagnosticService';
 import { useAdmin } from '../context/AdminContext';
 import PageSEO from '../components/PageSEO';
+
+const CountdownTimer = () => {
+    const [timeLeft, setTimeLeft] = useState({ hours: 23, minutes: 59, seconds: 59 });
+
+    React.useEffect(() => {
+        const timer = setInterval(() => {
+            setTimeLeft((prev) => {
+                if (prev.seconds > 0) return { ...prev, seconds: prev.seconds - 1 };
+                if (prev.minutes > 0) return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
+                if (prev.hours > 0) return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 };
+                return prev;
+            });
+        }, 1000);
+        return () => clearInterval(timer);
+    }, []);
+
+    return (
+        <div className="flex items-center justify-center gap-4 text-red-500 font-bold mb-6 bg-red-500/10 py-3 px-6 rounded-full border border-red-500/20 animate-pulse">
+            <Clock size={24} />
+            <span className="text-xl tracking-widest font-mono">
+                {String(timeLeft.hours).padStart(2, '0')}:{String(timeLeft.minutes).padStart(2, '0')}:{String(timeLeft.seconds).padStart(2, '0')}
+            </span>
+            <span className="text-sm uppercase tracking-wide">Oferta Expira em Breve</span>
+        </div>
+    );
+};
 
 const Diagnostic = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -23,7 +49,8 @@ const Diagnostic = () => {
     const [error, setError] = useState('');
 
     // Price Reveal State
-    const [showPriceConfirm, setShowPriceConfirm] = useState(false);
+    const [isPriceRevealed, setIsPriceRevealed] = useState(false);
+    const [showPricePopup, setShowPricePopup] = useState(false);
 
     // Admin Backdoor
     const secretClickCount = useRef(0);
@@ -380,37 +407,76 @@ const Diagnostic = () => {
 
                                 {/* Price / CTA Section (Re-styled) */}
                                 {currentUser?.price && (
-                                    <div id="price-section" className="bg-gradient-to-b from-[#111] to-black border border-white/10 rounded-3xl p-12 text-center relative overflow-hidden">
-                                        <div className="relative z-10 max-w-3xl mx-auto">
-                                            <h2 className="text-3xl md:text-5xl font-cabinet font-bold text-white mb-8">
-                                                Plano de Ação Recomendado
-                                            </h2>
+                                    <div id="price-section" className="relative rounded-3xl overflow-hidden">
 
-                                            {/* Deliverables List (Recommendations) */}
-                                            <div className="bg-white/5 rounded-2xl p-8 mb-10 text-left">
-                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                                    {currentUser.recommendations.map((rec, i) => (
-                                                        <div key={i} className="flex items-center gap-3 text-gray-300">
-                                                            <CheckCircle size={18} className="text-green-500 shrink-0" />
-                                                            <span className="text-sm">{rec}</span>
+                                        {/* Confirmation Popup Modal */}
+                                        <AnimatePresence>
+                                            {showPricePopup && (
+                                                <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+                                                    <motion.div
+                                                        initial={{ opacity: 0 }}
+                                                        animate={{ opacity: 1 }}
+                                                        exit={{ opacity: 0 }}
+                                                        className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+                                                        onClick={() => setShowPricePopup(false)}
+                                                    />
+                                                    <motion.div
+                                                        initial={{ scale: 0.9, opacity: 0 }}
+                                                        animate={{ scale: 1, opacity: 1 }}
+                                                        exit={{ scale: 0.9, opacity: 0 }}
+                                                        className="bg-[#111] border border-white/20 p-8 rounded-3xl max-w-lg w-full relative z-10 shadow-2xl"
+                                                    >
+                                                        <div className="w-16 h-16 bg-yellow-500/20 rounded-full flex items-center justify-center mx-auto mb-6 border border-yellow-500/30">
+                                                            <AlertTriangle size={32} className="text-yellow-500" />
                                                         </div>
-                                                    ))}
+                                                        <h3 className="text-2xl font-cabinet font-bold text-center mb-4 text-white">Confirmação Necessária</h3>
+                                                        <p className="text-gray-300 text-center mb-8 leading-relaxed">
+                                                            Você está prestes a acessar uma <strong>Condição Comercial Exclusiva</strong>.
+                                                            Ao revelar este investimento, você entende que esta oferta tem validade limitada de <strong>24 horas</strong>.
+                                                        </p>
+                                                        <div className="flex gap-4">
+                                                            <button
+                                                                onClick={() => setShowPricePopup(false)}
+                                                                className="flex-1 py-4 rounded-xl font-bold text-gray-400 hover:text-white hover:bg-white/5 transition-colors"
+                                                            >
+                                                                Cancelar
+                                                            </button>
+                                                            <button
+                                                                onClick={() => {
+                                                                    setShowPricePopup(false);
+                                                                    setIsPriceRevealed(true);
+                                                                }}
+                                                                className="flex-1 bg-green-500 hover:bg-green-400 text-black font-bold py-4 rounded-xl transition-transform active:scale-95"
+                                                            >
+                                                                SIM, ESTOU PRONTO
+                                                            </button>
+                                                        </div>
+                                                    </motion.div>
                                                 </div>
-                                            </div>
+                                            )}
+                                        </AnimatePresence>
 
-                                            {!showPriceConfirm ? (
-                                                <button
-                                                    onClick={() => setShowPriceConfirm(true)}
-                                                    className="w-full md:w-auto bg-green-600 hover:bg-green-500 text-white font-bold px-12 py-5 rounded-full text-xl transition-all shadow-lg hover:shadow-green-500/25"
-                                                >
-                                                    Ver Investimento
-                                                </button>
-                                            ) : (
-                                                <motion.div
-                                                    initial={{ height: 0, opacity: 0 }}
-                                                    animate={{ height: 'auto', opacity: 1 }}
-                                                    className="border-t border-white/10 pt-8"
-                                                >
+                                        <div className={`bg-gradient-to-b from-[#111] to-black border border-white/10 rounded-3xl p-12 text-center relative transition-all duration-700 ${!isPriceRevealed ? 'filter blur-sm select-none' : ''}`}>
+                                            <div className="relative z-10 max-w-3xl mx-auto">
+                                                <h2 className="text-3xl md:text-5xl font-cabinet font-bold text-white mb-8">
+                                                    Plano de Ação Recomendado
+                                                </h2>
+
+                                                {/* Deliverables List (Recommendations) */}
+                                                <div className="bg-white/5 rounded-2xl p-8 mb-10 text-left">
+                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                        {currentUser.recommendations.map((rec, i) => (
+                                                            <div key={i} className="flex items-center gap-3 text-gray-300">
+                                                                <CheckCircle size={18} className="text-green-500 shrink-0" />
+                                                                <span className="text-sm">{rec}</span>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                </div>
+
+                                                <div className="border-t border-white/10 pt-8">
+                                                    {isPriceRevealed && <CountdownTimer />}
+
                                                     <p className="text-green-400 font-bold tracking-widest uppercase mb-2 text-sm">{currentUser.price.label}</p>
                                                     <h3 className="text-6xl md:text-7xl font-bold text-white mb-2">{currentUser.price.value}</h3>
                                                     {currentUser.price.originalValue && (
@@ -425,9 +491,22 @@ const Diagnostic = () => {
                                                     >
                                                         ATIVAR PLANO DE AÇÃO 2025 <Zap size={24} />
                                                     </a>
-                                                </motion.div>
-                                            )}
+                                                </div>
+                                            </div>
                                         </div>
+
+                                        {/* Overlay Button when Blurred */}
+                                        {!isPriceRevealed && (
+                                            <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/20 backdrop-blur-[2px]">
+                                                <button
+                                                    onClick={() => setShowPricePopup(true)}
+                                                    className="bg-green-600 hover:bg-green-500 text-white font-bold px-12 py-5 rounded-full text-xl transition-all shadow-[0_0_50px_rgba(34,197,94,0.3)] hover:scale-105 flex items-center gap-2"
+                                                >
+                                                    <Lock size={20} />
+                                                    VER INVESTIMENTO
+                                                </button>
+                                            </div>
+                                        )}
                                     </div>
                                 )}
                             </div>

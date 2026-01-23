@@ -61,7 +61,7 @@ export const diagnosticUsers: IDiagnosticData[] = [
         company: 'Milhas Aéreas',
         score: 82,
         metrics: [
-            { label: 'Tráfego', value: 92, status: 'good' },
+            { label: 'Tráfego Orgânico', value: 60, status: 'good' },
             { label: 'Conversão', value: 28, status: 'critical' },
             { label: 'Autoridade SEO', value: 15, status: 'critical' },
             { label: 'Oportunidade', value: 98, status: 'good' }
