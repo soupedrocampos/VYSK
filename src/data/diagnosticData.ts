@@ -61,7 +61,7 @@ export const diagnosticUsers: IDiagnosticData[] = [
             { label: 'Autoridade SEO', value: 15, status: 'critical' },
             { label: 'Oportunidade', value: 98, status: 'good' }
         ],
-        summary: 'O projeto tem um tráfego excelente, mas a conversão no checkout está abaixo da média do mercado. identificamos oportunidades claras de otimização na página de vendas.',
+        summary: `Caio, o mercado de "Gestão de Milhas" ainda é um Nível 17 de dificuldade (Fácil), mas a janela está fechando. Hoje, o Google confunde "milhas" com "milho" por falta de conteúdo de qualidade. Enquanto seus concorrentes compram links falsos e deixam páginas quebradas no ar, nós vamos dominar as respostas da I.A. e criar autoridade técnica à prova de falhas.`,
         recommendations: [
             'Criar Cluster de Conteúdo "Gestão de Milhas"',
             'Otimizar Artigos para SGE (Google I.A.)',
@@ -80,109 +80,116 @@ export const diagnosticUsers: IDiagnosticData[] = [
         },
         analysisSections: [
             {
-                title: 'A Grande Oportunidade: Oceano Azul',
-                content: `<p class="mb-4 text-lg">O mercado de "Gestão de Milhas" é um oceano azul prestes a ficar vermelho. Hoje é fácil ranquear; amanhã será caro.</p>
-                <div class="bg-gradient-to-r from-purple-900/40 to-blue-900/40 border border-purple-500/30 p-6 rounded-2xl mb-6 relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/20 blur-[50px] rounded-full pointer-events-none"></div>
-                    <blockquote class="italic text-xl text-white font-cabinet mb-4 relative z-10">
-                        "Seus concorrentes têm sites 'feios', compram links falsos e ignoram a Inteligência Artificial. Vamos dominar o Google antes que eles aprendam a fazer o certo."
-                    </blockquote>
-                    <div class="flex items-center gap-2 text-yellow-400 font-bold bg-yellow-400/10 px-3 py-1 rounded-full w-fit">
-                        <span class="animate-pulse">⚠️</span> Senso de Urgência: Crítico
-                    </div>
-                </div>
-                <p class="text-gray-300">A dificuldade da palavra-chave (KD) para "Gestão de Milhas" está no nível <strong class="text-green-400">17 (Fácil)</strong>, mas o volume de competidores cresce semanalmente. A hora de entrar é agora.</p>`
-            },
-            {
-                title: 'Dados Reais: Quebrando Objeções',
-                content: `<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                    <div class="bg-white/5 p-5 rounded-2xl border border-white/10 hover:border-purple-500/30 transition-colors">
-                        <h4 class="text-purple-400 font-bold mb-1">O Poder do Orgânico</h4>
-                        <p class="text-3xl font-bold text-white mb-2">60%</p>
-                        <p class="text-sm text-gray-400">do tráfego do concorrente <em>Cash Milhas</em> é orgânico. Você não precisa ser refém de anúncios.</p>
-                    </div>
-                    <div class="bg-white/5 p-5 rounded-2xl border border-white/10 hover:border-purple-500/30 transition-colors">
-                        <h4 class="text-purple-400 font-bold mb-1">Volume Qualificado</h4>
-                        <p class="text-3xl font-bold text-white mb-2">90/mês</p>
-                        <p class="text-sm text-gray-400">Buscas exatas por "Gestor de Milhas". Intenção informacional = Leads de alta qualidade.</p>
-                    </div>
-                    <div class="bg-white/5 p-5 rounded-2xl border border-white/10 hover:border-purple-500/30 transition-colors">
-                        <h4 class="text-purple-400 font-bold mb-1">Custo x Oportunidade</h4>
-                        <p class="text-3xl font-bold text-white mb-2">R$ 1,21</p>
-                        <p class="text-sm text-gray-400">CPC médio. O SEO trará esses cliques de graça a longo prazo.</p>
-                    </div>
-                    <div class="bg-white/5 p-5 rounded-2xl border border-white/10 hover:border-purple-500/30 transition-colors">
-                        <h4 class="text-purple-400 font-bold mb-1">Potencial de Tráfego</h4>
-                        <p class="text-3xl font-bold text-white mb-2">10k+</p>
-                        <p class="text-sm text-gray-400">Visitas/mês do líder (First Class Milhas). Totalmente alcançável com técnica superior.</p>
+                title: '1. O Cenário de Oportunidade (Dados de Mercado)',
+                content: `<div class="space-y-4">
+                    <p class="text-gray-300">Estes números provam que o mercado é rentável e acessível agora, mas está difícil.</p> 
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+                            <h4 class="text-green-400 font-bold mb-1">Dificuldade KD: 17% (Fácil)</h4>
+                            <p class="text-sm text-gray-400">Para "Gestão de Milhas". Já para "Gestor de Milhas" é 29% com 90 buscas/mês.</p>
+                        </div>
+                        <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+                            <h4 class="text-blue-400 font-bold mb-1">CPC Estimado: R$ 1,21</h4>
+                            <p class="text-sm text-gray-400">Barato, mas o SEO trará esse tráfego de graça para sempre.</p>
+                        </div>
+                        <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+                            <h4 class="text-purple-400 font-bold mb-1">Intenção: Informacional</h4>
+                            <p class="text-sm text-gray-400">O público quer aprender. Isso valida a necessidade de artigos educativos, não apenas vendas.</p>
+                        </div>
+                        <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+                            <h4 class="text-yellow-400 font-bold mb-1">Janela de Tempo</h4>
+                            <p class="text-sm text-gray-400">Concorrência crescendo semanalmente. A hora de entrar é agora.</p>
+                        </div>
                     </div>
                 </div>`
             },
             {
-                title: 'A Estratégia: Escrevendo para a I.A.',
-                content: `<p class="mb-4">O SEO moderno não é apenas sobre palavras-chave, é sobre responder à Inteligência Artificial do Google (SGE).</p>
-                
-                <div class="bg-red-500/10 border border-red-500/20 p-4 rounded-xl mb-6">
-                    <h4 class="text-red-300 font-bold mb-2 flex items-center gap-2">🚫 O Problema do "Milho"</h4>
-                    <p class="text-gray-400 text-sm">O Google ainda confunde "Gestão de Milhas" com "Gestão de Milho" (agronegócio) por falta de conteúdo específico. Vamos criar a autoridade semântica que educará o algoritmo.</p>
-                </div>
+                title: '2. A Prova Social (Números dos Concorrentes)',
+                content: `<div class="space-y-4">
+                    <p class="text-gray-300 mb-4">Veja o tráfego que está sendo perdido para sites "amadores".</p>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-4 bg-white/5 p-4 rounded-xl border border-white/10">
+                            <div class="bg-red-500/20 p-2 rounded-lg text-red-400 font-bold">10k</div>
+                            <div>
+                                <h4 class="text-white font-bold">First Class Milhas</h4>
+                                <p class="text-sm text-gray-400">10.000 visitas/mês mesmo com um site esteticamente "feio" e básico.</p>
+                            </div>
+                        </div>
 
-                <h4 class="text-white font-bold mb-3">Perguntas que seu site responderá para a I.A.:</h4>
-                <ul class="space-y-3">
-                    <li class="flex items-start gap-3 bg-white/5 p-3 rounded-lg border border-white/5">
-                        <span class="text-purple-400 mt-1">🤖</span>
-                        <span class="text-gray-300">"Onde posso contratar um gestor de milhas com bom custo-benefício?"</span>
+                        <div class="flex items-start gap-4 bg-white/5 p-4 rounded-xl border border-white/10">
+                            <div class="bg-green-500/20 p-2 rounded-lg text-green-400 font-bold">16k</div>
+                            <div>
+                                <h4 class="text-white font-bold">Cash Milhas (Orgânico)</h4>
+                                <p class="text-sm text-gray-400">16.000 acessos, sendo <strong>60% totalmente orgânico (gratuito)</strong>. Focado apenas em capturar leads.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 bg-white/5 p-4 rounded-xl border border-white/10">
+                            <div class="bg-blue-500/20 p-2 rounded-lg text-blue-400 font-bold">51%</div>
+                            <div>
+                                <h4 class="text-white font-bold">Milhas Lucrativas</h4>
+                                <p class="text-sm text-gray-400">Tráfego orgânico apenas com uma Landing Page simples. Palavras-chave geram dinheiro.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>`
+            },
+            {
+                title: '3. A Estratégia "Matadora": Falhas da Concorrência',
+                content: `<ul class="space-y-4">
+                    <li class="bg-red-900/10 border border-red-500/20 p-4 rounded-xl">
+                        <h4 class="text-red-300 font-bold flex items-center gap-2 mb-2"><XCircle size={18} /> Amadorismo Técnico</h4>
+                        <p class="text-gray-400 text-sm">O domínio <em>gestormilhas.com.br</em> tem páginas quebradas, erros de código e textos em inglês ("Lorem Ipsum") esquecidos.</p>
                     </li>
-                    <li class="flex items-start gap-3 bg-white/5 p-3 rounded-lg border border-white/5">
-                        <span class="text-purple-400 mt-1">🤖</span>
-                        <span class="text-gray-300">"Quanto custa 10.000 ou 30.000 milhas?"</span>
+                    <li class="bg-red-900/10 border border-red-500/20 p-4 rounded-xl">
+                        <h4 class="text-red-300 font-bold flex items-center gap-2 mb-2"><AlertTriangle size={18} /> Risco de "Black Hat"</h4>
+                        <p class="text-gray-400 text-sm">Concorrentes comprando backlinks de "lixo". É uma bomba-relógio para penalização do Google. Nossa proposta oferece crescimento seguro.</p>
                     </li>
-                    <li class="flex items-start gap-3 bg-white/5 p-3 rounded-lg border border-white/5">
-                        <span class="text-purple-400 mt-1">🤖</span>
-                        <span class="text-gray-300">"Qual o melhor aplicativo de gestão de milhas?" (Tendência em alta)</span>
+                    <li class="bg-purple-900/10 border border-purple-500/20 p-4 rounded-xl">
+                        <h4 class="text-purple-300 font-bold flex items-center gap-2 mb-2"><User size={18} /> Confusão do Algoritmo</h4>
+                        <p class="text-gray-400 text-sm">O Google confunde "Gestão de Milhas" com "Gestão de Milho". Vamos educar o robô com conteúdo semântico.</p>
                     </li>
                 </ul>`
             },
             {
-                title: 'Por Que Vamos Ganhar?',
-                content: `<div class="space-y-4">
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center shrink-0 border border-green-500/30">
-                            <span class="text-green-400 font-bold">1</span>
-                        </div>
-                        <div>
-                            <h4 class="text-white font-bold">Concorrência Amadora</h4>
-                            <p class="text-gray-400 text-sm">A maioria usa apenas Instagram ou sites quebrados. O concorrente direto pelo nome tem erros de código expostos.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center shrink-0 border border-green-500/30">
-                            <span class="text-green-400 font-bold">2</span>
-                        </div>
-                        <div>
-                            <h4 class="text-white font-bold">Sem "Black Hat"</h4>
-                            <p class="text-gray-400 text-sm">Concorrentes compram backlinks tóxicos (bomba-relógio). Nós construiremos autoridade real e perene.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center shrink-0 border border-green-500/30">
-                            <span class="text-green-400 font-bold">3</span>
-                        </div>
-                        <div>
-                            <h4 class="text-white font-bold">Proteção de Marca</h4>
-                            <p class="text-gray-400 text-sm">Recomendação tática: Registrar <em>caiogestordemilhas.com.br</em> para blindar sua marca contra novos entrantes.</p>
-                        </div>
+                title: '4. Otimização para IA (O Diferencial Moderno)',
+                content: `<div class="bg-gradient-to-br from-purple-900/20 to-blue-900/20 border border-purple-500/30 p-6 rounded-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-purple-500/10 blur-[60px] rounded-full pointer-events-none"></div>
+                    
+                    <h4 class="text-white font-cabinet font-bold text-lg mb-4 relative z-10">Visibilidade na IA (SGE)</h4>
+                    <p class="text-gray-300 mb-4 text-sm relative z-10">As IAs já respondem citando fontes. Seu site deve responder perguntas como:</p>
+                    
+                    <ul class="space-y-2 mb-6 relative z-10">
+                        <li class="flex items-center gap-2 text-purple-200 text-sm bg-purple-500/10 px-3 py-2 rounded-lg">
+                            <span>🤖</span> "Onde contratar gestor de milhas custo-benefício?"
+                        </li>
+                        <li class="flex items-center gap-2 text-purple-200 text-sm bg-purple-500/10 px-3 py-2 rounded-lg">
+                            <span>🤖</span> "Quanto custa 10.000 ou 30.000 milhas?"
+                        </li>
+                    </ul>
+
+                    <div class="border-t border-white/10 pt-4 relative z-10">
+                        <h5 class="text-white font-bold text-sm mb-1">Integração Multimídia</h5>
+                        <p class="text-gray-400 text-xs">Uso de transcrições de seus vídeos do YouTube e legendas do Instagram para fortalecer o texto (Google indexa isso agora).</p>
                     </div>
                 </div>`
             },
             {
-                title: 'Seja a Resposta que o Google Procura',
-                content: `<p class="text-lg text-gray-300 italic mb-6">
-                    "Caio, o mercado ainda é nível 17 (Fácil), mas a janela está fechando. Hoje, a I.A. responde dúvidas usando fontes confiáveis. Se alguém pergunta 'Onde contratar um gestor de milhas?', seu site precisa ser a resposta."
-                </p>
-                <div class="bg-purple-600/20 border border-purple-500/40 p-6 rounded-2xl text-center">
-                    <h3 class="text-white font-cabinet font-bold text-xl mb-2">Vamos construir sua autoridade digital</h3>
-                    <p class="text-purple-200 text-sm mb-0">Antes que esse nicho fique saturado.</p>
+                title: '5. Sugestão de Domínios (Ação Imediata)',
+                content: `<div class="bg-green-900/10 border border-green-500/20 p-5 rounded-xl flex items-start gap-4">
+                    <div class="bg-green-500/20 p-3 rounded-full text-green-400 shrink-0">
+                        <CheckCircle size={24} />
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-lg mb-2">Estratégia de Defesa</h4>
+                        <p class="text-gray-400 text-sm mb-3">O domínio <em>gestaodemilhas.com.br</em> parece inativo. Recomendação táctica:</p>
+                        <ul class="list-disc list-inside text-gray-300 text-sm space-y-1">
+                            <li>Comprar <strong>caiogestordemilhas.com.br</strong></li>
+                            <li>Ou <strong>sougestordemilhas.com.br</strong></li>
+                        </ul>
+                        <p class="text-green-400 text-xs mt-3 font-bold">Custo: ~R$ 40,00 (Proteção de Marca)</p>
+                    </div>
                 </div>`
             }
         ]
