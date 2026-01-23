@@ -32,6 +32,7 @@ export interface IDiagnosticData {
         type?: 'text' | 'stats_grid' | 'competitors' | 'ai_showcase' | 'domain_action' | 'warning_list';
         content?: string;
         items?: any[]; // Flexible payload for different section types
+        summary?: string; // Summary text for sections like warning_list
     }[];
 }
 
@@ -123,10 +124,20 @@ export const diagnosticUsers: IDiagnosticData[] = [
                 title: '💣 3. As Falhas da Concorrência',
                 type: 'warning_list',
                 items: [
-                    { title: 'Ausência de Infraestrutura', desc: 'Concorrentes sem site profissional ou Landing Page de alta conversão.' },
-                    { title: 'Conteúdo Raso', desc: 'Falta de artigos profundos e otimizados para SEO e novas IAs.' },
-                    { title: 'Oportunidade de Ouro', desc: 'Você precisa urgente de um ecossistema digital (Site + Blog + SEO) para dominar o Google.' }
-                ]
+                    {
+                        title: '1. Amadorismo Técnico e Sites "Quebrados"',
+                        desc: 'Concorrentes com funcionalidades quebradas (calculadoras com erro), textos em inglês esquecidos no layout ("Lorem Ipsum") e estrutura incompleta com poucas páginas indexadas. Um "veneno" para o crescimento sustentável.'
+                    },
+                    {
+                        title: '2. Estratégias de Alto Risco (Black Hat SEO)',
+                        desc: 'Uso massivo de compra de links tóxicos e "falsa autoridade". Risco alto de punição pelo Google. Diferente da nossa estratégia White Hat de construção de autoridade real e duradoura.'
+                    },
+                    {
+                        title: '3. Sites Feios e Conteúdo Raso',
+                        desc: 'Líderes atuais tem sites com design ultrapassado e experiência ruim. Falta conteúdo aprofundado ("Milhas vs Milho") e ignoram perguntas chaves para Inteligência Artificial.'
+                    }
+                ],
+                summary: 'Caio, seus concorrentes estão jogando sujo (comprando links), jogando errado (sites quebrados) ou jogando feio (design ruim). O Google está desesperado por um site organizado e limpo para colocar em 1º lugar. Esse site será o seu.'
             },
             {
                 title: '🧠 4. Otimização para IA (O Diferencial)',

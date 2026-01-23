@@ -194,27 +194,10 @@ const Diagnostic = () => {
                                     <p className="text-green-400 font-bold tracking-widest uppercase mb-4 text-sm md:text-base">
                                         {currentUser?.hero?.subtitle || 'Especialista em Performance'}
                                     </p>
-                                    <h1 className="text-4xl md:text-6xl font-cabinet font-bold leading-tight mb-8 text-white drop-shadow-2xl">
+                                    <h1 className="text-4xl md:text-6xl font-cabinet font-bold leading-tight mb-8 text-green-500 drop-shadow-2xl">
                                         {currentUser?.hero?.title || 'Diagnóstico de Performance'}
                                     </h1>
 
-                                    {currentUser?.videoUrl && (
-                                        <div
-                                            className={`w-full mx-auto mb-20 rounded-2xl overflow-hidden shadow-2xl border border-white/20 transition-all duration-700 ease-in-out cursor-pointer group ${isVideoExpanded ? 'max-w-[90vw] md:max-w-7xl scale-105 z-50' : 'max-w-5xl hover:scale-[1.02]'}`}
-                                            onClick={() => setIsVideoExpanded(true)}
-                                        >
-                                            <div className="relative">
-                                                {!isVideoExpanded && (
-                                                    <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors pointer-events-none">
-                                                        <div className="bg-white/10 backdrop-blur-md p-4 rounded-full border border-white/20 text-white animate-pulse">
-                                                            <span className="text-sm font-bold tracking-wider">CLIQUE PARA AMPLIAR</span>
-                                                        </div>
-                                                    </div>
-                                                )}
-                                                <CustomVideoPlayer url={currentUser.videoUrl} />
-                                            </div>
-                                        </div>
-                                    )}
                                     <button
                                         onClick={() => {
                                             const element = document.getElementById('price-section');
@@ -225,95 +208,92 @@ const Diagnostic = () => {
                                         {currentUser?.hero?.cta || 'Ver Meu Plano'}
                                     </button>
                                 </div>
-                            </div>
 
-                            <div className="container mx-auto px-4 -mt-32 relative z-20 pb-20 space-y-20">
-                                {/* Score & Summary Section */}
-                                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                                    {/* Score Card */}
-                                    <motion.div
-                                        initial={{ x: -50, opacity: 0 }}
-                                        animate={{ x: 0, opacity: 1 }}
-                                        className="lg:col-span-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 flex flex-col items-center justify-center text-center relative overflow-hidden group"
+                                {/* Video Section - Full Width */}
+                                {currentUser?.videoUrl && (
+                                    <div
+                                        className={`w-full mx-auto mt-12 mb-12 rounded-2xl overflow-hidden shadow-2xl border border-white/20 transition-all duration-700 ease-in-out cursor-pointer group relative z-20 ${isVideoExpanded ? 'max-w-[95vw] scale-105' : 'max-w-[90%] md:max-w-7xl hover:scale-[1.01]'}`}
+                                        onClick={() => setIsVideoExpanded(true)}
                                     >
-                                        <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                                        <div className="w-40 h-40 relative flex items-center justify-center mb-6">
-                                            <svg className="w-full h-full transform -rotate-90">
-                                                <circle
-                                                    cx="80"
-                                                    cy="80"
-                                                    r="70"
-                                                    stroke="currentColor"
-                                                    strokeWidth="8"
-                                                    fill="transparent"
-                                                    className="text-white/10"
-                                                />
-                                                <circle
-                                                    cx="80"
-                                                    cy="80"
-                                                    r="70"
-                                                    stroke="currentColor"
-                                                    strokeWidth="8"
-                                                    fill="transparent"
-                                                    strokeDasharray={440}
-                                                    strokeDashoffset={440 - (440 * (currentUser?.score || 0)) / 100}
-                                                    className="text-green-500 transition-all duration-1000 ease-out"
-                                                />
-                                            </svg>
-                                            <div className="absolute inset-0 flex items-center justify-center flex-col">
-                                                <span className="text-5xl font-bold font-cabinet text-white">
-                                                    {currentUser?.score}
-                                                </span>
+                                        <div className="relative aspect-video">
+                                            {!isVideoExpanded && (
+                                                <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors pointer-events-none">
+                                                    <div className="bg-white/10 backdrop-blur-md p-4 rounded-full border border-white/20 text-white animate-pulse">
+                                                        <span className="text-sm font-bold tracking-wider">CLIQUE PARA AMPLIAR</span>
+                                                    </div>
+                                                </div>
+                                            )}
+                                            <div className="h-full w-full">
+                                                <CustomVideoPlayer url={currentUser.videoUrl} />
                                             </div>
                                         </div>
-                                        <h3 className="text-2xl font-bold text-white mb-2">Pontuação Geral</h3>
-                                        <p className="text-gray-400 text-sm">Análise de IA baseada em 4 pilares estratégicos.</p>
-                                    </motion.div>
+                                    </div>
+                                )}
+                            </div>
 
-                                    {/* Summary Card */}
+                            <div className="container mx-auto px-4 mt-12 relative z-20 pb-20 space-y-8">
+                                {/* Score & Metrics Row (5 Columns) */}
+                                <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+                                    {/* 1. Score Card */}
                                     <motion.div
-                                        initial={{ x: 50, opacity: 0 }}
-                                        animate={{ x: 0, opacity: 1 }}
-                                        className="lg:col-span-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 flex flex-col justify-center relative overflow-hidden"
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="md:col-span-1 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 flex flex-col items-center justify-center text-center relative overflow-hidden group min-h-[200px]"
                                     >
-                                        <div className="absolute top-0 right-0 p-4 opacity-20">
-                                            <BarChart size={100} className="text-white" />
+                                        <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                                        <div className="w-24 h-24 relative flex items-center justify-center mb-4">
+                                            <svg className="w-full h-full transform -rotate-90">
+                                                <circle cx="48" cy="48" r="40" stroke="currentColor" strokeWidth="6" fill="transparent" className="text-white/10" />
+                                                <circle cx="48" cy="48" r="40" stroke="currentColor" strokeWidth="6" fill="transparent" strokeDasharray={251} strokeDashoffset={251 - (251 * (currentUser?.score || 0)) / 100} className="text-green-500 transition-all duration-1000 ease-out" />
+                                            </svg>
+                                            <div className="absolute inset-0 flex items-center justify-center flex-col">
+                                                <span className="text-3xl font-bold font-cabinet text-white">{currentUser?.score}</span>
+                                            </div>
                                         </div>
-                                        <h3 className="text-xl font-bold text-green-400 mb-4 flex items-center gap-2">
-                                            <Activity size={20} /> Resumo da Análise
-                                        </h3>
-                                        <p className="text-gray-100 text-lg md:text-xl leading-relaxed font-light">
-                                            {currentUser?.summary}
-                                        </p>
+                                        <h3 className="text-lg font-bold text-white leading-tight">Pontuação Geral</h3>
                                     </motion.div>
-                                </div>
 
-                                {/* Metrics Row */}
-                                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                    {/* 2-5. Metrics Cards */}
                                     {currentUser?.metrics.map((metric, idx) => (
                                         <motion.div
                                             key={idx}
-                                            initial={{ y: 20, opacity: 0 }}
-                                            animate={{ y: 0, opacity: 1 }}
+                                            initial={{ opacity: 0, y: 20 }}
+                                            animate={{ opacity: 1, y: 0 }}
                                             transition={{ delay: idx * 0.1 }}
-                                            className="bg-[#111] border border-white/10 rounded-2xl p-6 relative overflow-hidden group hover:border-green-500/30 transition-colors"
+                                            className="md:col-span-1 bg-[#111] border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-green-500/30 transition-colors group min-h-[200px]"
                                         >
-                                            <div className="flex justify-between items-start mb-4 relative z-10">
-                                                <span className="text-gray-400 text-sm font-bold uppercase tracking-wider">{metric.label}</span>
-                                                {metric.status === 'good' ? <CheckCircle size={18} className="text-green-500" /> : <AlertTriangle size={18} className="text-red-500" />}
+                                            <div className="flex justify-between items-start mb-2">
+                                                <span className="text-gray-400 text-xs font-bold uppercase tracking-wider h-8 line-clamp-2">{metric.label}</span>
+                                                {metric.status === 'good' ? <CheckCircle size={16} className="text-green-500 shrink-0" /> : <AlertTriangle size={16} className="text-red-500 shrink-0" />}
                                             </div>
-                                            <div className={`text-3xl font-bold mb-2 ${metric.status === 'good' ? 'text-green-400' : 'text-red-400'}`}>
-                                                {metric.value}%
-                                            </div>
-                                            <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
-                                                <div
-                                                    className={`h-full rounded-full transition-all duration-1000 ${metric.status === 'good' ? 'bg-green-500' : 'bg-red-500'}`}
-                                                    style={{ width: `${metric.value}%` }}
-                                                />
+                                            <div>
+                                                <div className={`text-4xl font-bold mb-3 ${metric.status === 'good' ? 'text-green-400' : 'text-red-400'}`}>
+                                                    {metric.value}%
+                                                </div>
+                                                <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
+                                                    <div className={`h-full rounded-full transition-all duration-1000 ${metric.status === 'good' ? 'bg-green-500' : 'bg-red-500'}`} style={{ width: `${metric.value}%` }} />
+                                                </div>
                                             </div>
                                         </motion.div>
                                     ))}
                                 </div>
+
+                                {/* Summary Card (Full Width Below) */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className="w-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-10 flex flex-col justify-center relative overflow-hidden"
+                                >
+                                    <div className="absolute top-0 right-0 p-4 opacity-10">
+                                        <BarChart size={150} className="text-white" />
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-green-400 mb-6 flex items-center gap-3">
+                                        <Activity size={28} /> Resumo Estratégico da Análise
+                                    </h3>
+                                    <p className="text-gray-200 text-lg md:text-xl leading-relaxed font-light max-w-5xl">
+                                        {currentUser?.summary}
+                                    </p>
+                                </motion.div>
 
                                 {/* Dynamic Analysis Sections */}
                                 <div className="space-y-16">
@@ -386,6 +366,32 @@ const Diagnostic = () => {
                                                                 </div>
                                                             ))}
                                                         </div>
+                                                    </div>
+                                                </div>
+                                            );
+                                        }
+
+                                        if (section.type === 'warning_list') {
+                                            return (
+                                                <div key={idx} className="space-y-8">
+                                                    <h3 className="text-2xl font-bold text-white flex items-center gap-2">
+                                                        {section.title}
+                                                    </h3>
+                                                    {section.summary && (
+                                                        <p className="text-yellow-400 text-lg md:text-xl leading-relaxed font-medium bg-yellow-500/10 border border-yellow-500/20 rounded-2xl p-6">
+                                                            {section.summary}
+                                                        </p>
+                                                    )}
+                                                    <div className="grid grid-cols-1 gap-6">
+                                                        {section.items?.map((item: any, i: number) => (
+                                                            <div key={i} className="bg-red-900/10 border border-red-500/20 rounded-2xl p-8 hover:bg-red-900/20 transition-colors">
+                                                                <h4 className="font-bold text-red-400 text-xl mb-3 flex items-center gap-2">
+                                                                    <AlertTriangle size={24} />
+                                                                    {item.title}
+                                                                </h4>
+                                                                <p className="text-gray-300 text-base md:text-lg leading-relaxed">{item.desc}</p>
+                                                            </div>
+                                                        ))}
                                                     </div>
                                                 </div>
                                             );
@@ -499,7 +505,7 @@ const Diagnostic = () => {
                                                     )}
 
                                                     <a
-                                                        href="https://wa.me/55999999999?text=Ol%C3%A1%2C%20gostaria%20de%20ativar%20o%20Plano%20de%20A%C3%A7%C3%A3o%202025"
+                                                        href="https://wa.me/553195509009?text=eu%20aceito%20a%20proposta%2C%20e%20quero%20meu%20site%2C%20landing%20page%20e%20blog%20com%20voc%C3%AA"
                                                         target="_blank"
                                                         rel="noreferrer"
                                                         className="inline-flex items-center gap-3 bg-green-500 hover:bg-green-400 text-black font-bold px-10 py-5 rounded-full text-xl transition-all transform hover:scale-105"
