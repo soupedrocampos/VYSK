@@ -3,6 +3,7 @@
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Lock, User, LogIn, CheckCircle, AlertTriangle, BarChart, Activity, Zap, Video } from 'lucide-react';
+import CustomVideoPlayer from '../components/CustomVideoPlayer';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { type IDiagnosticData } from '../data/diagnosticData';
@@ -151,14 +152,11 @@ const Diagnostic = () => {
                             <div className="relative w-full h-[600px] flex items-center justify-center overflow-hidden">
                                 <div className="absolute inset-0 z-0">
                                     <img
-                                        src="/assets/plane-interior.jpg" // Placeholder, will fallback to gradient if plain color
+                                        src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?q=80&w=2000&auto=format&fit=crop"
                                         alt="Background"
-                                        className="w-full h-full object-cover opacity-40 grayscale"
-                                        onError={(e) => {
-                                            (e.target as HTMLImageElement).style.display = 'none';
-                                        }}
+                                        className="w-full h-full object-cover opacity-50 grayscale"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent" />
                                     <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80" />
                                 </div>
 
@@ -169,6 +167,12 @@ const Diagnostic = () => {
                                     <h1 className="text-4xl md:text-6xl font-cabinet font-bold leading-tight mb-8 text-white drop-shadow-2xl">
                                         {currentUser?.hero?.title || 'Diagnóstico de Performance'}
                                     </h1>
+
+                                    {currentUser?.videoUrl && (
+                                        <div className="w-full max-w-3xl mx-auto mb-10 rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+                                            <CustomVideoPlayer url={currentUser.videoUrl} />
+                                        </div>
+                                    )}
                                     <button
                                         onClick={() => {
                                             const element = document.getElementById('price-section');
