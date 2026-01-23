@@ -63,10 +63,10 @@ export const diagnosticUsers: IDiagnosticData[] = [
         ],
         summary: 'O projeto tem um tráfego excelente, mas a conversão no checkout está abaixo da média do mercado. identificamos oportunidades claras de otimização na página de vendas.',
         recommendations: [
-            'Implementar checkout transparente',
-            'Adicionar prova social na hero section',
-            'Otimizar velocidade de carregamento',
-            'Criar upsell pós-compra'
+            'Criar Cluster de Conteúdo "Gestão de Milhas"',
+            'Otimizar Artigos para SGE (Google I.A.)',
+            'Implementar Schema Markup de Autoridade',
+            'Blindagem de Marca (Domínios)'
         ],
         videoUrl: 'https://www.youtube.com/watch?v=Q0jredtJEdg',
         mockups: [
