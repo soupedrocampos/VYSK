@@ -123,9 +123,9 @@ export const diagnosticUsers: IDiagnosticData[] = [
                 title: '💣 3. As Falhas da Concorrência',
                 type: 'warning_list',
                 items: [
-                    { title: 'Amadorismo Técnico', desc: 'Sites quebrados e erros de código expostos.' },
-                    { title: 'Risco de Black Hat', desc: 'Compra de backlinks tóxicos (risco de punição).' },
-                    { title: 'Confusão Semântica', desc: 'Google confunde Milhas com Milho (Agronegócio).' }
+                    { title: 'Ausência de Infraestrutura', desc: 'Concorrentes sem site profissional ou Landing Page de alta conversão.' },
+                    { title: 'Conteúdo Raso', desc: 'Falta de artigos profundos e otimizados para SEO e novas IAs.' },
+                    { title: 'Oportunidade de Ouro', desc: 'Você precisa urgente de um ecossistema digital (Site + Blog + SEO) para dominar o Google.' }
                 ]
             },
             {

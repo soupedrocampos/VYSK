@@ -52,6 +52,9 @@ const Diagnostic = () => {
     const [isPriceRevealed, setIsPriceRevealed] = useState(false);
     const [showPricePopup, setShowPricePopup] = useState(false);
 
+    // Video State
+    const [isVideoExpanded, setIsVideoExpanded] = useState(false);
+
     // Admin Backdoor
     const secretClickCount = useRef(0);
     const secretClickTimeout = useRef<any>(null);
@@ -196,8 +199,20 @@ const Diagnostic = () => {
                                     </h1>
 
                                     {currentUser?.videoUrl && (
-                                        <div className="w-full max-w-3xl mx-auto mb-10 rounded-2xl overflow-hidden shadow-2xl border border-white/20">
-                                            <CustomVideoPlayer url={currentUser.videoUrl} />
+                                        <div
+                                            className={`w-full mx-auto mb-20 rounded-2xl overflow-hidden shadow-2xl border border-white/20 transition-all duration-700 ease-in-out cursor-pointer group ${isVideoExpanded ? 'max-w-[90vw] md:max-w-7xl scale-105 z-50' : 'max-w-5xl hover:scale-[1.02]'}`}
+                                            onClick={() => setIsVideoExpanded(true)}
+                                        >
+                                            <div className="relative">
+                                                {!isVideoExpanded && (
+                                                    <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors pointer-events-none">
+                                                        <div className="bg-white/10 backdrop-blur-md p-4 rounded-full border border-white/20 text-white animate-pulse">
+                                                            <span className="text-sm font-bold tracking-wider">CLIQUE PARA AMPLIAR</span>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                                <CustomVideoPlayer url={currentUser.videoUrl} />
+                                            </div>
                                         </div>
                                     )}
                                     <button
