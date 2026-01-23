@@ -63,18 +63,22 @@ export const diagnosticUsers: IDiagnosticData[] = [
         ],
         summary: `🚀 Caio, o mercado de "Gestão de Milhas" ainda é um Nível 17 de dificuldade (Fácil), mas a janela está fechando! ⚠️ Hoje, o Google confunde "milhas" com "milho" 🌽 por falta de conteúdo de qualidade. Enquanto seus concorrentes compram links falsos e deixam páginas quebradas no ar, nós vamos dominar as respostas da I.A. 🤖 e criar autoridade técnica à prova de falhas. 🏆`,
         recommendations: [
-            '📚 Criar Cluster de Conteúdo "Gestão de Milhas"',
-            '🤖 Otimizar Artigos para SGE (Google I.A.)',
-            '⭐ Implementar Schema Markup de Autoridade',
-            '🛡️ Blindagem de Marca (Domínios)'
+            '💻 Landing Page & Site Completo (Desktop/Mobile)',
+            '📝 Blog: 100 Artigos Otimizados para I.A.',
+            '🚀 Setup Completo de SEO Técnico & Robots',
+            '⚡ Otimização de Velocidade e Performance',
+            '🔗 Estratégia de Backlinks de Autoridade',
+            '📊 Relatórios de Crescimento Mensal',
+            '🛡️ Blindagem de Marca e Segurança',
+            '💎 3 Meses de Acompanhamento Estratégico'
         ],
         videoUrl: 'https://www.youtube.com/watch?v=Q0jredtJEdg',
         mockups: [
             { title: '', image: '/assets/caio-option-1.png' }
         ],
         price: {
-            value: 'R$ 8.000,00',
-            label: '💎 INVESTIMENTO DO PROJETO',
+            value: 'R$ 7.997,00',
+            label: '💎 3 MESES DE ACOMPANHAMENTO',
             originalValue: 'R$ 15.000,00'
         },
         analysisSections: [
