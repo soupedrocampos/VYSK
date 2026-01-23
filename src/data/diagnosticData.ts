@@ -70,8 +70,7 @@ export const diagnosticUsers: IDiagnosticData[] = [
         ],
         videoUrl: 'https://www.youtube.com/watch?v=Q0jredtJEdg',
         mockups: [
-            { title: 'Opção 1', image: '/assets/caio-option-1.png' },
-            { title: 'Opção 2', image: '/assets/caio-option-2.jpg' }
+            { title: '', image: '/assets/caio-option-1.png' }
         ],
         price: {
             value: 'R$ 8.000,00',

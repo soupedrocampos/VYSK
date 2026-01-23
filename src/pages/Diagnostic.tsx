@@ -312,7 +312,7 @@ const Diagnostic = () => {
                                         <h3 className="text-2xl font-bold font-cabinet mb-6 text-white text-center">
                                             Modelos de Site - Escolha o seu
                                         </h3>
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <div className={`grid grid-cols-1 ${currentUser.mockups.length > 1 ? 'md:grid-cols-2' : ''} gap-8`}>
                                             {currentUser.mockups.map((mockup, idx) => (
                                                 <MockupCard key={idx} mockup={mockup} />
                                             ))}
