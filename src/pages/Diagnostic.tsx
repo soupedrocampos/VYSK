@@ -529,8 +529,6 @@ const Diagnostic = () => {
                     )}
                 </AnimatePresence>
             </div>
-
-            <Footer />
         </div>
     );
 };
