@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import ReactPlayer from 'react-player';
-import { Play, Pause, Volume2, VolumeX, Maximize } from 'lucide-react';
+import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface CustomVideoPlayerProps {
@@ -16,7 +16,8 @@ const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({ url }) => {
     const [duration, setDuration] = useState(0);
     const [showControls, setShowControls] = useState(false);
 
-    const playerRef = useRef<ReactPlayer>(null);
+    // Change refined to any to avoid "value used as type" error with some configurations
+    const playerRef = useRef<any>(null);
     const containerRef = useRef<HTMLDivElement>(null);
 
     const handlePlayPause = () => {
@@ -45,7 +46,8 @@ const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({ url }) => {
         playerRef.current?.seekTo(parseFloat((e.target as HTMLInputElement).value));
     };
 
-    const handleProgress = (state: { played: number }) => {
+    // Use any for state to avoid type mismatch with ReactPlayer's callback signature
+    const handleProgress = (state: any) => {
         if (!seeking) {
             setPlayed(state.played);
         }
@@ -97,7 +99,7 @@ const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({ url }) => {
                                 iv_load_policy: 3
                             }
                         }
-                    }}
+                    } as any}
                 />
             </div>
 
