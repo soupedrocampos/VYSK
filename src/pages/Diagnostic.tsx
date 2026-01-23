@@ -2,46 +2,13 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Lock, User, LogIn, LogOut, CheckCircle, AlertTriangle, XCircle, BarChart } from 'lucide-react';
-import CustomVideoPlayer from '../components/CustomVideoPlayer';
+import { Lock, User, LogIn, CheckCircle, AlertTriangle, BarChart, Activity, Zap, Video } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { type IDiagnosticData } from '../data/diagnosticData';
 import { diagnosticService } from '../utils/diagnosticService';
 import { useAdmin } from '../context/AdminContext';
 import PageSEO from '../components/PageSEO';
-
-const MockupCard = ({ mockup }: { mockup: { title: string; image: string } }) => {
-    const [isRevealed, setIsRevealed] = useState(false);
-
-    return (
-        <div className="space-y-4">
-            <h4 className="text-xl font-bold font-cabinet text-purple-300 text-center">{mockup.title}</h4>
-            <div
-                className="relative rounded-2xl overflow-hidden cursor-pointer group border border-white/10"
-                onClick={() => setIsRevealed(true)}
-            >
-                {/* Image */}
-                <img
-                    src={mockup.image}
-                    alt={mockup.title}
-                    className={`w-full transition-all duration-700 ${isRevealed ? 'scale-100 blur-0' : 'scale-105 blur-md'}`}
-                />
-
-                {/* Glass Camouflage Overlay */}
-                {!isRevealed && (
-                    <div className="absolute inset-0 bg-white/5 backdrop-blur-xl flex flex-col items-center justify-center transition-opacity duration-500 hover:bg-white/10">
-                        <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center backdrop-blur-md border border-purple-500/30 mb-4 group-hover:scale-110 transition-transform">
-                            <Lock className="text-purple-300" size={24} />
-                        </div>
-                        <p className="font-cabinet font-bold text-white text-lg">CLIQUE PARA VISUALIZAR</p>
-                        <p className="text-sm text-gray-400">Design Exclusivo</p>
-                    </div>
-                )}
-            </div>
-        </div>
-    );
-};
 
 const Diagnostic = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -55,7 +22,6 @@ const Diagnostic = () => {
     const [error, setError] = useState('');
 
     // Price Reveal State
-    const [isPriceRevealed, setIsPriceRevealed] = useState(false);
     const [showPriceConfirm, setShowPriceConfirm] = useState(false);
 
     // Admin Backdoor
@@ -88,24 +54,6 @@ const Diagnostic = () => {
             setError('');
         } else {
             setError('Usuário ou senha incorretos.');
-        }
-    };
-
-    const handleLogout = () => {
-        setIsAuthenticated(false);
-        setCurrentUser(null);
-        setUsername('');
-        setPassword('');
-        setIsPriceRevealed(false);
-        setShowPriceConfirm(false);
-    };
-
-    const getStatusColor = (status: 'good' | 'warning' | 'critical') => {
-        switch (status) {
-            case 'good': return 'text-green-400 bg-green-500/10 border-green-500/20';
-            case 'warning': return 'text-yellow-400 bg-yellow-500/10 border-yellow-500/20';
-            case 'critical': return 'text-red-400 bg-red-500/10 border-red-500/20';
-            default: return 'text-gray-400';
         }
     };
 
@@ -195,234 +143,292 @@ const Diagnostic = () => {
                     ) : (
                         <motion.div
                             key="dashboard"
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.95 }}
-                            className="w-full max-w-5xl space-y-8"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            className="w-full min-h-screen bg-[#0a0a0a] text-white overflow-x-hidden"
                         >
-                            {/* Header */}
-                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-                                <div>
-                                    <h1 className="text-3xl md:text-5xl font-bold font-cabinet mb-2">
-                                        Olá, <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">{currentUser?.name}</span>
-                                    </h1>
-                                    <p className="text-xl text-gray-400">{currentUser?.company} • Diagnóstico de Performance</p>
+                            {/* Hero Section */}
+                            <div className="relative w-full h-[600px] flex items-center justify-center overflow-hidden">
+                                <div className="absolute inset-0 z-0">
+                                    <img
+                                        src="/assets/plane-interior.jpg" // Placeholder, will fallback to gradient if plain color
+                                        alt="Background"
+                                        className="w-full h-full object-cover opacity-40 grayscale"
+                                        onError={(e) => {
+                                            (e.target as HTMLImageElement).style.display = 'none';
+                                        }}
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent" />
+                                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80" />
                                 </div>
-                                <button
-                                    onClick={handleLogout}
-                                    className="flex items-center gap-2 px-4 py-2 rounded-lg border border-white/10 hover:bg-white/5 transition-colors text-sm text-gray-300"
-                                >
-                                    <LogOut size={16} /> Sair
-                                </button>
+
+                                <div className="relative z-10 container mx-auto px-4 text-center max-w-4xl pt-20">
+                                    <p className="text-green-400 font-bold tracking-widest uppercase mb-4 text-sm md:text-base">
+                                        {currentUser?.hero?.subtitle || 'Especialista em Performance'}
+                                    </p>
+                                    <h1 className="text-4xl md:text-6xl font-cabinet font-bold leading-tight mb-8 text-white drop-shadow-2xl">
+                                        {currentUser?.hero?.title || 'Diagnóstico de Performance'}
+                                    </h1>
+                                    <button
+                                        onClick={() => {
+                                            const element = document.getElementById('price-section');
+                                            element?.scrollIntoView({ behavior: 'smooth' });
+                                        }}
+                                        className="bg-green-500 hover:bg-green-400 text-black font-bold px-8 py-4 rounded-full text-lg transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(34,197,94,0.4)]"
+                                    >
+                                        {currentUser?.hero?.cta || 'Ver Meu Plano'}
+                                    </button>
+                                </div>
                             </div>
 
-                            {/* Video Section */}
-                            {currentUser?.videoUrl && (
-                                <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                >
-                                    <CustomVideoPlayer url={currentUser.videoUrl} />
-                                </motion.div>
-                            )}
-
-                            {/* Main Grid */}
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                                {/* Score Card */}
-                                <div className="bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-3xl p-8 flex flex-col items-center justify-center text-center">
-                                    <div className="w-32 h-32 rounded-full border-4 border-purple-500/30 flex items-center justify-center mb-4 relative">
-                                        <span className="text-4xl font-bold">{currentUser?.score}</span>
-                                        <div className="absolute inset-0 border-4 border-t-purple-500 rounded-full rotate-45" />
-                                    </div>
-                                    <h3 className="text-xl font-bold mb-2">Pontuação Geral</h3>
-                                    <p className="text-gray-400 text-sm">Baseado em 4 pilares</p>
-                                </div>
-
-                                {/* Summary */}
-                                <div className="md:col-span-2 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-3xl p-8">
-                                    <div className="flex items-center gap-3 mb-6">
-                                        <BarChart size={24} className="text-purple-400" />
-                                        <h3 className="text-xl font-bold">Resumo da Análise</h3>
-                                    </div>
-                                    <p className="text-gray-300 leading-relaxed text-lg">
-                                        {currentUser?.summary}
-                                    </p>
-                                </div>
-
-                                {/* Metrics Breakdown */}
-                                <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                                    {currentUser?.metrics.map((metric, idx) => (
-                                        <div key={idx} className={`p-6 rounded-2xl border ${getStatusColor(metric.status)}`}>
-                                            <div className="flex justify-between items-start mb-4">
-                                                <h4 className="font-bold">{metric.label}</h4>
-                                                {metric.status === 'good' && <CheckCircle size={20} />}
-                                                {metric.status === 'warning' && <AlertTriangle size={20} />}
-                                                {metric.status === 'critical' && <XCircle size={20} />}
+                            <div className="container mx-auto px-4 -mt-32 relative z-20 pb-20 space-y-20">
+                                {/* Score & Summary Section */}
+                                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                                    {/* Score Card */}
+                                    <motion.div
+                                        initial={{ x: -50, opacity: 0 }}
+                                        animate={{ x: 0, opacity: 1 }}
+                                        className="lg:col-span-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 flex flex-col items-center justify-center text-center relative overflow-hidden group"
+                                    >
+                                        <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                                        <div className="w-40 h-40 relative flex items-center justify-center mb-6">
+                                            <svg className="w-full h-full transform -rotate-90">
+                                                <circle
+                                                    cx="80"
+                                                    cy="80"
+                                                    r="70"
+                                                    stroke="currentColor"
+                                                    strokeWidth="8"
+                                                    fill="transparent"
+                                                    className="text-white/10"
+                                                />
+                                                <circle
+                                                    cx="80"
+                                                    cy="80"
+                                                    r="70"
+                                                    stroke="currentColor"
+                                                    strokeWidth="8"
+                                                    fill="transparent"
+                                                    strokeDasharray={440}
+                                                    strokeDashoffset={440 - (440 * (currentUser?.score || 0)) / 100}
+                                                    className="text-green-500 transition-all duration-1000 ease-out"
+                                                />
+                                            </svg>
+                                            <div className="absolute inset-0 flex items-center justify-center flex-col">
+                                                <span className="text-5xl font-bold font-cabinet text-white">
+                                                    {currentUser?.score}
+                                                </span>
                                             </div>
-                                            <div className="text-3xl font-bold mb-1">{metric.value}%</div>
-                                            <div className="w-full h-1 bg-black/20 rounded-full overflow-hidden">
+                                        </div>
+                                        <h3 className="text-2xl font-bold text-white mb-2">Pontuação Geral</h3>
+                                        <p className="text-gray-400 text-sm">Análise de IA baseada em 4 pilares estratégicos.</p>
+                                    </motion.div>
+
+                                    {/* Summary Card */}
+                                    <motion.div
+                                        initial={{ x: 50, opacity: 0 }}
+                                        animate={{ x: 0, opacity: 1 }}
+                                        className="lg:col-span-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 flex flex-col justify-center relative overflow-hidden"
+                                    >
+                                        <div className="absolute top-0 right-0 p-4 opacity-20">
+                                            <BarChart size={100} className="text-white" />
+                                        </div>
+                                        <h3 className="text-xl font-bold text-green-400 mb-4 flex items-center gap-2">
+                                            <Activity size={20} /> Resumo da Análise
+                                        </h3>
+                                        <p className="text-gray-100 text-lg md:text-xl leading-relaxed font-light">
+                                            {currentUser?.summary}
+                                        </p>
+                                    </motion.div>
+                                </div>
+
+                                {/* Metrics Row */}
+                                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                    {currentUser?.metrics.map((metric, idx) => (
+                                        <motion.div
+                                            key={idx}
+                                            initial={{ y: 20, opacity: 0 }}
+                                            animate={{ y: 0, opacity: 1 }}
+                                            transition={{ delay: idx * 0.1 }}
+                                            className="bg-[#111] border border-white/10 rounded-2xl p-6 relative overflow-hidden group hover:border-green-500/30 transition-colors"
+                                        >
+                                            <div className="flex justify-between items-start mb-4 relative z-10">
+                                                <span className="text-gray-400 text-sm font-bold uppercase tracking-wider">{metric.label}</span>
+                                                {metric.status === 'good' ? <CheckCircle size={18} className="text-green-500" /> : <AlertTriangle size={18} className="text-red-500" />}
+                                            </div>
+                                            <div className={`text-3xl font-bold mb-2 ${metric.status === 'good' ? 'text-green-400' : 'text-red-400'}`}>
+                                                {metric.value}%
+                                            </div>
+                                            <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
                                                 <div
-                                                    className="h-full bg-current opacity-50"
+                                                    className={`h-full rounded-full transition-all duration-1000 ${metric.status === 'good' ? 'bg-green-500' : 'bg-red-500'}`}
                                                     style={{ width: `${metric.value}%` }}
                                                 />
                                             </div>
-                                        </div>
+                                        </motion.div>
                                     ))}
                                 </div>
 
-                                {/* Analysis Sections (Persuasive Content) */}
-                                {currentUser?.analysisSections?.map((section, idx) => (
-                                    <motion.div
-                                        key={idx}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        className="md:col-span-3 bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/10 rounded-3xl p-8 md:p-12 relative overflow-hidden"
-                                    >
-                                        <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 blur-[100px] rounded-full pointer-events-none" />
-                                        <h3 className="text-2xl md:text-3xl font-cabinet font-bold mb-6 text-white">{section.title}</h3>
-                                        <div
-                                            className="text-gray-300 text-lg leading-relaxed whitespace-pre-wrap [&>img]:rounded-xl [&>img]:w-full [&>img]:my-4"
-                                            dangerouslySetInnerHTML={{ __html: section.content }}
-                                        />
-                                    </motion.div>
-                                ))}
-
-                                {/* Recommendations */}
-                                <div className="md:col-span-3 bg-gradient-to-br from-purple-900/20 to-blue-900/20 border border-white/10 rounded-3xl p-8">
-                                    <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                                        <CheckCircle className="text-green-400" />
-                                        Plano de Ação Recomendado
-                                    </h3>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        {currentUser?.recommendations.map((rec, idx) => (
-                                            <div key={idx} className="flex items-start gap-4 p-4 bg-white/5 rounded-xl border border-white/5">
-                                                <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold shrink-0">
-                                                    {idx + 1}
+                                {/* Dynamic Analysis Sections */}
+                                <div className="space-y-16">
+                                    {currentUser?.analysisSections?.map((section, idx) => {
+                                        // Specific Renderers based on 'type'
+                                        if (section.type === 'stats_grid') {
+                                            return (
+                                                <div key={idx} className="space-y-6">
+                                                    <h3 className="text-2xl font-bold text-white flex items-center gap-2">
+                                                        {section.title}
+                                                    </h3>
+                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                                        {section.items?.map((item: any, i: number) => (
+                                                            <div key={i} className="bg-[#111] border border-white/10 rounded-2xl p-8 hover:bg-white/[0.02] transition-colors">
+                                                                <div className="flex items-center gap-2 mb-2">
+                                                                    <div className={`w-2 h-2 rounded-full ${item.color === 'green' ? 'bg-green-500' : 'bg-blue-500'}`} />
+                                                                    <span className={`font-bold ${item.color === 'green' ? 'text-green-400' : 'text-blue-400'}`}>{item.label}</span>
+                                                                </div>
+                                                                <div className="text-4xl font-cabinet font-bold text-white mb-2">{item.value}</div>
+                                                                <p className="text-gray-400 text-sm">{item.desc}</p>
+                                                            </div>
+                                                        ))}
+                                                    </div>
                                                 </div>
-                                                <p className="text-gray-200">{rec}</p>
+                                            );
+                                        }
+
+                                        if (section.type === 'competitors') {
+                                            return (
+                                                <div key={idx} className="space-y-6">
+                                                    <h3 className="text-2xl font-bold text-white flex items-center gap-2">
+                                                        {section.title}
+                                                    </h3>
+                                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                                        {section.items?.map((item: any, i: number) => (
+                                                            <div key={i} className="bg-[#161616] rounded-2xl overflow-hidden border border-white/5 hover:border-white/20 transition-all group">
+                                                                <div className="h-32 bg-gradient-to-br from-gray-800 to-black relative flex items-center justify-center">
+                                                                    <span className="text-4xl">✈️</span>
+                                                                    <div className={`absolute top-4 right-4 text-xs font-bold px-2 py-1 rounded bg-[${item.color === 'green' ? '#22c55e' : '#ef4444'}]/20 text-[${item.color === 'green' ? '#22c55e' : '#ef4444'}]`}>
+                                                                        {item.stat}
+                                                                    </div>
+                                                                </div>
+                                                                <div className="p-6">
+                                                                    <h4 className="font-bold text-lg text-white mb-1">{item.name}</h4>
+                                                                    <p className="text-gray-400 text-sm">{item.desc}</p>
+                                                                </div>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            );
+                                        }
+
+                                        if (section.type === 'ai_showcase') {
+                                            return (
+                                                <div key={idx} className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-purple-900/20 to-blue-900/20 border border-purple-500/20 p-8 md:p-12">
+                                                    <div className="absolute inset-0 bg-[url('/assets/grid.svg')] opacity-20" />
+                                                    <div className="relative z-10">
+                                                        <h3 className="text-3xl font-cabinet font-bold text-white mb-8 text-center">{section.title}</h3>
+                                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                                            {section.items?.map((item: any, i: number) => (
+                                                                <div key={i} className="bg-black/40 backdrop-blur-md rounded-2xl p-6 border border-white/10 flex items-start gap-4">
+                                                                    <div className="bg-purple-500/20 p-3 rounded-lg text-purple-400">
+                                                                        {item.icon === 'robot' ? <Zap size={24} /> : <Video size={24} />}
+                                                                    </div>
+                                                                    <div>
+                                                                        <h4 className="font-bold text-white text-lg mb-2">{item.title}</h4>
+                                                                        <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+                                                                    </div>
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            );
+                                        }
+
+                                        // Default text renderer (Fallback)
+                                        return (
+                                            <div key={idx} className="bg-white/5 border border-white/10 rounded-3xl p-8">
+                                                <h3 className="text-2xl font-bold mb-4">{section.title}</h3>
+                                                <div dangerouslySetInnerHTML={{ __html: section.content || '' }} className="text-gray-300" />
                                             </div>
-                                        ))}
-                                    </div>
+                                        );
+                                    })}
                                 </div>
 
-                                {/* Mockups Section */}
+                                {/* Mockup Preview (Refined) */}
                                 {currentUser?.mockups && (
-                                    <div className="md:col-span-3">
-                                        <h3 className="text-2xl font-bold font-cabinet mb-6 text-white text-center">
-                                            Modelos de Site - Escolha o seu
-                                        </h3>
-                                        <div className={`grid grid-cols-1 ${currentUser.mockups.length > 1 ? 'md:grid-cols-2' : ''} gap-8`}>
+                                    <div className="py-10">
+                                        <div className="grid grid-cols-1 gap-8">
                                             {currentUser.mockups.map((mockup, idx) => (
-                                                <MockupCard key={idx} mockup={mockup} />
+                                                <motion.div
+                                                    key={idx}
+                                                    initial={{ opacity: 0, scale: 0.95 }}
+                                                    whileInView={{ opacity: 1, scale: 1 }}
+                                                    viewport={{ once: true }}
+                                                    className="rounded-3xl overflow-hidden shadow-2xl border border-white/10"
+                                                >
+                                                    <img src={mockup.image} alt="Mockup" className="w-full h-auto" />
+                                                </motion.div>
                                             ))}
                                         </div>
                                     </div>
                                 )}
 
-                                {/* Price Reveal Section */}
+                                {/* Price / CTA Section (Re-styled) */}
                                 {currentUser?.price && (
-                                    <div className="md:col-span-3 mt-8 mb-20">
-                                        {!isPriceRevealed ? (
-                                            <motion.div
-                                                className="w-full bg-white/5 border border-white/10 rounded-3xl p-12 text-center cursor-pointer hover:bg-white/10 transition-colors group relative overflow-hidden"
-                                                onClick={() => setShowPriceConfirm(true)}
-                                                whileHover={{ scale: 1.01 }}
-                                            >
-                                                <div className="relative z-10 flex flex-col items-center gap-4">
-                                                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                                                        <Lock className="text-white w-8 h-8" />
-                                                    </div>
-                                                    <h3 className="text-2xl font-bold text-white">VISUALIZAR INVESTIMENTO</h3>
-                                                    <p className="text-gray-400 max-w-md mx-auto">
-                                                        O plano de ação desenvolvido é exclusivo e de alto impacto. Clique para confirmar que você entende o valor da proposta.
-                                                    </p>
+                                    <div id="price-section" className="bg-gradient-to-b from-[#111] to-black border border-white/10 rounded-3xl p-12 text-center relative overflow-hidden">
+                                        <div className="relative z-10 max-w-3xl mx-auto">
+                                            <h2 className="text-3xl md:text-5xl font-cabinet font-bold text-white mb-8">
+                                                Plano de Ação Recomendado
+                                            </h2>
+
+                                            {/* Deliverables List (Recommendations) */}
+                                            <div className="bg-white/5 rounded-2xl p-8 mb-10 text-left">
+                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                    {currentUser.recommendations.map((rec, i) => (
+                                                        <div key={i} className="flex items-center gap-3 text-gray-300">
+                                                            <CheckCircle size={18} className="text-green-500 shrink-0" />
+                                                            <span className="text-sm">{rec}</span>
+                                                        </div>
+                                                    ))}
                                                 </div>
-                                            </motion.div>
-                                        ) : (
-                                            <motion.div
-                                                initial={{ opacity: 0, scale: 0.9 }}
-                                                animate={{ opacity: 1, scale: 1 }}
-                                                className="w-full bg-gradient-to-br from-purple-900/40 to-black border border-purple-500/30 rounded-3xl p-12 text-center relative overflow-hidden"
-                                            >
-                                                <div className="absolute inset-0 bg-[url('/assets/grid.svg')] opacity-10" />
-                                                <div className="relative z-10">
-                                                    <p className="text-purple-300 font-bold tracking-widest uppercase mb-4 text-sm">
-                                                        {currentUser.price.label}
-                                                    </p>
-                                                    <div className="flex flex-col items-center justify-center gap-2">
-                                                        {currentUser.price.originalValue && (
-                                                            <span className="text-gray-500 line-through text-2xl font-cabinet">
-                                                                {currentUser.price.originalValue}
-                                                            </span>
-                                                        )}
-                                                        <h2 className="text-6xl md:text-8xl font-cabinet font-bold text-white mb-2 tracking-tighter">
-                                                            {currentUser.price.value}
-                                                        </h2>
-                                                        <span className="px-4 py-2 bg-purple-500/20 text-purple-300 rounded-full text-xs font-bold uppercase border border-purple-500/20">
-                                                            Oferta Especial
-                                                        </span>
-                                                        <button
-                                                            className="mt-8 bg-white text-black px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform shadow-[0_0_30px_rgba(255,255,255,0.3)]"
-                                                            onClick={() => window.location.href = "https://wa.me/55999999999"} // Example WhatsApp link
-                                                        >
-                                                            GARANTIR MINHA VAGA
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </motion.div>
-                                        )}
+                                            </div>
+
+                                            {!showPriceConfirm ? (
+                                                <button
+                                                    onClick={() => setShowPriceConfirm(true)}
+                                                    className="w-full md:w-auto bg-green-600 hover:bg-green-500 text-white font-bold px-12 py-5 rounded-full text-xl transition-all shadow-lg hover:shadow-green-500/25"
+                                                >
+                                                    Ver Investimento
+                                                </button>
+                                            ) : (
+                                                <motion.div
+                                                    initial={{ height: 0, opacity: 0 }}
+                                                    animate={{ height: 'auto', opacity: 1 }}
+                                                    className="border-t border-white/10 pt-8"
+                                                >
+                                                    <p className="text-green-400 font-bold tracking-widest uppercase mb-2 text-sm">{currentUser.price.label}</p>
+                                                    <h3 className="text-6xl md:text-7xl font-bold text-white mb-2">{currentUser.price.value}</h3>
+                                                    {currentUser.price.originalValue && (
+                                                        <span className="text-gray-500 line-through text-xl block mb-8">{currentUser.price.originalValue}</span>
+                                                    )}
+
+                                                    <a
+                                                        href="https://wa.me/55999999999?text=Ol%C3%A1%2C%20gostaria%20de%20ativar%20o%20Plano%20de%20A%C3%A7%C3%A3o%202025"
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                        className="inline-flex items-center gap-3 bg-green-500 hover:bg-green-400 text-black font-bold px-10 py-5 rounded-full text-xl transition-all transform hover:scale-105"
+                                                    >
+                                                        ATIVAR PLANO DE AÇÃO 2025 <Zap size={24} />
+                                                    </a>
+                                                </motion.div>
+                                            )}
+                                        </div>
                                     </div>
                                 )}
                             </div>
 
-                            {/* Popup Confirmation */}
-                            <AnimatePresence>
-                                {showPriceConfirm && (
-                                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm">
-                                        <motion.div
-                                            initial={{ opacity: 0, scale: 0.9 }}
-                                            animate={{ opacity: 1, scale: 1 }}
-                                            exit={{ opacity: 0, scale: 0.9 }}
-                                            className="bg-[#111] border border-white/20 rounded-3xl p-8 max-w-md w-full relative"
-                                        >
-                                            <button
-                                                onClick={() => setShowPriceConfirm(false)}
-                                                className="absolute top-4 right-4 text-gray-500 hover:text-white"
-                                            >
-                                                <XCircle size={24} />
-                                            </button>
-
-                                            <div className="flex flex-col items-center text-center">
-                                                <div className="w-16 h-16 rounded-full bg-yellow-500/20 text-yellow-500 flex items-center justify-center mb-6">
-                                                    <AlertTriangle size={32} />
-                                                </div>
-                                                <h3 className="text-2xl font-bold font-cabinet text-white mb-4">Atenção: Alto Valor</h3>
-                                                <p className="text-gray-400 mb-8 leading-relaxed">
-                                                    Esta oferta inclui acompanhamento exclusivo e garantia de resultado. O investimento reflete a qualidade e o retorno esperado. Você está pronto para escalar seu negócio?
-                                                </p>
-                                                <div className="grid grid-cols-2 gap-4 w-full">
-                                                    <button
-                                                        onClick={() => setShowPriceConfirm(false)}
-                                                        className="px-6 py-3 rounded-xl border border-white/10 hover:bg-white/5 text-gray-400 font-bold text-sm"
-                                                    >
-                                                        VOLTAR
-                                                    </button>
-                                                    <button
-                                                        onClick={() => {
-                                                            setShowPriceConfirm(false);
-                                                            setIsPriceRevealed(true);
-                                                        }}
-                                                        className="px-6 py-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-sm shadow-lg shadow-purple-900/20"
-                                                    >
-                                                        SIM, ESTOU PRONTO
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </motion.div>
-                                    </div>
-                                )}
-                            </AnimatePresence>
+                            <Footer />
                         </motion.div>
                     )}
                 </AnimatePresence>
