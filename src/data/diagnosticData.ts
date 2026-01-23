@@ -56,10 +56,10 @@ export const diagnosticUsers: IDiagnosticData[] = [
         company: 'Milhas Aéreas',
         score: 82,
         metrics: [
-            { label: 'Conversão', value: 65, status: 'warning' },
             { label: 'Tráfego', value: 92, status: 'good' },
-            { label: 'Retenção', value: 78, status: 'good' },
-            { label: 'LTV', value: 50, status: 'critical' }
+            { label: 'Conversão', value: 28, status: 'critical' },
+            { label: 'Autoridade SEO', value: 15, status: 'critical' },
+            { label: 'Oportunidade', value: 98, status: 'good' }
         ],
         summary: 'O projeto tem um tráfego excelente, mas a conversão no checkout está abaixo da média do mercado. identificamos oportunidades claras de otimização na página de vendas.',
         recommendations: [
