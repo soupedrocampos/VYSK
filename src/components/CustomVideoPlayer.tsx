@@ -20,6 +20,21 @@ const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({ url }) => {
     const playerRef = useRef<any>(null);
     const containerRef = useRef<HTMLDivElement>(null);
 
+    const isGoogleDrive = url.includes('drive.google.com');
+
+    if (isGoogleDrive) {
+        return (
+            <div className="relative w-full aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+                <iframe
+                    src={url}
+                    className="w-full h-full"
+                    allow="autoplay"
+                    title="Video Player"
+                />
+            </div>
+        );
+    }
+
     const handlePlayPause = () => {
         setPlaying(!playing);
     };
